@@ -1,18 +1,21 @@
 ---
 layout: default
-title: OpenStack + Ceph Workshop
+title: OpenStack Workshop
+breadcrumbs:
+  - name: learn
+    url: /learn/
+  - name: openstack
 ---
 
 <div class="section">
-  <h1>OpenStack + Ceph Workshop</h1>
+  <h1>OpenStack Workshop</h1>
   <p>
-    A hands-on workshop covering the full path from bare metal to a production-ready
-    private cloud. Participants build and operate a real OpenStack environment
-    with Ceph as the storage backend — step by step, with everything running
-    on actual hardware.
+    A hands-on workshop covering the full path from bare metal to a
+    production-ready private cloud. Participants build and operate a real
+    OpenStack environment — step by step, on actual hardware.
   </p>
   <p>
-    After the workshop, participants can deploy and operate OpenStack with Ceph,
+    After the workshop, participants can deploy and operate OpenStack,
     understand the architecture, and maintain the environment independently.
   </p>
   <span class="workshop-meta">7 parts · 5 days · English · Hands-on</span>
@@ -20,10 +23,10 @@ title: OpenStack + Ceph Workshop
 
 <div class="section">
   <span class="section-label">Slides</span>
-  <p>All slides are available as a single HTML file and as PDF.</p>
   <div class="slides-grid">
-    <a class="slide-link slide-link--primary" href="{{ '/learn/openstack-ceph/slides.html' | relative_url }}">View slides</a>
-    <a class="slide-link" href="{{ '/learn/openstack-ceph/slides.pdf' | relative_url }}">Download PDF</a>
+    <a class="slide-link slide-link--primary" href="{{ '/learn/openstack/slides.html' | relative_url }}">View slides</a>
+    <a class="slide-link" href="{{ '/learn/openstack/slides.pdf' | relative_url }}">Download PDF</a>
+    <a class="slide-link slide-link--pptx" href="{{ '/learn/openstack/slides.pptx' | relative_url }}">Download PPTX</a>
   </div>
 </div>
 
@@ -41,10 +44,10 @@ title: OpenStack + Ceph Workshop
 </div>
 
 <div class="section">
-  <span class="section-label">Format</span>
+  <span class="section-label">Book this workshop</span>
   <p>
     Available as a group workshop (4–5 participants, remote or on-site)
-    or as a custom engagement. Contact:
-    <a href="mailto:ping@socket.de">ping@socket.de</a>
+    or as a custom engagement.
+    Contact: <a href="mailto:ping@socket.de">ping@socket.de</a>
   </p>
 </div>
