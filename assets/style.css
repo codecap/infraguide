@@ -134,6 +134,46 @@ a:hover {
   text-decoration: none;
 }
 
+/* Workshop card */
+
+.workshop-card {
+  margin-top: 0.5rem;
+}
+
+.workshop-card h2 {
+  margin-bottom: 0.25rem;
+}
+
+.workshop-card h2 a {
+  color: var(--color-text);
+}
+
+.workshop-card h2 a:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.workshop-meta {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* Primary slide button */
+
+.slide-link--primary {
+  background: var(--color-accent);
+  color: #FFFFFF;
+  border-color: var(--color-accent);
+}
+
+.slide-link--primary:hover {
+  background: #1E4E8C;
+  border-color: #1E4E8C;
+  color: #FFFFFF;
+}
+
 /* Coming soon */
 
 .coming-soon {
