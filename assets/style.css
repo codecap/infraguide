@@ -134,6 +134,72 @@ a:hover {
   text-decoration: none;
 }
 
+/* Navigation items – active / inactive */
+
+.nav-list {
+  list-style: none;
+  margin-top: 0.75rem;
+}
+
+.nav-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+}
+
+.nav-list li:last-child {
+  border-bottom: none;
+}
+
+.nav-list a {
+  font-weight: 500;
+  color: var(--color-accent);
+  min-width: 140px;
+  display: inline-block;
+}
+
+.nav-list a:hover {
+  text-decoration: underline;
+}
+
+.nav-item--inactive {
+  color: var(--color-muted);
+  min-width: 140px;
+  display: inline-block;
+  font-weight: 500;
+  cursor: default;
+}
+
+.nav-desc {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.badge-soon {
+  font-size: 0.7rem;
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  padding: 0.1rem 0.4rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* PPTX button */
+
+.slide-link--pptx {
+  color: var(--color-muted);
+  border-color: var(--color-border);
+}
+
+.slide-link--pptx:hover {
+  border-color: var(--color-muted);
+  background: var(--color-bg);
+}
+
 /* Workshop card */
 
 .workshop-card {

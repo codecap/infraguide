@@ -12,6 +12,20 @@
     <a href="{{ '/' | relative_url }}" class="site-title">infraguide.org</a>
   </header>
 
+  {% if page.breadcrumbs %}
+  <nav class="breadcrumb">
+    <a href="{{ '/' | relative_url }}">infraguide.org</a>
+    {% for crumb in page.breadcrumbs %}
+      <span class="breadcrumb-sep">/</span>
+      {% if crumb.url %}
+        <a href="{{ crumb.url | relative_url }}">{{ crumb.name }}</a>
+      {% else %}
+        <span class="breadcrumb-current">{{ crumb.name }}</span>
+      {% endif %}
+    {% endfor %}
+  </nav>
+  {% endif %}
+
   <main>
     {{ content }}
   </main>
