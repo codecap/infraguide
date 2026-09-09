@@ -1,0 +1,192 @@
+/* infraguide.org – minimal, technical */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg:      #FFFFFF;
+  --color-text:    #111111;
+  --color-accent:  #2B6CB0;
+  --color-muted:   #6B7280;
+  --color-border:  #E5E7EB;
+  --font:          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --max-width:     860px;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-family: var(--font);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+/* Header */
+
+header {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.site-title:hover {
+  color: var(--color-accent);
+}
+
+/* Main */
+
+main {
+  margin-bottom: 4rem;
+}
+
+/* Typography */
+
+h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--color-muted);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
+
+.section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* Workshop slides links */
+
+.slides-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.slide-link {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  font-size: 0.875rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.slide-link:hover {
+  border-color: var(--color-accent);
+  background: #EBF4FF;
+  text-decoration: none;
+}
+
+/* Coming soon */
+
+.coming-soon {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.coming-soon ul {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.coming-soon li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+.coming-soon li::before {
+  content: "·  ";
+  color: var(--color-border);
+}
+
+.coming-soon li:first-child::before {
+  content: "";
+}
+
+/* Footer */
+
+footer {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.5rem;
+}
+
+footer a {
+  color: var(--color-muted);
+}
+
+footer a:hover {
+  color: var(--color-accent);
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+  body {
+    padding: 1.25rem 1rem 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

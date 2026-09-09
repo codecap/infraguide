@@ -1,0 +1,16 @@
+title: infraguide.org
+description: Open Source Infrastructure – Guides, Tools and Training.
+url: "https://dev.infraguide.org"
+baseurl: ""
+
+author: Vladislav Nazarenko
+
+markdown: kramdown
+highlighter: rouge
+
+permalink: pretty
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
