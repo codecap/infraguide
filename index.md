@@ -18,30 +18,25 @@ title: Open Source Infrastructure
 </div>
 
 <div class="section">
-  <span class="section-label">Training</span>
-  <h2>OpenStack + Ceph Workshop</h2>
-  <p>
-    Hands-on workshop covering the full stack — from bare metal to a running
-    OpenStack cloud with Ceph storage. Seven parts, each available as slides.
-  </p>
-  <div class="slides-grid">
-    <a class="slide-link" href="https://infraguide.org/intro.html">Intro</a>
-    <a class="slide-link" href="https://infraguide.org/architecture.html">Architecture</a>
-    <a class="slide-link" href="https://infraguide.org/preparations.html">Preparations</a>
-    <a class="slide-link" href="https://infraguide.org/ceph.html">Ceph</a>
-    <a class="slide-link" href="https://infraguide.org/openstack.html">OpenStack</a>
-    <a class="slide-link" href="https://infraguide.org/testing.html">Testing</a>
-    <a class="slide-link" href="https://infraguide.org/automation.html">Automation</a>
-  </div>
-</div>
-
-<div class="section coming-soon">
-  <span class="section-label">Coming soon</span>
-  <ul>
-    <li>OpenStack Workshop</li>
-    <li>Ceph Workshop</li>
-    <li>Guides</li>
-    <li>Tools</li>
-    <li>Certifications</li>
+  <ul class="nav-list">
+    <li>
+      <a href="/learn/">learn</a>
+      <span class="nav-desc">Workshops and training material</span>
+    </li>
+    <li>
+      <span class="nav-item--inactive">guides</span>
+      <span class="nav-desc">Deployment guides and real setups</span>
+      <span class="badge-soon">soon</span>
+    </li>
+    <li>
+      <span class="nav-item--inactive">tools</span>
+      <span class="nav-desc">Decision tools and compatibility matrix</span>
+      <span class="badge-soon">soon</span>
+    </li>
+    <li>
+      <span class="nav-item--inactive">certifications</span>
+      <span class="nav-desc">Certification paths for Open Source Infrastructure</span>
+      <span class="badge-soon">soon</span>
+    </li>
   </ul>
 </div>

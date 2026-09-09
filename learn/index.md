@@ -17,11 +17,11 @@ breadcrumbs:
 <div class="section">
   <ul class="nav-list">
     <li>
-      <a href="{{ '/learn/openstack/' | relative_url }}">openstack</a>
+      <a href="/learn/openstack/">openstack</a>
       <span class="nav-desc">OpenStack Workshop – build and operate a private cloud</span>
     </li>
     <li>
-      <a href="{{ '/learn/ceph/' | relative_url }}">ceph</a>
+      <a href="/learn/ceph/">ceph</a>
       <span class="nav-desc">Ceph Workshop – distributed storage from scratch</span>
     </li>
     <li>
