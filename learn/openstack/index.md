@@ -21,6 +21,9 @@ breadcrumbs:
   <span class="workshop-meta">7 parts · 5 days · English · Hands-on</span>
 </div>
 
+---
+![](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+
 <div class="section">
   <span class="section-label">Slides</span>
   <div class="slides-grid">
