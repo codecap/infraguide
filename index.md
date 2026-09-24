@@ -29,6 +29,11 @@ title: Open Source Infrastructure
       <span class="badge-soon">soon</span>
     </li>
     <li>
+      <span class="nav-item--inactive">articles</span>
+      <span class="nav-desc">Articles, Comparisons, Evaluations</span>
+      <span class="badge-soon">soon</span>
+    </li>
+    <li>
       <span class="nav-item--inactive">tools</span>
       <span class="nav-desc">Decision tools and compatibility matrix</span>
       <span class="badge-soon">soon</span>

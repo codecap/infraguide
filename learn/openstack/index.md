@@ -1,6 +1,6 @@
 ---
 layout: default
-title: OpenStack Workshop
+title: OpenStack
 breadcrumbs:
   - name: learn
     url: /learn/
@@ -9,6 +9,7 @@ breadcrumbs:
 
 <div class="section">
   <h1>OpenStack Workshop</h1>
+  <img src="https://www.svgrepo.com/show/354145/openstack-icon.svg" alt="logo" width="10%"/>
   <p>
     A hands-on workshop covering the full path from bare metal to a
     production-ready private cloud. Participants build and operate a real
@@ -22,7 +23,8 @@ breadcrumbs:
 </div>
 
 ---
-![](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+
+<img src="https://raw.githubusercontent.com/codecap/infraguide/refs/heads/main/assets/img/openstack/env.svg" alt="logo" width="90%"/>
 
 <div class="section">
   <span class="section-label">Slides</span>
@@ -32,6 +34,30 @@ breadcrumbs:
     <a class="slide-link slide-link--pptx" href="{{ '/learn/openstack/slides.pptx' | relative_url }}">Download PPTX</a>
   </div>
 </div>
+
+
+---
+## Automatic build and state
+
+✅ nodes created
+
+✅ nodes configured
+
+✅ deployment
+
+✅ post-deployment check
+
+✅ keystone accessible
+
+✅ dasshboard accessible
+
+✅ monitoring accessible and working
+
+✅ smoke test
+
+...
+
+
 
 <div class="section">
   <span class="section-label">Parts</span>
