@@ -5,15 +5,36 @@ title: Open Source Infrastructure
 
 <div class="section">
   <h1>Open Source Infrastructure</h1>
+  
   <p>
-    The options for building private cloud infrastructure are real and mature —
+    The options for building private cloud infrastructure are real and mature:
     OpenStack, Ceph, Proxmox, Incus and others. Choosing between them, and
     actually running them in production, is where it gets hard.
   </p>
   <p>
-    infraguide.org collects practical material from real deployments:
-    workshop slides, deployment guides, and decision tools.
-    No vendor preference, no abstractions.
+    Nobody has time to try them all. So people pick what they know. Proxmox,
+    because it's the obvious start, even when something else would fit
+    better. Or OpenStack, even when it's a size too big for the company.
+  </p>
+  <p>
+    infraguide.org collects practical material from real deployments: workshop
+    slides, deployment guides, and decision tools. It starts at the entry
+    point, so you get to a running installation quickly and can play with it
+    before you decide.
+  </p>
+  <p>
+    Everything here is tested in practice. Missing topics get tried out first,
+    or written by people who know them.
+  </p>
+  <p>
+    No vendor preference, no abstractions, no partnerships, no paid
+    recommendations. The site gives you a starting point. The decision is
+    yours.
+  </p>
+  <p>
+    Written by practitioners, for practitioners. Started by socket GmbH. If
+    you want hands-on help, from knowledge transfer to building it together,
+    socket is there. If not, the site works on its own.
   </p>
 </div>
 
