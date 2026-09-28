@@ -43,5 +43,16 @@ title: Open Source Infrastructure
       <span class="nav-desc">Certification paths for Open Source Infrastructure</span>
       <span class="badge-soon">soon</span>
     </li>
+    <li>
+      <span class="nav-item--inactive">cheat sheets</span>
+      <span class="nav-desc">Reference guide used for quick information and fast problem-solving</span>
+      <span class="badge-soon">soon</span>
+    </li>
+
   </ul>
 </div>
+
+---
+
+<img src="https://raw.githubusercontent.com/codecap/infraguide/refs/heads/main/assets/img/openstack/env.svg" alt="logo" width="90%"/>
+<img src="https://raw.githubusercontent.com/codecap/infraguide/refs/heads/main/assets/img/ceph/env.svg" alt="logo" width="90%"/>
