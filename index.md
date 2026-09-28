@@ -58,7 +58,7 @@ title: Open Source Infrastructure
 <img src="https://www.svgrepo.com/show/448233/kubernetes.svg" alt="logo" width="10%"/>
 <img src="https://www.svgrepo.com/show/331552/proxmox.svg" alt="logo" width="10%"/>
 <img src="https://www.svgrepo.com/show/353402/apache-cloudstack.svg" alt="logo" width="10%"/>
-<img src="https://kubevirt.io/assets/images/KubeVirt_logo_color.svg" alt="logo" width="10%"/>
+<img src="https://cncf-icons.com/artwork/projects/kubevirt/icon/color/kubevirt-icon-color.svg" alt="logo" width="10%"/>
 <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/incus.svg" alt="logo" width="10%"/>
 <img src="https://cdn.simpleicons.org/opennebula/0097C2" alt="logo" width="10%"/>
 <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/truenas.svg" alt="logo" width="10%"/>

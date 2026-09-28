@@ -58,24 +58,12 @@ breadcrumbs:
 ...
 
 
-
-<div class="section">
-  <span class="section-label">Parts</span>
-  <div class="slides-grid">
-    <a class="slide-link" href="https://infraguide.org/intro.html">Intro</a>
-    <a class="slide-link" href="https://infraguide.org/architecture.html">Architecture</a>
-    <a class="slide-link" href="https://infraguide.org/preparations.html">Preparations</a>
-    <a class="slide-link" href="https://infraguide.org/ceph.html">Ceph</a>
-    <a class="slide-link" href="https://infraguide.org/openstack.html">OpenStack</a>
-    <a class="slide-link" href="https://infraguide.org/testing.html">Testing</a>
-    <a class="slide-link" href="https://infraguide.org/automation.html">Automation</a>
-  </div>
-</div>
+---
 
 <div class="section">
   <span class="section-label">Book this workshop</span>
   <p>
-    Available as a group workshop (4–5 participants, remote or on-site)
+    Available as a group workshop (4 – 5 participants, remote or on-site)
     or as a custom engagement.
     Contact: <a href="mailto:ping@socket.de">ping@socket.de</a>
   </p>
