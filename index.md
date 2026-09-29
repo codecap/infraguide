@@ -3,82 +3,115 @@ layout: default
 title: Open Source Infrastructure
 ---
 
-<div class="section">
-  <h1>Open Source Infrastructure</h1>
-  
-  <p>
-    The options for building private cloud infrastructure are real and mature:
-    OpenStack, Ceph, Proxmox, Incus and others. Choosing between them, and
-    actually running them in production, is where it gets hard.
-  </p>
-  <p>
-    Nobody has time to try them all. So people pick what they know. Proxmox,
-    because it's the obvious start, even when something else would fit
-    better. Or OpenStack, even when it's a size too big for the company.
-  </p>
-  <p>
-    infraguide.org collects practical material from real deployments: workshop
-    slides, deployment guides, and decision tools. It starts at the entry
-    point, so you get to a running installation quickly and can play with it
-    before you decide.
-  </p>
-  <p>
-    Everything here is tested in practice. Missing topics get tried out first,
-    or written by people who know them.
-  </p>
-  <p>
-    No vendor preference, no abstractions, no partnerships, no paid
-    recommendations. The site gives you a starting point. The decision is
-    yours.
-  </p>
-  <p>
-    Written by practitioners, for practitioners. Started by socket GmbH. If
-    you want hands-on help, from knowledge transfer to building it together,
-    socket is there. If not, the site works on its own.
-  </p>
+<div class="section hero">
+  <div>
+    <h1>Open Source Infrastructure</h1>
+    <p class="hero-tagline">Practical material from real deployments — no vendor preference, no paid recommendations.</p>
+    <p>
+      The options for building private cloud infrastructure are real and mature:
+      OpenStack, Ceph, Proxmox, Incus and others. Choosing between them, and
+      actually running them in production, is where it gets hard. Nobody has
+      time to try them all, so people pick what they know — even when
+      something else would fit better.
+    </p>
+    <p>
+      infraguide.org collects workshop slides, deployment guides, and decision
+      tools, starting at the entry point so you get to a running installation
+      quickly and can play with it before you decide. Everything here is
+      tested in practice, written by practitioners, for practitioners.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn--primary" href="/learn/">Start learning →</a>
+      <a class="btn btn--ghost" href="mailto:ping@socket.de">Get hands-on help</a>
+    </div>
+  </div>
+
+  <div class="terminal" aria-hidden="true">
+    <div class="terminal-bar">
+      <span class="terminal-dot terminal-dot--red"></span>
+      <span class="terminal-dot terminal-dot--yellow"></span>
+      <span class="terminal-dot terminal-dot--green"></span>
+      <span class="terminal-title">infraguide — status</span>
+    </div>
+    <div class="terminal-body">
+      <div class="term-line term-cmd">infraguide check --stack</div>
+      <div class="term-line term-ok">openstack&nbsp;&nbsp;deployed, keystone reachable</div>
+      <div class="term-line term-ok">ceph&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;healthy, rbd + cephfs + s3 ok</div>
+      <div class="term-line term-ok">monitoring&nbsp;&nbsp;up, dashboards reachable</div>
+      <div class="term-line">&nbsp;</div>
+      <div class="term-line term-cmd">start learning</div>
+    </div>
+  </div>
 </div>
 
 <div class="section">
-  <ul class="nav-list">
-    <li>
-      <a href="/learn/">learn</a>
-      <span class="nav-desc">Workshops and training material</span>
-    </li>
-    <li>
-      <span class="nav-item--inactive">guides</span>
-      <span class="nav-desc">Deployment guides and real setups</span>
-      <span class="badge-soon">soon</span>
-    </li>
-    <li>
-      <span class="nav-item--inactive">articles</span>
-      <span class="nav-desc">Articles, Comparisons, Evaluations</span>
-      <span class="badge-soon">soon</span>
-    </li>
-    <li>
-      <span class="nav-item--inactive">tools</span>
-      <span class="nav-desc">Decision tools and compatibility matrix</span>
-      <span class="badge-soon">soon</span>
-    </li>
-    <li>
-      <span class="nav-item--inactive">certifications</span>
-      <span class="nav-desc">Certification paths for Open Source Infrastructure</span>
-      <span class="badge-soon">soon</span>
-    </li>
-    <li>
-      <span class="nav-item--inactive">cheat sheets</span>
-      <span class="nav-desc">Reference guide used for quick information and fast problem-solving</span>
-      <span class="badge-soon">soon</span>
-    </li>
-
-  </ul>
+  <span class="section-label">What's here</span>
+  <div class="card-grid">
+    <a class="card" href="/learn/">
+      <span class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 19.5V4.5"/><path d="M20 19H6.5a2.5 2.5 0 0 0 0 5H20"/></svg>
+      </span>
+      <span class="card-title">learn</span>
+      <p class="card-desc">Workshops and training material</p>
+    </a>
+    <div class="card card--inactive">
+      <span class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m9 20-6-3V4l6 3 6-3 6 3v13l-6-3-6 3-6-3"/><path d="M9 7v13M15 4v13"/></svg>
+      </span>
+      <span class="card-title">guides <span class="badge-soon">soon</span></span>
+      <p class="card-desc">Deployment guides and real setups</p>
+    </div>
+    <div class="card card--inactive">
+      <span class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6M9 9h1"/></svg>
+      </span>
+      <span class="card-title">articles <span class="badge-soon">soon</span></span>
+      <p class="card-desc">Articles, comparisons, evaluations</p>
+    </div>
+    <div class="card card--inactive">
+      <span class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </span>
+      <span class="card-title">tools <span class="badge-soon">soon</span></span>
+      <p class="card-desc">Decision tools and compatibility matrix</p>
+    </div>
+    <div class="card card--inactive">
+      <span class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5 6 22l6-3 6 3-2.5-8.5"/></svg>
+      </span>
+      <span class="card-title">certifications <span class="badge-soon">soon</span></span>
+      <p class="card-desc">Certification paths for Open Source Infrastructure</p>
+    </div>
+    <div class="card card--inactive">
+      <span class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9 3-3-3-3M4 13v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-6"/><path d="M13 15h5"/></svg>
+      </span>
+      <span class="card-title">cheat sheets <span class="badge-soon">soon</span></span>
+      <p class="card-desc">Reference guide for quick information and fast problem-solving</p>
+    </div>
+  </div>
 </div>
 
----
-<img src="https://www.svgrepo.com/show/354145/openstack-icon.svg" alt="logo" width="10%"/>
-<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg" alt="logo" width="10%"/>
-<img src="https://www.svgrepo.com/show/331552/proxmox.svg" alt="logo" width="10%"/>
-<img src="https://www.svgrepo.com/show/353402/apache-cloudstack.svg" alt="logo" width="10%"/>
-<img src="https://cncf-icons.com/artwork/projects/kubevirt/icon/color/kubevirt-icon-color.svg" alt="logo" width="10%"/>
-<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/incus.svg" alt="logo" width="10%"/>
-<img src="https://cdn.simpleicons.org/opennebula/0097C2" alt="logo" width="10%"/>
-<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/truenas.svg" alt="logo" width="10%"/>
+<div class="section">
+  <span class="section-label">Works with</span>
+  <div class="logo-strip">
+    <span class="logo-chip"><img src="https://www.svgrepo.com/show/354145/openstack-icon.svg" alt="OpenStack"/></span>
+    <span class="logo-chip"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg" alt="Ceph"/></span>
+    <span class="logo-chip"><img src="https://www.svgrepo.com/show/331552/proxmox.svg" alt="Proxmox"/></span>
+    <span class="logo-chip"><img src="https://www.svgrepo.com/show/353402/apache-cloudstack.svg" alt="CloudStack"/></span>
+    <span class="logo-chip"><img src="https://cncf-icons.com/artwork/projects/kubevirt/icon/color/kubevirt-icon-color.svg" alt="KubeVirt"/></span>
+    <span class="logo-chip"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/incus.svg" alt="Incus"/></span>
+    <span class="logo-chip"><img src="https://cdn.simpleicons.org/opennebula/6B7280" alt="OpenNebula"/></span>
+    <span class="logo-chip"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/truenas.svg" alt="TrueNAS"/></span>
+  </div>
+</div>
+
+<div class="section">
+  <p>
+    No abstractions, no partnerships. The site gives you a starting point —
+    the decision is yours. Started by socket GmbH. If you want hands-on
+    help, from knowledge transfer to building it together,
+    <a href="mailto:ping@socket.de">socket</a> is there. If not, the site
+    works on its own.
+  </p>
+</div>

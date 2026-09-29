@@ -7,24 +7,38 @@ breadcrumbs:
   - name: openstack
 ---
 
-<div class="section">
-  <h1>OpenStack Workshop</h1>
-  <img src="https://www.svgrepo.com/show/354145/openstack-icon.svg" alt="logo" width="10%"/>
-  <p>
-    A hands-on workshop covering the full path from bare metal to a
-    production-ready private cloud. Participants build and operate a real
-    OpenStack environment — step by step, on actual hardware.
-  </p>
+<div class="section" style="--topic-tint: var(--color-openstack-tint);">
+  <div class="workshop-header">
+    <span class="workshop-icon">
+      <img src="https://www.svgrepo.com/show/354145/openstack-icon.svg" alt="OpenStack logo"/>
+    </span>
+    <div>
+      <h1>OpenStack Workshop</h1>
+      <p>
+        A hands-on workshop covering the full path from bare metal to a
+        production-ready private cloud. Participants build and operate a real
+        OpenStack environment — step by step, on actual hardware.
+      </p>
+    </div>
+  </div>
   <p>
     After the workshop, participants can deploy and operate OpenStack,
     understand the architecture, and maintain the environment independently.
   </p>
-  <span class="workshop-meta">7 parts · 5 days · English · Hands-on</span>
+  <div class="pill-row">
+    <span class="pill">7 parts</span>
+    <span class="pill">5 days</span>
+    <span class="pill">English</span>
+    <span class="pill">Hands-on</span>
+  </div>
 </div>
 
----
-
-<img src="https://raw.githubusercontent.com/codecap/infraguide/refs/heads/main/assets/img/openstack/env.svg" alt="logo" width="90%"/>
+<div class="section">
+  <span class="section-label">Environment</span>
+  <div class="diagram-frame">
+    <img src="{{ '/assets/img/openstack/env.svg' | relative_url }}" alt="OpenStack workshop environment diagram"/>
+  </div>
+</div>
 
 <div class="section">
   <span class="section-label">Slides</span>
@@ -35,35 +49,32 @@ breadcrumbs:
   </div>
 </div>
 
-
----
-## Automatic build and state
-
-✅ nodes created
-
-✅ nodes configured
-
-✅ deployment
-
-✅ post-deployment check
-
-✅ keystone accessible
-
-✅ dasshboard accessible
-
-✅ monitoring accessible and working
-
-✅ smoke test
-
-...
-
-
----
+<div class="section">
+  <span class="section-label">Automatic build and state</span>
+  <div class="terminal">
+    <div class="terminal-bar">
+      <span class="terminal-dot terminal-dot--red"></span>
+      <span class="terminal-dot terminal-dot--yellow"></span>
+      <span class="terminal-dot terminal-dot--green"></span>
+      <span class="terminal-title">openstack — build status</span>
+    </div>
+    <div class="terminal-body">
+      <div class="term-line term-ok">nodes created</div>
+      <div class="term-line term-ok">nodes configured</div>
+      <div class="term-line term-ok">deployment</div>
+      <div class="term-line term-ok">post-deployment check</div>
+      <div class="term-line term-ok">keystone accessible</div>
+      <div class="term-line term-ok">dashboard accessible</div>
+      <div class="term-line term-ok">monitoring accessible and working</div>
+      <div class="term-line term-ok">smoke test</div>
+    </div>
+  </div>
+</div>
 
 <div class="section">
   <span class="section-label">Book this workshop</span>
   <p>
-    Available as a group workshop (4 – 5 participants, remote or on-site)
+    Available as a group workshop (4–5 participants, remote or on-site)
     or as a custom engagement.
     Contact: <a href="mailto:ping@socket.de">ping@socket.de</a>
   </p>
