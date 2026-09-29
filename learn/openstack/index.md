@@ -51,22 +51,46 @@ breadcrumbs:
 
 <div class="section">
   <span class="section-label">Automatic build and state</span>
-  <div class="terminal">
-    <div class="terminal-bar">
-      <span class="terminal-dot terminal-dot--red"></span>
-      <span class="terminal-dot terminal-dot--yellow"></span>
-      <span class="terminal-dot terminal-dot--green"></span>
-      <span class="terminal-title">openstack — build status</span>
+  <div class="status-panel">
+    <div class="status-row">
+      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+      <span class="status-label">nodes created</span>
+      <span class="status-tag">passed</span>
     </div>
-    <div class="terminal-body">
-      <div class="term-line term-ok">nodes created</div>
-      <div class="term-line term-ok">nodes configured</div>
-      <div class="term-line term-ok">deployment</div>
-      <div class="term-line term-ok">post-deployment check</div>
-      <div class="term-line term-ok">keystone accessible</div>
-      <div class="term-line term-ok">dashboard accessible</div>
-      <div class="term-line term-ok">monitoring accessible and working</div>
-      <div class="term-line term-ok">smoke test</div>
+    <div class="status-row">
+      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+      <span class="status-label">nodes configured</span>
+      <span class="status-tag">passed</span>
+    </div>
+    <div class="status-row">
+      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+      <span class="status-label">deployment</span>
+      <span class="status-tag">passed</span>
+    </div>
+    <div class="status-row">
+      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+      <span class="status-label">post-deployment check</span>
+      <span class="status-tag">passed</span>
+    </div>
+    <div class="status-row">
+      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+      <span class="status-label">keystone accessible</span>
+      <span class="status-tag">passed</span>
+    </div>
+    <div class="status-row">
+      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+      <span class="status-label">dashboard accessible</span>
+      <span class="status-tag">passed</span>
+    </div>
+    <div class="status-row">
+      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+      <span class="status-label">monitoring accessible and working</span>
+      <span class="status-tag">passed</span>
+    </div>
+    <div class="status-row">
+      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+      <span class="status-label">smoke test</span>
+      <span class="status-tag">passed</span>
     </div>
   </div>
 </div>

@@ -292,6 +292,51 @@ a:hover {
   content: "✓ ";
 }
 
+/* Status panel (build / check results) */
+
+.status-panel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+}
+
+.status-row:last-child {
+  border-bottom: none;
+}
+
+.status-icon {
+  width: 18px;
+  height: 18px;
+  color: #16A34A;
+  flex-shrink: 0;
+}
+
+.status-label {
+  color: var(--color-text);
+  flex: 1;
+}
+
+.status-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #16A34A;
+  background: #F0FDF4;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
 /* Card grid */
 
 .card-grid {
