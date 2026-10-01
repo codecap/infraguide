@@ -11,7 +11,7 @@ breadcrumbs:
   <h2>1. Data controller</h2>
   <p>
   The data controller responsible for this website is Vladislav Nazarenko /
-  socket GmbH, as named in the imprint. Contact: ping@infraguide.org.
+  socket GmbH, as named in the imprint. Contact: <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>.
 
   <h2>2. Hosting</h2>
   <p>

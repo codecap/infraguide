@@ -19,7 +19,7 @@ breadcrumbs:
 
   <h2>Contact</h2>
   <p>
-    Email: <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>
+    Email: <a href="mailto:ping@infraguide.org">ping@infraguide.org</a><br>
     Phone: +49 6196 204 55 80
   </p>
 
