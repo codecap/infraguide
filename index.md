@@ -22,7 +22,6 @@ title: Open Source Infrastructure
     </p>
     <div class="hero-actions">
       <a class="btn btn--primary" href="/learn/">Start learning →</a>
-      <a class="btn btn--ghost" href="mailto:ping@infraguide.org">Get hands-on help</a>
     </div>
   </div>
 
