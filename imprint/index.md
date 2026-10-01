@@ -12,28 +12,63 @@ breadcrumbs:
   <h2>Provider</h2>
   <p>
     socket GmbH<br>
-    [street and house number]<br>
-    [postal code and city]<br>
+    Mergenthalerallee 73-75<br>
+    65760 Eschborn<br>
     Germany
   </p>
 
   <h2>Contact</h2>
   <p>
     Email: <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>
+    Phone: +49 6196 204 55 80
   </p>
 
   <h2>Represented by</h2>
-  <p>[managing director(s)]</p>
+  <p>Vladislav Nazarenko</p>
 
   <h2>Register entry</h2>
   <p>
-    Registration court: [court]<br>
-    Registration number: [HRB number]<br>
-    VAT ID (§ 27a UStG): [VAT ID]
+    Registration court: Offenbach am Main<br>
+    Registration number: HRB 52681<br>
+    VAT ID (§ 27a UStG): DE333472184
   </p>
 
   <h2>Responsible for content (§ 18 Abs. 2 MStV)</h2>
-  <p>[name and address]</p>
-
-  <p><em>This page is a placeholder — replace the bracketed fields with socket GmbH's actual legal details before publishing.</em></p>
+  <p>
+    Vladislav Nazarenko<br>
+    <br>
+    socket GmbH<br>
+    Mergenthalerallee 73-75<br>
+    65760 Eschborn<br>
+    Germany
+  </p>
 </div>
+
+
+
+
+Imprint
+
+Information pursuant to Sec. 5 DDG (German Digital Services Act)
+
+[Name / Company]
+[Street, number]
+[Postal code, city]
+[Country]
+
+Represented by:
+[Name of managing director]
+
+Contact:
+Email: ping@infraguide.org
+Phone: [phone number]
+
+Register entry:
+[Commercial register, registration court, registration number – if applicable]
+
+VAT ID:
+[VAT identification number per Sec. 27a German VAT Act – if available]
+
+Responsible for content pursuant to Sec. 18(2) MStV:
+[Name]
+[Address as above, if identical]
