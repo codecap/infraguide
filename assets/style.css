@@ -288,6 +288,57 @@ a:hover {
   color: #34D399;
 }
 
+/* Code blocks — light (default) */
+
+.highlight,
+pre {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.highlight pre {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.highlight .c,
+.highlight .c1,
+.highlight .cm,
+.highlight .cp {
+  color: var(--color-muted);
+}
+
+/* Code blocks — dark variant (opt-in via .cheat-dark wrapper) */
+
+.cheat-dark .highlight,
+.cheat-dark pre {
+  background: #0B0F14;
+  border-color: #232B37;
+}
+
+.cheat-dark code {
+  color: #D1D5DB;
+}
+
+.cheat-dark .highlight .c,
+.cheat-dark .highlight .c1,
+.cheat-dark .highlight .cm,
+.cheat-dark .highlight .cp {
+  color: #6B7280;
+}
+
 .term-ok::before {
   content: "✓ ";
 }

@@ -7,6 +7,8 @@ breadcrumbs:
   - name: openstack
 ---
 
+<div class="cheat-dark" markdown="1">
+
 ## Services
 ```bash
 # list OpenStack services
@@ -252,3 +254,5 @@ openstack server remove floating ip <instance ID> <floating IP ID>
 # delete floating IP
 openstack floating ip delete <floating IP ID>
 ```
+
+</div>
