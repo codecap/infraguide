@@ -7,8 +7,6 @@ breadcrumbs:
   - name: openstack
 ---
 
-<div class="cheat-dark" markdown="1">
-
 ## Services
 ```bash
 # list OpenStack services
