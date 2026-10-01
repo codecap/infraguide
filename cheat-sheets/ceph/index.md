@@ -2,8 +2,8 @@
 layout: default
 title: Ceph
 breadcrumbs:
-  - name: cheatsheets
-    url: /cheatsheets/
+  - name: cheat-sheets
+    url: /cheat-sheets/
   - name: Ceph
 ---
 

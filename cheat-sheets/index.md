@@ -2,7 +2,7 @@
 layout: default
 title: Cheat Sheets
 breadcrumbs:
-  - name: cheatsheets
+  - name: cheat-sheets
 ---
 
 <div class="section">
@@ -17,12 +17,12 @@ breadcrumbs:
 
 <div class="section">
   <div class="card-grid">
-    <a class="card card--topic" style="--topic: var(--color-openstack); --topic-tint: var(--color-openstack-tint);" href="/cheatsheets/openstack/">
+    <a class="card card--topic" style="--topic: var(--color-openstack); --topic-tint: var(--color-openstack-tint);" href="/cheat-sheets/openstack/">
       <span class="card-icon"><img src="https://www.svgrepo.com/show/354145/openstack-icon.svg" alt="" width="18" height="18"/></span>
       <span class="card-title">OpenStack</span>
       <p class="card-desc">Build and operate a private cloud</p>
     </a>
-    <a class="card card--topic" style="--topic: var(--color-ceph); --topic-tint: var(--color-ceph-tint);" href="/cheatsheets/ceph/">
+    <a class="card card--topic" style="--topic: var(--color-ceph); --topic-tint: var(--color-ceph-tint);" href="/cheat-sheets/ceph/">
       <span class="card-icon"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg" alt="" width="18" height="18"/></span>
       <span class="card-title">Ceph</span>
       <p class="card-desc">Distributed storage from scratch</p>

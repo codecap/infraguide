@@ -82,13 +82,13 @@ title: Open Source Infrastructure
       <span class="card-title">certifications <span class="badge-soon">soon</span></span>
       <p class="card-desc">Certification paths for Open Source Infrastructure</p>
     </div>
-    <div class="card card--inactive">
+    <a class="card" href="/cheat-sheets/">
       <span class="card-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9 3-3-3-3M4 13v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-6"/><path d="M13 15h5"/></svg>
       </span>
-      <span class="card-title">cheat sheets <span class="badge-soon">soon</span></span>
+      <span class="card-title">cheat sheets</span>
       <p class="card-desc">Reference guide for quick information and fast problem-solving</p>
-    </div>
+    </a>
   </div>
 </div>
 
