@@ -52,15 +52,15 @@ header {
 }
 
 .site-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  letter-spacing: -0.01em;
 }
 
-.site-title:hover {
-  color: var(--color-accent);
+.site-logo {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
 .header-nav {
@@ -672,9 +672,22 @@ footer {
   gap: 0.75rem 1.5rem;
 }
 
+.footer-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+
 .footer-nav {
   display: flex;
   gap: 1.25rem;
+}
+
+.footer-icon {
+  height: 20px;
+  width: auto;
+  opacity: 0.8;
 }
 
 footer a {

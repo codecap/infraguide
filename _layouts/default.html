@@ -9,7 +9,9 @@
 </head>
 <body>
   <header>
-    <a href="{{ '/' | relative_url }}" class="site-title">infraguide.org</a>
+    <a href="{{ '/' | relative_url }}" class="site-title">
+      <img src="{{ '/assets/logo/logo.svg' | relative_url }}" alt="infraguide.org" class="site-logo">
+    </a>
     <nav class="header-nav">
       <a href="{{ '/learn/' | relative_url }}">learn</a>
     </nav>
@@ -35,12 +37,15 @@
 
   <footer>
     <div class="footer-row">
-      <p>&copy; {{ site.time | date: "%Y" }} socket GmbH</p>
-      <nav class="footer-nav">
-        <a href="{{ '/about/' | relative_url }}">about</a>
-        <a href="{{ '/imprint/' | relative_url }}">imprint</a>
-        <a href="{{ '/privacy/' | relative_url }}">privacy policy</a>
-      </nav>
+      <div class="footer-left">
+        <p>&copy; {{ site.time | date: "%Y" }} socket GmbH</p>
+        <nav class="footer-nav">
+          <a href="{{ '/about/' | relative_url }}">about</a>
+          <a href="{{ '/imprint/' | relative_url }}">imprint</a>
+          <a href="{{ '/privacy/' | relative_url }}">privacy policy</a>
+        </nav>
+      </div>
+      <img src="{{ '/assets/logo/icon.svg' | relative_url }}" alt="" class="footer-icon">
     </div>
   </footer>
 
