@@ -31,6 +31,6 @@ breadcrumbs:
 
   <p>
     This site is a project of socket GmbH. Questions, feedback are welcome via
-    <a href="mailto:ping@infraguide.org">ping@infraguide.org</a><br> .
+    <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>.
   </p>
 </div>

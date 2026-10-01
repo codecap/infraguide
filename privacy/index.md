@@ -69,7 +69,7 @@ breadcrumbs:
   ("Google"). Data may be further processed by Google LLC in the United
   States.
 
-  Google Analytics uses cookies to analyze how visitors use this site(e.g. pages
+  Google Analytics uses cookies to analyze how visitors use this site (e.g. pages
   visited, session duration, referral source). The data collected may include
   your IP address, device and browser information, and usage behavior. Google
   participates in the EU-U.S. Data Privacy Framework, which serves as the legal
@@ -83,7 +83,7 @@ breadcrumbs:
   You can withdraw or change your consent at any time via the cookie settings
   icon at the bottom left of the page.
 
-  Data retention: Event data is retained for 2 months. User data(associated with
+  Data retention: Event data is retained for 2 months. User data (associated with
   cookies, user identifiers, or advertising identifiers) is retained for 14
   months. The retention period is automatically reset to its full duration
   whenever the user interacts with the site again during this window.
@@ -97,14 +97,16 @@ breadcrumbs:
   <h2>7. Your rights</h2>
   <p>
   Under the GDPR, you have the right to:
-
-      request access to the personal data we hold about you (Art. 15),
-      request correction of inaccurate data (Art. 16),
-      request erasure of your data (Art. 17),
-      request restriction of processing (Art. 18),
-      data portability (Art. 20), and
-      object to processing based on legitimate interest (Art. 21).
-
+  </p>
+  <ul>
+    <li>request access to the personal data we hold about you (Art. 15),</li>
+    <li>request correction of inaccurate data (Art. 16),</li>
+    <li>request erasure of your data (Art. 17),</li>
+    <li>request restriction of processing (Art. 18),</li>
+    <li>data portability (Art. 20), and</li>
+    <li>object to processing based on legitimate interest (Art. 21).</li>
+  </ul>
+  <p>
   If you have consented to data processing (e.g. Google Analytics), you may
   withdraw that consent at any time via the cookie settings icon, without
   affecting the lawfulness of processing before the withdrawal.

@@ -252,5 +252,3 @@ openstack server remove floating ip <instance ID> <floating IP ID>
 # delete floating IP
 openstack floating ip delete <floating IP ID>
 ```
-
-</div>

@@ -134,6 +134,16 @@ p {
   color: var(--color-muted);
 }
 
+ul {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--color-muted);
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
 a {
   color: var(--color-accent);
   text-decoration: none;
