@@ -43,32 +43,3 @@ breadcrumbs:
     Germany
   </p>
 </div>
-
-
-
-
-Imprint
-
-Information pursuant to Sec. 5 DDG (German Digital Services Act)
-
-[Name / Company]
-[Street, number]
-[Postal code, city]
-[Country]
-
-Represented by:
-[Name of managing director]
-
-Contact:
-Email: ping@infraguide.org
-Phone: [phone number]
-
-Register entry:
-[Commercial register, registration court, registration number – if applicable]
-
-VAT ID:
-[VAT identification number per Sec. 27a German VAT Act – if available]
-
-Responsible for content pursuant to Sec. 18(2) MStV:
-[Name]
-[Address as above, if identical]
