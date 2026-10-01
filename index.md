@@ -26,22 +26,7 @@ title: Open Source Infrastructure
     </div>
   </div>
 
-  <div class="terminal" aria-hidden="true">
-    <div class="terminal-bar">
-      <span class="terminal-dot terminal-dot--red"></span>
-      <span class="terminal-dot terminal-dot--yellow"></span>
-      <span class="terminal-dot terminal-dot--green"></span>
-      <img src="/assets/logo/icon.svg" alt="" class="terminal-icon">
-    </div>
-    <div class="terminal-body">
-      <div class="term-line term-cmd">infraguide check --stack</div>
-      <div class="term-line term-ok">openstack&nbsp;&nbsp;deployed, keystone reachable</div>
-      <div class="term-line term-ok">ceph&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;healthy, rbd + cephfs + s3 ok</div>
-      <div class="term-line term-ok">monitoring&nbsp;&nbsp;up, dashboards reachable</div>
-      <div class="term-line">&nbsp;</div>
-      <div class="term-line term-cmd">start learning</div>
-    </div>
-  </div>
+  <img src="/assets/logo/icon.svg" alt="" class="hero-icon" aria-hidden="true">
 </div>
 
 <div class="section">

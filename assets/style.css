@@ -189,6 +189,14 @@ a:hover {
   flex-wrap: wrap;
 }
 
+.hero-icon {
+  align-self: stretch;
+  justify-self: stretch;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 /* Buttons */
 
 .btn {
@@ -695,7 +703,7 @@ footer {
 }
 
 .footer-icon {
-  height: 20px;
+  height: 40px;
   width: auto;
   flex-shrink: 0;
   opacity: 0.8;
