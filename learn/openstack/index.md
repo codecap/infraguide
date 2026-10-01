@@ -100,6 +100,6 @@ breadcrumbs:
   <p>
     Available as a group workshop (4–5 participants, remote or on-site)
     or as a custom engagement.
-    Contact: <a href="mailto:ping@socket.de">ping@socket.de</a>
+    Contact: <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>
   </p>
 </div>

@@ -18,9 +18,9 @@ breadcrumbs:
     practitioners.
   </p>
   <p>
-    infraguide.org is started by socket GmbH. If you want hands-on help,
-    from knowledge transfer to building it together,
-    <a href="mailto:ping@socket.de">socket</a> is there. If not, the site
-    works on its own.
+    infraguide.org is started by the infraguide team. If you want hands-on
+    help, from knowledge transfer to building it together,
+    <a href="mailto:ping@infraguide.org">infraguide team</a> is there. If
+    not, the site works on its own.
   </p>
 </div>

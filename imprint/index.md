@@ -19,7 +19,7 @@ breadcrumbs:
 
   <h2>Contact</h2>
   <p>
-    Email: <a href="mailto:ping@socket.de">ping@socket.de</a>
+    Email: <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>
   </p>
 
   <h2>Represented by</h2>

@@ -22,7 +22,7 @@ title: Open Source Infrastructure
     </p>
     <div class="hero-actions">
       <a class="btn btn--primary" href="/learn/">Start learning →</a>
-      <a class="btn btn--ghost" href="mailto:ping@socket.de">Get hands-on help</a>
+      <a class="btn btn--ghost" href="mailto:ping@infraguide.org">Get hands-on help</a>
     </div>
   </div>
 
@@ -31,7 +31,7 @@ title: Open Source Infrastructure
       <span class="terminal-dot terminal-dot--red"></span>
       <span class="terminal-dot terminal-dot--yellow"></span>
       <span class="terminal-dot terminal-dot--green"></span>
-      <span class="terminal-title">infraguide — status</span>
+      <img src="/assets/logo/icon.svg" alt="" class="terminal-icon">
     </div>
     <div class="terminal-body">
       <div class="term-line term-cmd">infraguide check --stack</div>
@@ -109,9 +109,9 @@ title: Open Source Infrastructure
 <div class="section">
   <p>
     No abstractions, no partnerships. The site gives you a starting point —
-    the decision is yours. Started by socket GmbH. If you want hands-on
-    help, from knowledge transfer to building it together,
-    <a href="mailto:ping@socket.de">socket</a> is there. If not, the site
-    works on its own.
+    the decision is yours. Started by the infraguide team. If you want
+    hands-on help, from knowledge transfer to building it together,
+    <a href="mailto:ping@infraguide.org">infraguide team</a> is there. If
+    not, the site works on its own.
   </p>
 </div>

@@ -38,14 +38,14 @@ breadcrumbs:
   <h2>Contact</h2>
   <p>
     Questions about this policy or your data can be sent to
-    <a href="mailto:ping@socket.de">ping@socket.de</a>.
+    <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>.
   </p>
 
   <h2>Data controller</h2>
   <p>
-    socket GmbH — see the <a href="/imprint/">imprint</a> for full contact
-    details.
+    infraguide team — see the <a href="/imprint/">imprint</a> for full
+    contact details.
   </p>
 
-  <p><em>This page is a placeholder — review and finalize with socket GmbH's actual hosting setup and legal requirements before publishing.</em></p>
+  <p><em>This page is a placeholder — review and finalize with the infraguide team's actual hosting setup and legal requirements before publishing.</em></p>
 </div>
