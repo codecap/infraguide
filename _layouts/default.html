@@ -43,5 +43,57 @@
       </nav>
     </div>
   </footer>
+
+  <div id="cookie-consent" class="cookie-consent" hidden>
+    <p>
+      This site uses Google Analytics to understand how visitors use it.
+      Analytics cookies are only set if you accept.
+      <a href="{{ '/privacy/' | relative_url }}">Privacy policy</a>
+    </p>
+    <div class="cookie-consent-actions">
+      <button type="button" class="btn btn--ghost" data-consent="decline">Decline</button>
+      <button type="button" class="btn btn--primary" data-consent="accept">Accept</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var GA_ID = 'G-BNHX3DX017';
+      var STORAGE_KEY = 'ga-consent';
+
+      function loadGA() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(s);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', GA_ID);
+      }
+
+      var consent = localStorage.getItem(STORAGE_KEY);
+      if (consent === 'granted') {
+        loadGA();
+        return;
+      }
+      if (consent === 'denied') {
+        return;
+      }
+
+      var banner = document.getElementById('cookie-consent');
+      if (!banner) return;
+      banner.hidden = false;
+      banner.addEventListener('click', function (e) {
+        var action = e.target.getAttribute('data-consent');
+        if (!action) return;
+        localStorage.setItem(STORAGE_KEY, action === 'accept' ? 'granted' : 'denied');
+        if (action === 'accept') loadGA();
+        banner.hidden = true;
+      });
+    })();
+  </script>
 </body>
 </html>
