@@ -38,14 +38,14 @@
   <footer>
     <div class="footer-row">
       <div class="footer-left">
-        <p>&copy; {{ site.time | date: "%Y" }} socket GmbH</p>
+        <img src="{{ '/assets/logo/icon.svg' | relative_url }}" alt="" class="footer-icon">
+        <p>&copy; {{ site.time | date: "%Y" }} infraguide.org</p>
         <nav class="footer-nav">
           <a href="{{ '/about/' | relative_url }}">about</a>
           <a href="{{ '/imprint/' | relative_url }}">imprint</a>
           <a href="{{ '/privacy/' | relative_url }}">privacy policy</a>
         </nav>
       </div>
-      <img src="{{ '/assets/logo/icon.svg' | relative_url }}" alt="" class="footer-icon">
     </div>
   </footer>
 
