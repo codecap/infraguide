@@ -135,13 +135,22 @@ p {
 }
 
 ul {
-  padding-left: 1.25rem;
+  list-style: none;
   margin-bottom: 1rem;
   color: var(--color-muted);
 }
 
 li {
+  position: relative;
+  padding-left: 1.1rem;
   margin-bottom: 0.4rem;
+}
+
+li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--color-muted);
 }
 
 a {

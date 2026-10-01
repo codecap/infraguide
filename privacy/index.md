@@ -99,12 +99,12 @@ breadcrumbs:
   Under the GDPR, you have the right to:
   </p>
   <ul>
-    <li>request access to the personal data we hold about you (Art. 15),</li>
-    <li>request correction of inaccurate data (Art. 16),</li>
-    <li>request erasure of your data (Art. 17),</li>
-    <li>request restriction of processing (Art. 18),</li>
-    <li>data portability (Art. 20), and</li>
-    <li>object to processing based on legitimate interest (Art. 21).</li>
+    <li>Request access to the personal data we hold about you (Art. 15)</li>
+    <li>Request correction of inaccurate data (Art. 16)</li>
+    <li>Request erasure of your data (Art. 17)</li>
+    <li>Request restriction of processing (Art. 18)</li>
+    <li>Data portability (Art. 20)</li>
+    <li>Object to processing based on legitimate interest (Art. 21)</li>
   </ul>
   <p>
   If you have consented to data processing (e.g. Google Analytics), you may
