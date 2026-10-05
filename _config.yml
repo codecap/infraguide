@@ -1,6 +1,6 @@
 title: infraguide.org
 description: Open Source Infrastructure – Guides, Tools and Training.
-url: "https://dev.infraguide.org"
+url: "https://infraguide.org"
 baseurl: ""
 
 author: Vladislav Nazarenko
@@ -9,6 +9,11 @@ markdown: kramdown
 highlighter: rouge
 
 permalink: pretty
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-last-modified-at
 
 exclude:
   - README.md
