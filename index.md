@@ -1,17 +1,17 @@
 ---
 layout: default
-title: Open Source Infrastructure
+title: Open Source Private Cloud Infrastructure
 ---
 
 <div class="section hero">
   <div>
-    <h1>Open Source Infrastructure</h1>
+    <h1>Open Source Private Cloud Infrastructure</h1>
     <p class="hero-tagline">Practical material from real deployments — no vendor preference, no paid recommendations.</p>
     <p>
       The options for building private cloud infrastructure are real and mature:
       OpenStack, Ceph, Proxmox, Incus and others. Choosing between them, and
       actually running them in production, is where it gets hard. Nobody has
-      time to try them all, so people pick what they know — even when
+      time to try them all, so people pick what they know, even when
       something else would fit better.
     </p>
     <p>
@@ -64,7 +64,7 @@ title: Open Source Infrastructure
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5 6 22l6-3 6 3-2.5-8.5"/></svg>
       </span>
       <span class="card-title">certifications <span class="badge-soon">soon</span></span>
-      <p class="card-desc">Certification paths for Open Source Infrastructure</p>
+      <p class="card-desc">Certification paths for Open Source Private Cloud Infrastructure</p>
     </div>
     <a class="card" href="/cheat-sheets/">
       <span class="card-icon">

@@ -1,14 +1,14 @@
 ---
 layout: default
-title: Training
+title: Open Source Private Cloud Labs | infraguide.org
 breadcrumbs:
   - name: learn
 ---
 
 <div class="section">
-  <h1>Trainings</h1>
+  <h1>Labs</h1>
   <p>
-    Hands-on workshops for Open Source Infrastructure.
+    Hands-on workshops for Open Source Private Cloud.
     Each workshop covers a real production stack — no simplified examples,
     no vendor-managed environments.
   </p>
