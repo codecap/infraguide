@@ -3,6 +3,7 @@ layout: default
 title: Privacy Policy
 breadcrumbs:
   - name: privacy policy
+sitemap: false
 ---
 
 <div class="section">

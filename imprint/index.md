@@ -3,6 +3,7 @@ layout: default
 title: Imprint
 breadcrumbs:
   - name: imprint
+sitemap: false
 ---
 
 <div class="section">
