@@ -1,7 +1,7 @@
 ---
 layout: default
-title: OpenStack Lab: Bare Metal to Private Cloud | infraguide.org
-description: Free OpenStack lab in English: build and operate a private cloud from bare metal to production. Workshop slides included.
+title: "OpenStack Lab: Bare Metal to Private Cloud | infraguide.org"
+description: "Free OpenStack lab in English: build and operate a private cloud from bare metal to production. Workshop slides included."
 breadcrumbs:
   - name: learn
     url: /learn/

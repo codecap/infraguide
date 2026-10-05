@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Ceph Lab: Deploy and Operate a Cluster | infraguide.org
-description: Free Ceph lab in English: deploy, configure and operate a distributed storage cluster. Workshop slides included.
+title: "Ceph Lab: Deploy and Operate a Cluster | infraguide.org"
+description: "Free Ceph lab in English: deploy, configure and operate a distributed storage cluster. Workshop slides included."
 breadcrumbs:
   - name: learn
     url: /learn/
