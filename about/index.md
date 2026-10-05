@@ -21,16 +21,16 @@ breadcrumbs:
     simplified.
   </p>
   <p>
-    I started this as Vladislav Nazarenko
-    (<a href="https://github.com/codecap">codecap</a>), an infrastructure
-    consultant working on private cloud and on-prem systems, out of recurring
-    questions from clients and workshop participants. It's meant to grow
-    beyond just me: if you work with this stuff and want to contribute a
-    guide, get in touch.
+    The content is free. It started with recurring questions from clients and
+    workshop participants, and it is meant to grow into a community project.
+    If you work with this stuff and want to contribute a guide, get in
+    touch.
   </p>
 
   <p>
-    This site is a project of socket GmbH. Questions, feedback are welcome via
-    <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>.
+    If you need something specific, like a workshop, a setup or a review,
+    write to <a href="mailto:ping@infraguide.org">ping@infraguide.org</a> and
+    we talk about it. If not, the site works on its own. Questions and
+    feedback are welcome at the same address.
   </p>
 </div>

@@ -7,8 +7,7 @@ breadcrumbs:
 
 <div class="section">
   <h1>Imprint</h1>
-  <p>Information according to § 5 TMG / § 18 MStV.</p>
-
+  <p>Information according to § 5 DDG and § 18 MStV.</p>
   <h2>Provider</h2>
   <p>
     socket GmbH<br>

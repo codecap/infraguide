@@ -92,10 +92,10 @@ title: Open Source Infrastructure
 
 <div class="section">
   <p>
-    No abstractions, no partnerships. The site gives you a starting point —
-    the decision is yours. Started by the infraguide team. If you want
-    hands-on help, from knowledge transfer to building it together,
-    <a href="mailto:ping@infraguide.org">infraguide team</a> is there. If
-    not, the site works on its own.
+    No abstractions, no partnerships. The site gives you a starting point, the
+    decision is yours. If you want hands-on help, from knowledge transfer to
+    building it together, write to
+    <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>.
+    If not, the site works on its own.
   </p>
 </div>
