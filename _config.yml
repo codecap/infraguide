@@ -1,9 +1,14 @@
 title: infraguide.org
-description: Open Source Infrastructure – Guides, Tools and Training.
+description: >
+  Labs, guides, articles, tools, certifications and cheat sheets for open
+  source private cloud infrastructure. Real deployments, no vendor
+  preference.
+
 url: "https://infraguide.org"
 baseurl: ""
+lang: en
 
-author: Vladislav Nazarenko
+author: infraguide.org
 
 markdown: kramdown
 highlighter: rouge
@@ -14,6 +19,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-last-modified-at
+  - jekyll-seo-tag
 
 exclude:
   - README.md
