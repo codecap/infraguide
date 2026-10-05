@@ -1,6 +1,7 @@
 ---
 layout: default
-title: About
+title: About infraguide.org | Open Source Private Cloud
+description: Free, practical guides on running private cloud infrastructure. Simple to start, not simplified.
 breadcrumbs:
   - name: about
 ---

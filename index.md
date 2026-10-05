@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Open Source Private Cloud Infrastructure
+title: Open Source Private Cloud Infrastructure | infraguide.org
+description: Labs, guides, articles, tools, certifications and cheat sheets for open source private cloud infrastructure. Real deployments, no vendor preference.
 ---
 
 <div class="section hero">

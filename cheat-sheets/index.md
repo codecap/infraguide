@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Cheat Sheets
+title: Open Source Private Cloud Cheat Sheets | infraguide.org
+description: Compact cheat sheets with commands and config snippets for open source cloud and storage tools. Find what you need without digging through the docs.
 breadcrumbs:
   - name: cheat-sheets
 ---

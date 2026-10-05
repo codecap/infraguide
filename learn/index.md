@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Open Source Private Cloud Labs | infraguide.org
+description: Free hands-on labs and workshop slides for open source cloud, virtualization and storage, built on real production stacks, no simplified examples.
 breadcrumbs:
   - name: learn
 ---

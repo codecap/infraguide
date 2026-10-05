@@ -1,12 +1,15 @@
 ---
 layout: default
-title: Ceph Check Sheet
+title: Ceph Cheat Sheet: orch, rbd, rados, CephFS | infraguide.org
+description: Ceph cheat sheet with commands for cephadm orchestration, RBD, RADOS, cephx, CephFS, radosgw and benchmarking. Copy and paste ready.
 breadcrumbs:
   - name: cheat-sheets
     url: /cheat-sheets/
-  - name: Ceph
+  - name: ceph
 ---
-# Ceph Cheat Sheat
+# Ceph Cheat Sheet
+
+Common ceph, rbd and rados commands, grouped by tool. Replace the values to match your cluster.
 
 ## ceph orch
 ```bash

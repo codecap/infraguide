@@ -1,13 +1,16 @@
 ---
 layout: default
-title: OpenStack Cheat Sheet
+title: OpenStack CLI Cheat Sheet: Common Commands | infraguide.org
+description: OpenStack CLI cheat sheet: commands for users, projects, flavors, images, networks, volumes, instances and floating IPs. Copy and paste ready.
 breadcrumbs:
   - name: cheat-sheets
     url: /cheat-sheets/
   - name: openstack
 ---
 
-# OpenStack Cheat Sheet
+# OpenStack CLI Cheat Sheet
+
+Common openstack commands, grouped by service. Replace the values in angle brackets.
 
 ## Services
 ```bash

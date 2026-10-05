@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Imprint
+title: Imprint | infraguide.org
 breadcrumbs:
   - name: imprint
 sitemap: false

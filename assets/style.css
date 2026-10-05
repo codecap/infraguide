@@ -183,6 +183,15 @@ a:hover {
   display: block;
 }
 
+.section-sublabel {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 1.25rem 0 0.75rem;
+  display: block;
+}
+
 /* Hero */
 
 .hero {

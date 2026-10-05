@@ -4,7 +4,7 @@
   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a0d95ff2-fbed-4b16-a4a2-5e7c4b244e68" data-blockingmode="auto" type="text/javascript"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <title>{{ page.title | default: site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <meta property="og:type" content="website">

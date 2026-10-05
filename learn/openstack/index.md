@@ -1,6 +1,7 @@
 ---
 layout: default
-title: OpenStack
+title: OpenStack Lab: Bare Metal to Private Cloud | infraguide.org
+description: Free OpenStack lab in English: build and operate a private cloud from bare metal to production. Workshop slides included.
 breadcrumbs:
   - name: learn
     url: /learn/
@@ -13,7 +14,7 @@ breadcrumbs:
       <img src="https://www.svgrepo.com/show/354145/openstack-icon.svg" alt="OpenStack logo"/>
     </span>
     <div>
-      <h1>OpenStack Workshop</h1>
+      <h1>OpenStack Lab</h1>
       <p>
         A hands-on workshop covering the full path from bare metal to a
         production-ready private cloud. Participants build and operate a real
@@ -34,23 +35,12 @@ breadcrumbs:
 </div>
 
 <div class="section">
-  <span class="section-label">Environment</span>
+  <h2 class="section-label">Lab</h2>
+  <span class="section-sublabel">Environment</span>
   <div class="diagram-frame">
     <img src="{{ '/assets/img/openstack/env.svg' | relative_url }}" alt="OpenStack workshop environment diagram"/>
   </div>
-</div>
-
-<div class="section">
-  <span class="section-label">Slides</span>
-  <div class="slides-grid">
-    <a class="slide-link slide-link--primary" href="{{ '/learn/openstack/slides.html' | relative_url }}">View slides</a>
-    <a class="slide-link" href="{{ '/learn/openstack/slides.pdf' | relative_url }}">Download PDF</a>
-    <a class="slide-link slide-link--pptx" href="{{ '/learn/openstack/slides.pptx' | relative_url }}">Download PPTX</a>
-  </div>
-</div>
-
-<div class="section">
-  <span class="section-label">Automatic build and state</span>
+  <span class="section-sublabel">Automatic build and state</span>
   <div class="status-panel">
     <div class="status-row">
       <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
@@ -96,10 +86,18 @@ breadcrumbs:
 </div>
 
 <div class="section">
-  <span class="section-label">Book this workshop</span>
+  <h2 class="section-label">Workshop slides</h2>
+  <div class="slides-grid">
+    <a class="slide-link slide-link--primary" href="{{ '/learn/openstack/slides.html' | relative_url }}">View slides</a>
+    <a class="slide-link" href="{{ '/learn/openstack/slides.pdf' | relative_url }}">Download PDF</a>
+    <a class="slide-link slide-link--pptx" href="{{ '/learn/openstack/slides.pptx' | relative_url }}">Download PPTX</a>
+  </div>
+</div>
+
+<div class="section">
   <p>
-    Available as a group workshop (4–5 participants, remote or on-site)
-    or as a custom engagement.
-    Contact: <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>
+    Available as a group workshop (4–5 participants, remote or on-site) or
+    as a custom engagement — write to
+    <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>.
   </p>
 </div>
