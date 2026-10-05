@@ -1,11 +1,13 @@
 ---
 layout: default
-title: OpenStack
+title: OpenStack Cheat Sheet
 breadcrumbs:
   - name: cheat-sheets
     url: /cheat-sheets/
   - name: openstack
 ---
+
+# OpenStack Cheat Sheet
 
 ## Services
 ```bash

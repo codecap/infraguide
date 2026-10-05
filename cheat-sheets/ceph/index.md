@@ -1,11 +1,12 @@
 ---
 layout: default
-title: Ceph
+title: Ceph Check Sheet
 breadcrumbs:
   - name: cheat-sheets
     url: /cheat-sheets/
   - name: Ceph
 ---
+# Ceph Cheat Sheat
 
 ## ceph orch
 ```bash
