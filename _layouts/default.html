@@ -16,6 +16,17 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="{{ '/favicon.png' | relative_url }}" sizes="48x48">
   <link rel="icon" href="{{ '/assets/logo/icon.svg' | relative_url }}" type="image/svg+xml">
+  {% if page.url == "/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "infraguide.org",
+    "url": "https://infraguide.org/",
+    "inLanguage": "en"
+  }
+  </script>
+  {% endif %}
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
   {% feed_meta %}
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} — pages" href="{{ '/pages.xml' | absolute_url }}">
