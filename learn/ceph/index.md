@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ceph Lab: Deploy and Operate a Cluster | infraguide.org"
-description: "Free Ceph lab in English: deploy, configure and operate a distributed storage cluster. Workshop slides included."
+description: "Free Ceph lab in English: build a cluster from scratch with cephadm, covering block, file and object storage. Workshop slides included."
 breadcrumbs:
   - name: learn
     url: /learn/
@@ -16,21 +16,41 @@ breadcrumbs:
     <div>
       <h1>Ceph Lab</h1>
       <p>
-        A hands-on workshop covering Ceph from the ground up — deployment,
-        configuration, and operations of a distributed storage cluster.
-        Participants work on real hardware throughout.
+        You build a Ceph cluster from scratch with cephadm and run it the
+        way you would in production. The lab runs on one bare-metal host
+        with the cluster nodes as virtual machines. You work with them
+        like physical servers, networking included, and the configuration
+        is the one you would use on bare metal. It covers block, file and
+        object storage and shows how Ceph serves as the storage backend
+        for OpenStack.
       </p>
     </div>
   </div>
   <p>
-    After the workshop, participants understand Ceph's architecture,
-    can operate a Ceph cluster, and troubleshoot common issues independently.
+    After the lab you know the cluster components and how Ceph distributes
+    data. You can operate the cluster, replace OSDs and nodes while it is
+    running, and read the health signals when something goes wrong.
   </p>
-  <div class="pill-row">
-    <span class="pill">5 days</span>
-    <span class="pill">English</span>
-    <span class="pill">Hands-on</span>
-  </div>
+  <ul>
+    <li>Architecture: MON, MGR, OSD, CRUSH, pools and placement groups</li>
+    <li>Deployment and bootstrap with cephadm</li>
+    <li>Block storage (RBD), file system (CephFS) and object storage (S3)</li>
+    <li>Ceph as storage backend for OpenStack</li>
+    <li>Day two: replacing OSDs and nodes, upgrades, failure domains</li>
+    <li>Monitoring, health checks and benchmarking</li>
+  </ul>
+  <p>
+    You need: one bare-metal server with virtualization enabled. The lab
+    environment is allocated:
+  </p>
+  <ul>
+    <li>🔲 20 vCPUs</li>
+    <li>🗄️ 40 GB RAM</li>
+    <li>💽 1 TB disk</li>
+  </ul>
+  <p>
+    Good to know first: Linux, networking, containers and scripting.
+  </p>
 </div>
 
 <div class="section">
@@ -95,18 +115,39 @@ breadcrumbs:
 </div>
 
 <div class="section">
+  <h2 class="section-label">On real bare metal</h2>
+  <p>
+    The same configuration runs on physical servers. What differs is the
+    hardware and the setup around it. This is not documented here yet:
+  </p>
+  <ul>
+    <li>Network interface names, bonding, and the split into public and cluster network</li>
+    <li>Disks: device names, device classes and the CRUSH rules for them</li>
+    <li>Failure domains that match your real racks and hosts</li>
+    <li>Provisioning of the servers: PXE, IPMI or BMC access</li>
+  </ul>
+  <p>
+    Have run this on real hardware? Write to
+    <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>.
+  </p>
+</div>
+
+<div class="section">
   <h2 class="section-label">Workshop slides</h2>
   <div class="slides-grid">
     <a class="slide-link slide-link--primary" href="{{ '/learn/ceph/slides.html' | relative_url }}">View slides</a>
     <a class="slide-link" href="{{ '/learn/ceph/slides.pdf' | relative_url }}">Download PDF</a>
     <a class="slide-link slide-link--pptx" href="{{ '/learn/ceph/slides.pptx' | relative_url }}">Download PPTX</a>
   </div>
-</div>
-
-<div class="section">
+  <div class="pill-row">
+    <span class="pill">Advanced</span>
+    <span class="pill">2 days</span>
+    <span class="pill">From scratch</span>
+    <span class="pill">Hands-on</span>
+    <span class="pill">English</span>
+  </div>
   <p>
-    Available as a group workshop (4–5 participants, remote or on-site) or
-    as a custom engagement — write to
+    Want this delivered as a guided workshop? Write to
     <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>.
   </p>
 </div>
