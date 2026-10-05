@@ -16,16 +16,18 @@ breadcrumbs:
     <div>
       <h1>Ceph Lab</h1>
       <p>
-        You build a Ceph cluster from scratch with cephadm and run it the
-        way you would in production. The lab runs on one bare-metal host
-        with the cluster nodes as virtual machines. You work with them
-        like physical servers, networking included, and the configuration
-        is the one you would use on bare metal. It covers block, file and
-        object storage and shows how Ceph serves as the storage backend
-        for OpenStack.
+        Build and operate a Ceph cluster from scratch.
       </p>
     </div>
   </div>
+  <p>
+    You build a Ceph cluster from scratch with cephadm and run it the way you
+    would in production. The lab runs on one bare-metal host with the cluster
+    nodes as virtual machines. You work with them like physical servers,
+    networking included, and the configuration is the one you would use on
+    bare metal. It covers block, file and object storage and shows how Ceph
+    serves as the storage backend for OpenStack.
+  </p>
   <p>
     After the lab you know the cluster components and how Ceph distributes
     data. You can operate the cluster, replace OSDs and nodes while it is
@@ -126,10 +128,6 @@ breadcrumbs:
     <li>Failure domains that match your real racks and hosts</li>
     <li>Provisioning of the servers: PXE, IPMI or BMC access</li>
   </ul>
-  <p>
-    Have run this on real hardware? Write to
-    <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>.
-  </p>
 </div>
 
 <div class="section">
@@ -146,8 +144,10 @@ breadcrumbs:
     <span class="pill">Hands-on</span>
     <span class="pill">English</span>
   </div>
-  <p>
-    Want this delivered as a guided workshop? Write to
-    <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>.
-  </p>
+  <div>
+    <p>
+      Want this delivered as a guided workshop? Write to
+      <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>.
+    </p>
+  </div>
 </div>

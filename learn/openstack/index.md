@@ -16,16 +16,19 @@ breadcrumbs:
     <div>
       <h1>OpenStack Lab</h1>
       <p>
-        You build a multi-node OpenStack cloud step by step and operate it
-        afterwards. The lab runs on one bare-metal host with the cluster
-        nodes as virtual machines. You work with them like physical
-        servers, networking included, and the configuration is the one you
-        would use on bare metal. The VMs you create in OpenStack run on
-        top, so they are virtualized twice. The cloud is deployed with
-        kolla-ansible and uses Ceph as storage backend.
+        Build and operate a multi-node OpenStack cloud.
       </p>
     </div>
   </div>
+  <p>
+    You build a multi-node OpenStack cloud step by step and operate it
+    afterwards. The lab runs on one bare-metal host with the cluster nodes as
+    virtual machines. You work with them like physical servers, networking
+    included, and the configuration is the one you would use on bare metal.
+    The VMs you create in OpenStack run on top, so they are virtualized
+    twice. The cloud is deployed with kolla-ansible and uses Ceph as storage
+    backend.
+  </p>
   <p>
     After the lab you understand how the pieces fit together and can
     deploy, administer and extend the cloud yourself. You also have what
@@ -116,10 +119,6 @@ breadcrumbs:
     <li>BIOS and firmware settings, such as virtualization and boot mode</li>
     <li>Provisioning of the servers: PXE, IPMI or BMC access</li>
   </ul>
-  <p>
-    Have run this on real hardware? Write to
-    <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>.
-  </p>
 </div>
 
 <div class="section">
@@ -136,8 +135,10 @@ breadcrumbs:
     <span class="pill">Hands-on</span>
     <span class="pill">English</span>
   </div>
-  <p>
-    Want this delivered as a guided workshop? Write to
-    <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>.
-  </p>
+  <div>
+    <p>
+      Want this delivered as a guided workshop? Write to
+      <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>.
+    </p>
+  </div>
 </div>
