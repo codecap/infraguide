@@ -19,3 +19,9 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+
+defaults:
+  - scope:
+      path: "**/*.pdf"
+    values:
+      sitemap: false
