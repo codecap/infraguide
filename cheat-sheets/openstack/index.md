@@ -12,6 +12,8 @@ breadcrumbs:
 
 Common openstack commands, grouped by service. Replace the values in angle brackets.
 
+Want to see these commands in context? Build the [OpenStack lab](/learn/openstack/).
+
 ## Services
 ```bash
 # list OpenStack services

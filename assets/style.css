@@ -609,6 +609,10 @@ a.card:hover {
   background: var(--color-surface);
 }
 
+.slide-link--cheatsheet {
+  margin-left: auto;
+}
+
 .slide-link--primary {
   background: var(--color-accent);
   color: #FFFFFF;

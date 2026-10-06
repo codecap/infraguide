@@ -87,6 +87,7 @@ breadcrumbs:
     <a class="slide-link slide-link--primary" href="{{ '/learn/openstack/slides.html' | relative_url }}">View slides</a>
     <a class="slide-link" href="{{ '/learn/openstack/slides.pdf' | relative_url }}">Download PDF</a>
     <a class="slide-link slide-link--pptx" href="{{ '/learn/openstack/slides.pptx' | relative_url }}">Download PPTX</a>
+    <a class="slide-link slide-link--cheatsheet" href="{{ '/cheat-sheets/openstack/' | relative_url }}">OpenStack cheat sheet</a>
   </div>
   <div class="pill-row">
     <span class="pill">Advanced</span>
