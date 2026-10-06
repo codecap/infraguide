@@ -599,29 +599,28 @@ a.card:hover {
   text-decoration: none;
 }
 
-.slide-link--pptx {
-  color: var(--color-muted);
-  border-color: var(--color-border);
+.slide-link--primary {
+  background: #60A5FA;
+  color: #FFFFFF;
+  border-color: #60A5FA;
 }
 
-.slide-link--pptx:hover {
-  border-color: var(--color-muted);
-  background: var(--color-surface);
+.slide-link--primary:hover {
+  background: #3B82F6;
+  border-color: #3B82F6;
+  color: #FFFFFF;
 }
 
 .slide-link--cheatsheet {
   margin-left: auto;
-}
-
-.slide-link--primary {
-  background: var(--color-accent);
+  background: #4ADE80;
   color: #FFFFFF;
-  border-color: var(--color-accent);
+  border-color: #4ADE80;
 }
 
-.slide-link--primary:hover {
-  background: var(--color-accent-dark);
-  border-color: var(--color-accent-dark);
+.slide-link--cheatsheet:hover {
+  background: #22C55E;
+  border-color: #22C55E;
   color: #FFFFFF;
 }
 
