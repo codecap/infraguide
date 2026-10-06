@@ -63,7 +63,7 @@ breadcrumbs:
     <img src="{{ '/assets/img/openstack/env.svg' | relative_url }}" alt="OpenStack workshop environment diagram"/>
   </div>
   <span class="section-sublabel">Automatic build and state</span>
-  {% include build-info.html data=site.data.learn.openstack.build_info %}
+  {% include build-info.html data=site.data.learn.openstack.build_info status=site.data.learn.openstack.build_status %}
   {% include status-panel.html data=site.data.learn.openstack.build_status %}
 </div>
 

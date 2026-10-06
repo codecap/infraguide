@@ -2,4 +2,17 @@
   {% for pair in include.data %}
   <span class="build-info-item"><span class="build-info-label">{{ pair[0] | replace: "_", " " | capitalize }}:</span> {{ pair[1] }}</span>
   {% endfor %}
+  {% assign total = include.status.size %}
+  {% assign passed = 0 %}
+  {% for item in include.status %}
+    {% if item.status == "passed" %}
+      {% assign passed = passed | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+  {% if passed == total %}
+    {% assign summary_color = "green" %}
+  {% else %}
+    {% assign summary_color = "red" %}
+  {% endif %}
+  <span class="build-info-item build-info-item--{{ summary_color }}">{{ passed }} of {{ total }} checks passed</span>
 </div>
