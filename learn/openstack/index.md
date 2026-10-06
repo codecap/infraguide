@@ -91,10 +91,9 @@ breadcrumbs:
     <a class="slide-link slide-link--cheatsheet" href="{{ '/cheat-sheets/openstack/' | relative_url }}">Cheat Sheet</a>
   </div>
   <div class="pill-row">
+    <span class="pill">Free</span>
     <span class="pill">Advanced</span>
     <span class="pill">3 days</span>
-    <span class="pill">Multi-node</span>
-    <span class="pill">Hands-on</span>
     <span class="pill">English</span>
   </div>
   <div>
