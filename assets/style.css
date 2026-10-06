@@ -600,27 +600,27 @@ a.card:hover {
 }
 
 .slide-link--primary {
-  background: #60A5FA;
+  background: var(--color-accent);
   color: #FFFFFF;
-  border-color: #60A5FA;
+  border-color: var(--color-accent);
 }
 
 .slide-link--primary:hover {
-  background: #3B82F6;
-  border-color: #3B82F6;
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
   color: #FFFFFF;
 }
 
 .slide-link--cheatsheet {
   margin-left: auto;
-  background: #4ADE80;
+  background: #22C55E;
   color: #FFFFFF;
-  border-color: #4ADE80;
+  border-color: #22C55E;
 }
 
 .slide-link--cheatsheet:hover {
-  background: #22C55E;
-  border-color: #22C55E;
+  background: #16A34A;
+  border-color: #16A34A;
   color: #FFFFFF;
 }
 
