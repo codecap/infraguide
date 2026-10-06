@@ -72,8 +72,7 @@ breadcrumbs:
 <div class="section">
   <h2 class="section-label">On real bare metal</h2>
   <p>
-    The same configuration runs on physical servers. The following parts
-    differ:
+    The same configuration runs on real hardware. The following parts differ:
   </p>
   <ul>
     <li>Network interface names, bonding, and the split into public and cluster network</li>
