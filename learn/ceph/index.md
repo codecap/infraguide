@@ -20,7 +20,7 @@ breadcrumbs:
       </p>
     </div>
   </div>
-  <div class="slides-grid">
+  <div class="slides-grid slides-grid--hero">
     <a class="slide-link slide-link--primary" href="{{ '/learn/ceph/slides.html' | relative_url }}">View slides</a>
     <a class="slide-link slide-link--cheatsheet" href="{{ '/cheat-sheets/ceph/' | relative_url }}">Cheat Sheet</a>
   </div>
