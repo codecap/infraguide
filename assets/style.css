@@ -383,6 +383,21 @@ code {
   content: "✓ ";
 }
 
+/* Build info (metadata about the automatic build) */
+
+.build-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-bottom: 0.5rem;
+}
+
+.build-info-label {
+  font-weight: 600;
+}
+
 /* Status panel (build / check results) */
 
 .status-panel {

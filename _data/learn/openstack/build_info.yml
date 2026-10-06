@@ -1,0 +1,5 @@
+# Metadata about the automatic OpenStack lab build.
+# Updated periodically by the build job; the lab page reads this file directly.
+date: 2026-10-05
+node: server61
+duration: 5288

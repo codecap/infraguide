@@ -62,6 +62,7 @@ breadcrumbs:
     <img src="{{ '/assets/img/ceph/env.svg' | relative_url }}" alt="Ceph workshop environment diagram"/>
   </div>
   <span class="section-sublabel">Automatic build and state</span>
+  {% include build-info.html data=site.data.learn.ceph.build_info %}
   {% include status-panel.html data=site.data.learn.ceph.build_status %}
 </div>
 

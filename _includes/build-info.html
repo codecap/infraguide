@@ -1,0 +1,5 @@
+<div class="build-info">
+  {% for pair in include.data %}
+  <span class="build-info-item"><span class="build-info-label">{{ pair[0] | replace: "_", " " | capitalize }}:</span> {{ pair[1] }}</span>
+  {% endfor %}
+</div>
