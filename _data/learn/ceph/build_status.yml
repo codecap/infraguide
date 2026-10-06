@@ -40,3 +40,7 @@
   text: smoke test
   status: passed
   color: green
+- name: vnatest
+  text: VNA Test
+  status: failed
+  color: red
