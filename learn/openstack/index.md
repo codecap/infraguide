@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "OpenStack Lab: Bare Metal to Private Cloud | infraguide.org"
-description: "Free OpenStack lab in English: deploy a multi-node cloud with kolla-ansible and Ceph, then operate and extend it yourself. Workshop slides included."
+description: "Free OpenStack lab in English: deploy and operate a multi-node private cloud with kolla-ansible and Ceph. Workshop slides included."
 breadcrumbs:
   - name: learn
     url: /learn/
@@ -16,17 +16,15 @@ breadcrumbs:
     <div>
       <h1>OpenStack Lab</h1>
       <p>
-        Build and operate a multi-node OpenStack cloud.
+        Deploy and operate a multi-node OpenStack cloud.
       </p>
     </div>
   </div>
   <p>
-    You build a multi-node OpenStack cloud step by step and operate it
-    afterwards. The lab runs on one bare-metal host with the cluster nodes as
-    virtual machines. You work with them like physical servers, networking
-    included, and the configuration is the one you would use on bare metal.
-    The VMs you create in OpenStack run on top, so they are virtualized
-    twice. The cloud is deployed with kolla-ansible and uses Ceph as storage
+    The lab runs on one bare-metal host with the cluster nodes as virtual
+    machines. You work with them like physical servers, networking included,
+    and the configuration is the one you would use on bare metal. The VMs you
+    create in OpenStack run on top. The cloud uses Ceph as its storage
     backend.
   </p>
   <p>

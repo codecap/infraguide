@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ceph Lab: Deploy and Operate a Cluster | infraguide.org"
-description: "Free Ceph lab in English: build a cluster from scratch with cephadm, covering block, file and object storage. Workshop slides included."
+title: "Ceph Lab: Deploy and Operate a Cluster | infraguide.org"
 breadcrumbs:
   - name: learn
     url: /learn/
@@ -16,17 +16,16 @@ breadcrumbs:
     <div>
       <h1>Ceph Lab</h1>
       <p>
-        Build and operate a Ceph cluster from scratch.
+        Deploy and operate a Ceph cluster from scratch.
       </p>
     </div>
   </div>
   <p>
-    You build a Ceph cluster from scratch with cephadm and run it the way you
-    would in production. The lab runs on one bare-metal host with the cluster
-    nodes as virtual machines. You work with them like physical servers,
-    networking included, and the configuration is the one you would use on
-    bare metal. It covers block, file and object storage and shows how Ceph
-    serves as the storage backend for OpenStack.
+   The lab runs on one bare-metal host with the cluster nodes as virtual
+    machines. You work with them like physical servers, networking included,
+    and the configuration is the one you would use on bare metal. It covers
+    block, file and object storage and shows how Ceph serves as the storage
+    backend for OpenStack.
   </p>
   <p>
     After the lab you know the cluster components and how Ceph distributes
