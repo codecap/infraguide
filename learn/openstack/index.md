@@ -20,6 +20,10 @@ breadcrumbs:
       </p>
     </div>
   </div>
+  <div class="slides-grid">
+    <a class="slide-link slide-link--primary" href="{{ '/learn/openstack/slides.html' | relative_url }}">View slides</a>
+    <a class="slide-link slide-link--cheatsheet" href="{{ '/cheat-sheets/openstack/' | relative_url }}">Cheat Sheet</a>
+  </div>
   <p>
     The lab runs on one bare-metal host with the cluster nodes as virtual
     machines. You work with them like physical servers, networking included,
