@@ -11,7 +11,7 @@ breadcrumbs:
 <div class="section" style="--topic-tint: var(--color-ceph-tint);">
   <div class="workshop-header">
     <span class="workshop-icon">
-      <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg" alt="Ceph logo"/>
+      <img src="{{ '/assets/img/logos/ceph.svg' | relative_url }}" alt="Ceph logo"/>
     </span>
     <div>
       <h1>Ceph Lab</h1>

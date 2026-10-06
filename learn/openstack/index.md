@@ -11,7 +11,7 @@ breadcrumbs:
 <div class="section" style="--topic-tint: var(--color-openstack-tint);">
   <div class="workshop-header">
     <span class="workshop-icon">
-      <img src="https://www.svgrepo.com/show/354145/openstack-icon.svg" alt="OpenStack logo"/>
+      <img src="{{ '/assets/img/logos/openstack.svg' | relative_url }}" alt="OpenStack logo"/>
     </span>
     <div>
       <h1>OpenStack Lab</h1>

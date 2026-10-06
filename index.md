@@ -80,14 +80,14 @@ description: Labs, guides, articles, tools, certifications and cheat sheets for 
 <div class="section">
   <span class="section-label">Works with</span>
   <div class="logo-strip">
-    <span class="logo-chip"><img src="https://www.svgrepo.com/show/354145/openstack-icon.svg" alt="OpenStack"/></span>
-    <span class="logo-chip"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg" alt="Ceph"/></span>
-    <span class="logo-chip"><img src="https://www.svgrepo.com/show/331552/proxmox.svg" alt="Proxmox"/></span>
-    <span class="logo-chip"><img src="https://www.svgrepo.com/show/353402/apache-cloudstack.svg" alt="CloudStack"/></span>
-    <span class="logo-chip"><img src="https://cncf-icons.com/artwork/projects/kubevirt/icon/color/kubevirt-icon-color.svg" alt="KubeVirt"/></span>
-    <span class="logo-chip"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/incus.svg" alt="Incus"/></span>
-    <span class="logo-chip"><img src="https://cdn.simpleicons.org/opennebula/6B7280" alt="OpenNebula"/></span>
-    <span class="logo-chip"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/truenas.svg" alt="TrueNAS"/></span>
+    <span class="logo-chip"><img src="{{ '/assets/img/logos/openstack.svg' | relative_url }}" alt="OpenStack"/></span>
+    <span class="logo-chip"><img src="{{ '/assets/img/logos/ceph.svg' | relative_url }}" alt="Ceph"/></span>
+    <span class="logo-chip"><img src="{{ '/assets/img/logos/proxmox.svg' | relative_url }}" alt="Proxmox"/></span>
+    <span class="logo-chip"><img src="{{ '/assets/img/logos/cloudstack.svg' | relative_url }}" alt="CloudStack"/></span>
+    <span class="logo-chip"><img src="{{ '/assets/img/logos/kubevirt.svg' | relative_url }}" alt="KubeVirt"/></span>
+    <span class="logo-chip"><img src="{{ '/assets/img/logos/incus.svg' | relative_url }}" alt="Incus"/></span>
+    <span class="logo-chip"><img src="{{ '/assets/img/logos/opennebula.svg' | relative_url }}" alt="OpenNebula"/></span>
+    <span class="logo-chip"><img src="{{ '/assets/img/logos/truenas.svg' | relative_url }}" alt="TrueNAS"/></span>
   </div>
 </div>
 
