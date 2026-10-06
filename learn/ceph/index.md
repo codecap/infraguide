@@ -86,7 +86,7 @@ breadcrumbs:
     <a class="slide-link slide-link--primary" href="{{ '/learn/ceph/slides.html' | relative_url }}">View slides</a>
     <a class="slide-link" href="{{ '/learn/ceph/slides.pdf' | relative_url }}">Download PDF</a>
     <a class="slide-link slide-link--pptx" href="{{ '/learn/ceph/slides.pptx' | relative_url }}">Download PPTX</a>
-    <a class="slide-link slide-link--cheatsheet" href="{{ '/cheat-sheets/ceph/' | relative_url }}">Ceph cheat sheet</a>
+    <a class="slide-link slide-link--cheatsheet" href="{{ '/cheat-sheets/ceph/' | relative_url }}">Cheat Sheet</a>
   </div>
   <div class="pill-row">
     <span class="pill">Advanced</span>

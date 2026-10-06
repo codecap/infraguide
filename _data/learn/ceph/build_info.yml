@@ -1,5 +1,5 @@
 # Metadata about the automatic Ceph lab build.
 # Updated periodically by the build job; the lab page reads this file directly.
 date: 2026-10-05
-node: server61
+node: node61
 duration: 4306 sec
