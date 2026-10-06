@@ -62,58 +62,7 @@ breadcrumbs:
     <img src="{{ '/assets/img/ceph/env.svg' | relative_url }}" alt="Ceph workshop environment diagram"/>
   </div>
   <span class="section-sublabel">Automatic build and state</span>
-  <div class="status-panel">
-    <div class="status-row">
-      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-      <span class="status-label">nodes created</span>
-      <span class="status-tag">passed</span>
-    </div>
-    <div class="status-row">
-      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-      <span class="status-label">nodes configured</span>
-      <span class="status-tag">passed</span>
-    </div>
-    <div class="status-row">
-      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-      <span class="status-label">deployment</span>
-      <span class="status-tag">passed</span>
-    </div>
-    <div class="status-row">
-      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-      <span class="status-label">post-deployment check</span>
-      <span class="status-tag">passed</span>
-    </div>
-    <div class="status-row">
-      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-      <span class="status-label">rbd check</span>
-      <span class="status-tag">passed</span>
-    </div>
-    <div class="status-row">
-      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-      <span class="status-label">cephfs check</span>
-      <span class="status-tag">passed</span>
-    </div>
-    <div class="status-row">
-      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-      <span class="status-label">s3 check</span>
-      <span class="status-tag">passed</span>
-    </div>
-    <div class="status-row">
-      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-      <span class="status-label">dashboard accessible</span>
-      <span class="status-tag">passed</span>
-    </div>
-    <div class="status-row">
-      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-      <span class="status-label">monitoring accessible and working</span>
-      <span class="status-tag">passed</span>
-    </div>
-    <div class="status-row">
-      <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-      <span class="status-label">smoke test</span>
-      <span class="status-tag">passed</span>
-    </div>
-  </div>
+  {% include status-panel.html data=site.data.learn.ceph.build_status %}
 </div>
 
 <div class="section">
