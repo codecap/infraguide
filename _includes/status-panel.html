@@ -1,0 +1,18 @@
+<div class="status-panel">
+  {% for item in include.data %}
+  <div class="status-row">
+    <svg class="status-icon status-icon--{{ item.color }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      {% if item.status == "passed" %}
+        <path d="m9 12 2 2 4-4"/>
+      {% elsif item.status == "failed" %}
+        <path d="m15 9-6 6M9 9l6 6"/>
+      {% else %}
+        <path d="M12 7v5l3 3"/>
+      {% endif %}
+    </svg>
+    <span class="status-label">{{ item.text }}</span>
+    <span class="status-tag status-tag--{{ item.color }}">{{ item.status }}</span>
+  </div>
+  {% endfor %}
+</div>

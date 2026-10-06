@@ -408,7 +408,6 @@ code {
 .status-icon {
   width: 18px;
   height: 18px;
-  color: #16A34A;
   flex-shrink: 0;
 }
 
@@ -420,12 +419,37 @@ code {
 .status-tag {
   font-size: 0.7rem;
   font-weight: 600;
-  color: #16A34A;
-  background: #F0FDF4;
   border-radius: 999px;
   padding: 0.15rem 0.6rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+}
+
+.status-icon--green,
+.status-tag--green {
+  color: #16A34A;
+}
+
+.status-tag--green {
+  background: #F0FDF4;
+}
+
+.status-icon--red,
+.status-tag--red {
+  color: #DC2626;
+}
+
+.status-tag--red {
+  background: #FEF2F2;
+}
+
+.status-icon--orange,
+.status-tag--orange {
+  color: #D97706;
+}
+
+.status-tag--orange {
+  background: #FFFBEB;
 }
 
 /* Card grid */

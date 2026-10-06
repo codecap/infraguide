@@ -1,0 +1,34 @@
+# Status of the automatic OpenStack lab build.
+# Updated periodically by the build job; the lab page reads this file directly.
+- name: nodes_created
+  text: nodes created
+  status: passed
+  color: green
+- name: nodes_configured
+  text: nodes configured
+  status: passed
+  color: green
+- name: deployment
+  text: deployment
+  status: passed
+  color: green
+- name: post_deployment_check
+  text: post-deployment check
+  status: passed
+  color: green
+- name: keystone_accessible
+  text: keystone accessible
+  status: passed
+  color: green
+- name: dashboard_accessible
+  text: dashboard accessible
+  status: passed
+  color: green
+- name: monitoring
+  text: monitoring accessible and working
+  status: passed
+  color: green
+- name: smoke_test
+  text: smoke test
+  status: passed
+  color: green
