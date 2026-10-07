@@ -5,7 +5,7 @@ author:      Vladislav Nazarenko (vnazarenko@📯socket.de)
 keywords:    openstack,ceph,workshops,operations,troubleshooting
 url:
 image:
-backgroundImage: url(https://raw.githubusercontent.com/codecap/infraguide/refs/heads/main/assets/marpbackground.jpg)
+backgroundImage: url(https://raw.githubusercontent.com/codecap/infraguide/refs/heads/main/assets/marp/background.jpg)
 transition: cover
 paginate: true
 footer: "[infraguide.org](https://infraguide.org) | Questions or need a guided workshop? → ping@socket.de"
