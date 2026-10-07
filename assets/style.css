@@ -19,10 +19,60 @@
   --color-openstack-tint: #FEF2F2;
   --color-ceph: #0E7490;
   --color-ceph-tint: #ECFEFF;
+  --color-green: #16A34A;
+  --color-green-tint: #F0FDF4;
+  --color-red: #DC2626;
+  --color-red-tint: #FEF2F2;
+  --color-orange: #D97706;
+  --color-orange-tint: #FFFBEB;
   --font:          "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono:     ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
   --max-width:     960px;
   --radius:        10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg:      #0B0F14;
+    --color-surface: #121820;
+    --color-text:    #E5E7EB;
+    --color-accent:  #4C8DD9;
+    --color-accent-dark: #6FA8E8;
+    --color-accent-tint: rgba(76, 141, 217, 0.15);
+    --color-muted:   #9CA3AF;
+    --color-border:  #262E38;
+    --color-openstack: #F06565;
+    --color-openstack-tint: rgba(220, 38, 38, 0.15);
+    --color-ceph: #22D3EE;
+    --color-ceph-tint: rgba(14, 116, 144, 0.2);
+    --color-green: #4ADE80;
+    --color-green-tint: rgba(34, 197, 94, 0.15);
+    --color-red: #F87171;
+    --color-red-tint: rgba(239, 68, 68, 0.15);
+    --color-orange: #FBBF24;
+    --color-orange-tint: rgba(217, 119, 6, 0.15);
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-bg:      #0B0F14;
+  --color-surface: #121820;
+  --color-text:    #E5E7EB;
+  --color-accent:  #4C8DD9;
+  --color-accent-dark: #6FA8E8;
+  --color-accent-tint: rgba(76, 141, 217, 0.15);
+  --color-muted:   #9CA3AF;
+  --color-border:  #262E38;
+  --color-openstack: #F06565;
+  --color-openstack-tint: rgba(220, 38, 38, 0.15);
+  --color-ceph: #22D3EE;
+  --color-ceph-tint: rgba(14, 116, 144, 0.2);
+  --color-green: #4ADE80;
+  --color-green-tint: rgba(34, 197, 94, 0.15);
+  --color-red: #F87171;
+  --color-red-tint: rgba(239, 68, 68, 0.15);
+  --color-orange: #FBBF24;
+  --color-orange-tint: rgba(217, 119, 6, 0.15);
 }
 
 html {
@@ -32,6 +82,20 @@ html {
   background: var(--color-bg);
   font-family: var(--font);
   -webkit-text-size-adjust: 100%;
+  transition: background 0.15s, color 0.15s;
+}
+
+/* Logos contain a dark navy fill — flip them to stay legible on dark backgrounds */
+:root[data-theme="dark"] .site-logo,
+:root[data-theme="dark"] .footer-icon {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .site-logo,
+  :root:not([data-theme="light"]) .footer-icon {
+    filter: invert(1) hue-rotate(180deg);
+  }
 }
 
 body {
@@ -65,6 +129,7 @@ header {
 
 .header-nav {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
 }
 
@@ -78,6 +143,42 @@ header {
 .header-nav a:hover {
   color: var(--color-accent);
   text-decoration: none;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: none;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.theme-toggle-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.theme-toggle-icon--moon {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle-icon--sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle-icon--moon {
+  display: block;
 }
 
 /* Breadcrumb */
@@ -407,16 +508,16 @@ code {
 }
 
 .build-info-item--green {
-  color: #16A34A;
-  background: #F0FDF4;
-  border-color: #16A34A;
+  color: var(--color-green);
+  background: var(--color-green-tint);
+  border-color: var(--color-green);
   font-weight: 600;
 }
 
 .build-info-item--red {
-  color: #DC2626;
-  background: #FEF2F2;
-  border-color: #DC2626;
+  color: var(--color-red);
+  background: var(--color-red-tint);
+  border-color: var(--color-red);
   font-weight: 600;
 }
 
@@ -464,29 +565,29 @@ code {
 
 .status-icon--green,
 .status-tag--green {
-  color: #16A34A;
+  color: var(--color-green);
 }
 
 .status-tag--green {
-  background: #F0FDF4;
+  background: var(--color-green-tint);
 }
 
 .status-icon--red,
 .status-tag--red {
-  color: #DC2626;
+  color: var(--color-red);
 }
 
 .status-tag--red {
-  background: #FEF2F2;
+  background: var(--color-red-tint);
 }
 
 .status-icon--orange,
 .status-tag--orange {
-  color: #D97706;
+  color: var(--color-orange);
 }
 
 .status-tag--orange {
-  background: #FFFBEB;
+  background: var(--color-orange-tint);
 }
 
 /* Card grid */
@@ -709,7 +810,9 @@ a.card:hover {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 1.5rem;
-  background: var(--color-surface);
+  /* diagrams are drawn with dark ink on a transparent canvas — keep the
+     frame white in both themes so they stay legible */
+  background: #FFFFFF;
 }
 
 .diagram-frame img {
