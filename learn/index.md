@@ -10,7 +10,7 @@ breadcrumbs:
   <h1>Labs</h1>
   <p>
     Hands-on workshops for Open Source Private Cloud.
-    Each workshop covers a real production stack — no simplified examples,
+    Each workshop covers a real production stack, no simplified examples,
     no vendor-managed environments.
   </p>
 </div>
