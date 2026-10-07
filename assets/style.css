@@ -53,8 +53,8 @@
   --color-red-tint: rgba(239, 68, 68, 0.15);
   --color-orange: #FBBF24;
   --color-orange-tint: rgba(217, 119, 6, 0.15);
-  --color-cheatsheet: #15803D;
-  --color-cheatsheet-hover: #166534;
+  --color-cheatsheet: #22C55E;
+  --color-cheatsheet-hover: #4ADE80;
   --color-diagram-bg: #121820;
 }
 
@@ -331,6 +331,12 @@ a:hover {
 .btn--primary:hover {
   background: var(--color-accent-dark);
   color: #FFFFFF;
+}
+
+/* Dark-mode accent blues are too light for white text — use dark text instead */
+:root[data-theme="dark"] .btn--primary,
+:root[data-theme="dark"] .btn--primary:hover {
+  color: var(--color-bg);
 }
 
 .btn--ghost {
@@ -743,6 +749,12 @@ a.card:hover {
   background: var(--color-cheatsheet-hover);
   border-color: var(--color-cheatsheet-hover);
   color: #FFFFFF;
+}
+
+/* Dark-mode greens are too light for white text — use dark text instead */
+:root[data-theme="dark"] .slide-link--cheatsheet,
+:root[data-theme="dark"] .slide-link--cheatsheet:hover {
+  color: var(--color-bg);
 }
 
 /* Workshop header */
