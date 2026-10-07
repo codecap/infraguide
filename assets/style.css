@@ -25,33 +25,13 @@
   --color-red-tint: #FEF2F2;
   --color-orange: #D97706;
   --color-orange-tint: #FFFBEB;
+  --color-cheatsheet: #22C55E;
+  --color-cheatsheet-hover: #16A34A;
+  --color-diagram-bg: #FFFFFF;
   --font:          "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono:     ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
   --max-width:     960px;
   --radius:        10px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --color-bg:      #0B0F14;
-    --color-surface: #121820;
-    --color-text:    #E5E7EB;
-    --color-accent:  #4C8DD9;
-    --color-accent-dark: #6FA8E8;
-    --color-accent-tint: rgba(76, 141, 217, 0.15);
-    --color-muted:   #9CA3AF;
-    --color-border:  #262E38;
-    --color-openstack: #F06565;
-    --color-openstack-tint: rgba(220, 38, 38, 0.15);
-    --color-ceph: #22D3EE;
-    --color-ceph-tint: rgba(14, 116, 144, 0.2);
-    --color-green: #4ADE80;
-    --color-green-tint: rgba(34, 197, 94, 0.15);
-    --color-red: #F87171;
-    --color-red-tint: rgba(239, 68, 68, 0.15);
-    --color-orange: #FBBF24;
-    --color-orange-tint: rgba(217, 119, 6, 0.15);
-  }
 }
 
 :root[data-theme="dark"] {
@@ -73,6 +53,9 @@
   --color-red-tint: rgba(239, 68, 68, 0.15);
   --color-orange: #FBBF24;
   --color-orange-tint: rgba(217, 119, 6, 0.15);
+  --color-cheatsheet: #22C55E;
+  --color-cheatsheet-hover: #4ADE80;
+  --color-diagram-bg: #D7DEE6;
 }
 
 html {
@@ -87,15 +70,9 @@ html {
 
 /* Logos contain a dark navy fill — flip them to stay legible on dark backgrounds */
 :root[data-theme="dark"] .site-logo,
-:root[data-theme="dark"] .footer-icon {
+:root[data-theme="dark"] .footer-icon,
+:root[data-theme="dark"] .hero-icon {
   filter: invert(1) hue-rotate(180deg);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .site-logo,
-  :root:not([data-theme="light"]) .footer-icon {
-    filter: invert(1) hue-rotate(180deg);
-  }
 }
 
 body {
@@ -751,14 +728,14 @@ a.card:hover {
 
 .slide-link--cheatsheet {
   margin-left: auto;
-  background: #22C55E;
+  background: var(--color-cheatsheet);
   color: #FFFFFF;
-  border-color: #22C55E;
+  border-color: var(--color-cheatsheet);
 }
 
 .slide-link--cheatsheet:hover {
-  background: #16A34A;
-  border-color: #16A34A;
+  background: var(--color-cheatsheet-hover);
+  border-color: var(--color-cheatsheet-hover);
   color: #FFFFFF;
 }
 
@@ -810,9 +787,9 @@ a.card:hover {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 1.5rem;
-  /* diagrams are drawn with dark ink on a transparent canvas — keep the
-     frame white in both themes so they stay legible */
-  background: #FFFFFF;
+  /* diagrams are drawn with dark ink on a transparent canvas, so the frame
+     background can't go fully dark without losing legibility */
+  background: var(--color-diagram-bg);
 }
 
 .diagram-frame img {
