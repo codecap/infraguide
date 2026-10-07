@@ -7,7 +7,7 @@ description: Labs, guides, articles, tools, certifications and cheat sheets for 
 <div class="section hero">
   <div>
     <h1>Open Source Private Cloud Infrastructure</h1>
-    <p class="hero-tagline">Practical material from real deployments — no vendor preference, no paid recommendations.</p>
+    <p class="hero-tagline">Practical material from real deployments, no vendor preference, no paid recommendations.</p>
     <p>
       The options for building private cloud infrastructure are real and mature:
       OpenStack, Ceph, Proxmox, Incus and others. Choosing between them, and
