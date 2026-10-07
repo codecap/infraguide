@@ -48,4 +48,15 @@ breadcrumbs:
       <p class="card-desc">Linux containers and virtual machines</p>
     </div>
   </div>
+  <p class="lab-wish">
+    Which lab should come next? Write to
+    <a href="mailto:ping@infraguide.org?subject=Lab%20wish">ping@infraguide.org</a>.
+  </p>
+  <div class="lab-request-box">
+    <p>
+      Need a lab for your own platform decision? We build it for you, on
+      your timeline. Write to
+      <a href="mailto:ping@infraguide.org?subject=Lab%20project">ping@infraguide.org</a>.
+    </p>
+  </div>
 </div>
