@@ -23,7 +23,7 @@ sitemap: false
     Phone: +49 6196 204 55 80
   </p>
 
-  <h2>Represented by</h2>
+  <h2>Managing Director</h2>
   <p>Vladislav Nazarenko</p>
 
   <h2>Register entry</h2>
