@@ -55,7 +55,7 @@
   --color-orange-tint: rgba(217, 119, 6, 0.15);
   --color-cheatsheet: #15803D;
   --color-cheatsheet-hover: #166534;
-  --color-diagram-bg: #D7DEE6;
+  --color-diagram-bg: #121820;
 }
 
 html {
@@ -793,9 +793,12 @@ a.card:hover {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 1.5rem;
-  /* diagrams are drawn with dark ink on a transparent canvas, so the frame
-     background can't go fully dark without losing legibility */
   background: var(--color-diagram-bg);
+}
+
+/* Diagrams are drawn with dark ink on a transparent canvas — flip them in dark mode */
+:root[data-theme="dark"] .diagram-frame img {
+  filter: invert(1) hue-rotate(180deg);
 }
 
 .diagram-frame img {
