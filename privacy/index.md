@@ -121,8 +121,8 @@ sitemap: false
   Legal basis: Art. 6(1)(a) GDPR (consent) and, for storing and reading cookies
   on your device, § 25(1) TDDDG (consent).
 
-  You can withdraw or change your consent at any time via the cookie settings
-  icon at the bottom left of the page.
+  You can withdraw or change your consent at any time via the "cookie settings"
+  link in the footer of every page.
 
   Data retention: Event data is retained for 2 months. User data (associated with
   cookies, user identifiers, or advertising identifiers) is retained for 14
@@ -169,7 +169,7 @@ sitemap: false
   </ul>
   <p>
   If you have consented to data processing (e.g. Google Analytics), you may
-  withdraw that consent at any time via the cookie settings icon, without
+  withdraw that consent at any time via the "cookie settings" link in the footer, without
   affecting the lawfulness of processing before the withdrawal (Art. 7(3)
   GDPR).
 
