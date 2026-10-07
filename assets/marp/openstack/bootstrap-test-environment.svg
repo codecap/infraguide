@@ -1,0 +1,76 @@
+<svg width="100%" viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" style="background: rgb(255, 255, 255);">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">OpenStack Netzwerk-Diagramm</title>
+
+  
+
+  <defs>
+    <symbol id="router-symbol" viewBox="-20 -20 40 40">
+      <polygon points="0,-20  4,-13  2,-13  2,-4  -2,-4  -2,-13  -4,-13" fill="#333"/>
+      <polygon points="0,20  4,13  2,13  2,4  -2,4  -2,13  -4,13" fill="#333"/>
+      <polygon points="4,0  12,4  12,2  20,2  20,-2  12,-2  12,-4" fill="#333"/>
+      <polygon points="-4,0  -12,-4  -12,-2  -20,-2  -20,2  -12,2  -12,4" fill="#333"/>
+    </symbol>
+  </defs>
+
+  <!-- Internet Cloud -->
+  <path d="M22,152 C6,152 2,140 2,132 C2,119 13,113 26,115 C23,99 34,91 47,92 C55,84 68,89 70,100 C77,87 89,86 96,93 C107,89 116,99 115,111 C126,111 128,122 125,132 C122,146 108,152 94,152 Z" fill="#f0f4f8" stroke="#aab" stroke-width="1.5" style="fill:rgb(240, 244, 248);stroke:rgb(170, 170, 187);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="63" y="170" text-anchor="middle" style="fill:rgb(34, 34, 34);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Internet</text>
+
+  <line x1="116" y1="132" x2="152" y2="182" stroke="#aab" stroke-width="1.5" style="fill:rgb(0, 0, 0);stroke:rgb(170, 170, 187);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Physical Router -->
+  <circle cx="178" cy="200" r="28" fill="#f5f5f5" stroke="#333" stroke-width="2" style="fill:rgb(245, 245, 245);stroke:rgb(51, 51, 51);color:rgb(251, 251, 254);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <use href="#router-symbol" x="158" y="180" width="40" height="40" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="178" y="244" text-anchor="middle" style="fill:rgb(34, 34, 34);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Physical router</text>
+  <text x="208" y="193" fill="#333" style="fill:rgb(51, 51, 51);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">.1</text>
+
+  <!-- Provider network vertical bus -->
+  <line x1="320" y1="60" x2="320" y2="340" stroke="#b33" stroke-width="2.5" style="fill:rgb(0, 0, 0);stroke:rgb(187, 51, 51);color:rgb(251, 251, 254);stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="358" y1="44" x2="323" y2="68" stroke="#b33" stroke-width="1.2" stroke-dasharray="5 3" style="fill:rgb(0, 0, 0);stroke:rgb(187, 51, 51);color:rgb(251, 251, 254);stroke-width:1.2px;stroke-dasharray:5px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="364" y="38" fill="#b33" style="fill:rgb(187, 51, 51);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:11px;font-weight:400;font-style:italic;text-anchor:start;dominant-baseline:auto">provider (external)</text>
+  <text x="364" y="52" fill="#b33" style="fill:rgb(187, 51, 51);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:11px;font-weight:400;font-style:italic;text-anchor:start;dominant-baseline:auto">network</text>
+
+  <line x1="206" y1="200" x2="320" y2="200" stroke="#b33" stroke-width="1.5" style="fill:rgb(0, 0, 0);stroke:rgb(187, 51, 51);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- VM 1 -->
+  <rect x="370" y="100" width="76" height="38" rx="5" fill="#fff0f0" stroke="#b33" stroke-width="1.5" style="fill:rgb(255, 240, 240);stroke:rgb(187, 51, 51);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="408" y="124" text-anchor="middle" fill="#b33" style="fill:rgb(34, 34, 34);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">VM</text>
+  <line x1="320" y1="119" x2="370" y2="119" stroke="#b33" stroke-width="1.5" style="fill:rgb(0, 0, 0);stroke:rgb(187, 51, 51);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="327" y="112" fill="#b33" style="fill:rgb(187, 51, 51);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">.142</text>
+
+  <!-- OpenStack Logical Router -->
+  <circle cx="410" cy="228" r="32" fill="#f5f5f5" stroke="#333" stroke-width="2" style="fill:rgb(245, 245, 245);stroke:rgb(51, 51, 51);color:rgb(251, 251, 254);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <use href="#router-symbol" x="390" y="208" width="40" height="40" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="410" y="274" text-anchor="middle" style="fill:rgb(34, 34, 34);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">OpenStack</text>
+  <text x="410" y="287" text-anchor="middle" style="fill:rgb(34, 34, 34);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">logical router</text>
+  <text x="325" y="222" fill="#b33" style="fill:rgb(187, 51, 51);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">.87</text>
+  <text x="446" y="222" fill="#1a5c9e" style="fill:rgb(26, 92, 158);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">.1</text>
+
+  <line x1="320" y1="228" x2="378" y2="228" stroke="#b33" stroke-width="1.5" style="fill:rgb(0, 0, 0);stroke:rgb(187, 51, 51);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Tenant network vertical bus -->
+  <line x1="530" y1="140" x2="530" y2="340" stroke="#1a5c9e" stroke-width="2.5" style="fill:rgb(0, 0, 0);stroke:rgb(26, 92, 158);color:rgb(251, 251, 254);stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="568" y1="108" x2="533" y2="147" stroke="#1a5c9e" stroke-width="1.2" stroke-dasharray="5 3" style="fill:rgb(0, 0, 0);stroke:rgb(26, 92, 158);color:rgb(251, 251, 254);stroke-width:1.2px;stroke-dasharray:5px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="574" y="104" fill="#1a5c9e" style="fill:rgb(26, 92, 158);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:11px;font-weight:400;font-style:italic;text-anchor:start;dominant-baseline:auto">tenant network</text>
+
+  <line x1="442" y1="228" x2="530" y2="228" stroke="#1a5c9e" stroke-width="1.5" style="fill:rgb(0, 0, 0);stroke:rgb(26, 92, 158);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- VM 2 -->
+  <rect x="572" y="178" width="76" height="38" rx="5" fill="#f0f4ff" stroke="#1a5c9e" stroke-width="1.5" style="fill:rgb(240, 244, 255);stroke:rgb(26, 92, 158);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="610" y="202" text-anchor="middle" fill="#1a5c9e" style="fill:rgb(34, 34, 34);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">VM</text>
+  <line x1="530" y1="197" x2="572" y2="197" stroke="#1a5c9e" stroke-width="1.5" style="fill:rgb(0, 0, 0);stroke:rgb(26, 92, 158);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- label RIGHT of vertical line, above horizontal -->
+  <text x="544" y="190" fill="#1a5c9e" style="fill:rgb(26, 92, 158);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">.193</text>
+
+  <!-- VM 3 -->
+  <rect x="572" y="268" width="76" height="38" rx="5" fill="#f0f4ff" stroke="#1a5c9e" stroke-width="1.5" style="fill:rgb(240, 244, 255);stroke:rgb(26, 92, 158);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="610" y="292" text-anchor="middle" fill="#1a5c9e" style="fill:rgb(34, 34, 34);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">VM</text>
+  <line x1="530" y1="287" x2="572" y2="287" stroke="#1a5c9e" stroke-width="1.5" style="fill:rgb(0, 0, 0);stroke:rgb(26, 92, 158);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- label RIGHT of vertical line, above horizontal -->
+  <text x="544" y="280" fill="#1a5c9e" style="fill:rgb(26, 92, 158);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">.217</text>
+
+  <!-- Subnet labels -->
+  <text x="320" y="358" text-anchor="middle" fill="#b33" style="fill:rgb(187, 51, 51);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:10px;font-weight:400;text-anchor:middle;dominant-baseline:auto">203.0.113.0/24</text>
+  <text x="530" y="358" text-anchor="middle" fill="#1a5c9e" style="fill:rgb(26, 92, 158);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:10px;font-weight:400;text-anchor:middle;dominant-baseline:auto">10.10.10.0/24</text>
+
+</svg>

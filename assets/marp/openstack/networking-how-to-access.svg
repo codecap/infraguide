@@ -1,0 +1,48 @@
+<svg width="100%" viewBox="0 0 760 480" xmlns="http://www.w3.org/2000/svg" style="">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">OpenStack Architektur-Diagramm</title>
+
+  
+
+  <!-- Testing node -->
+  <rect x="180" y="20" width="130" height="44" rx="6" fill="#f5f5f5" stroke="#888" stroke-width="1.5" style="fill:rgb(245, 245, 245);stroke:rgb(136, 136, 136);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="245" y="47" text-anchor="middle" style="fill:rgb(51, 51, 51);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:12px;font-weight:600;text-anchor:middle;dominant-baseline:auto">Testing</text>
+
+  <!-- Line: Testing → trunk -->
+  <line x1="245" y1="64" x2="245" y2="115" stroke="#555" stroke-width="1.5" style="fill:rgb(0, 0, 0);stroke:rgb(85, 85, 85);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Shared trunk bus -->
+  <line x1="40" y1="115" x2="710" y2="115" stroke="#555" stroke-width="2.5" style="fill:rgb(0, 0, 0);stroke:rgb(85, 85, 85);color:rgb(251, 251, 254);stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="42" y="107" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:11px;font-weight:400;text-anchor:start;dominant-baseline:auto">shared (trunk)</text>
+
+  <!-- Trunk → Network -->
+  <line x1="410" y1="115" x2="410" y2="210" stroke="#555" stroke-width="1.5" style="fill:rgb(0, 0, 0);stroke:rgb(85, 85, 85);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Trunk → Compute -->
+  <line x1="600" y1="115" x2="600" y2="210" stroke="#555" stroke-width="1.5" style="fill:rgb(0, 0, 0);stroke:rgb(85, 85, 85);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- OpenStack container -->
+  <rect x="28" y="148" width="704" height="310" rx="12" fill="none" stroke="#b33" stroke-width="2" stroke-dasharray="8 4" style="fill:none;stroke:rgb(187, 51, 51);color:rgb(251, 251, 254);stroke-width:2px;stroke-dasharray:8px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="50" y="175" style="fill:rgb(187, 51, 51);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:13px;font-weight:700;text-anchor:start;dominant-baseline:auto">OpenStack</text>
+
+  <!-- Controller stack -->
+  <rect x="56" y="188" width="190" height="240" rx="6" style="fill:none;stroke:rgb(204, 204, 204);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect x="62" y="194" width="190" height="240" rx="6" style="fill:none;stroke:rgb(187, 187, 187);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect x="68" y="200" width="190" height="240" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5" style="fill:rgb(239, 246, 255);stroke:rgb(59, 130, 246);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="80" y="220" style="fill:rgb(51, 51, 51);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:12px;font-weight:600;text-anchor:start;dominant-baseline:auto">Controller</text>
+
+  <!-- Network stack -->
+  <rect x="276" y="188" width="190" height="240" rx="6" style="fill:none;stroke:rgb(204, 204, 204);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect x="282" y="194" width="190" height="240" rx="6" style="fill:none;stroke:rgb(187, 187, 187);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect x="288" y="200" width="190" height="240" rx="6" fill="#F0FDF4" stroke="#22C55E" stroke-width="1.5" style="fill:rgb(240, 253, 244);stroke:rgb(34, 197, 94);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="300" y="220" style="fill:rgb(51, 51, 51);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:12px;font-weight:600;text-anchor:start;dominant-baseline:auto">Network</text>
+
+  <!-- Compute stack -->
+  <rect x="496" y="188" width="190" height="240" rx="6" style="fill:none;stroke:rgb(204, 204, 204);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect x="502" y="194" width="190" height="240" rx="6" style="fill:none;stroke:rgb(187, 187, 187);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect x="508" y="200" width="190" height="240" rx="6" fill="#FAF5FF" stroke="#A855F7" stroke-width="1.5" style="fill:rgb(250, 245, 255);stroke:rgb(168, 85, 247);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="520" y="220" style="fill:rgb(51, 51, 51);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:12px;font-weight:600;text-anchor:start;dominant-baseline:auto">Compute</text>
+
+  <!-- VM0 inside Compute -->
+  <rect x="538" y="250" width="120" height="44" rx="6" fill="#f5f5f5" stroke="#888" stroke-width="1.5" style="fill:rgb(245, 245, 245);stroke:rgb(136, 136, 136);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="598" y="277" text-anchor="middle" style="fill:rgb(51, 51, 51);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:12px;font-weight:600;text-anchor:middle;dominant-baseline:auto">VM0</text>
+
+</svg>

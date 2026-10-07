@@ -5,10 +5,7 @@ This directory is excluded from Jekyll builds (see `exclude` in `_config.yml`).
 
 ## How to create slides
 ```bash
-marp  --bespoke.progress  -w
-
+marp          # html slides
+marp --pdf    # pdf
+marp --pptx   # pptx
 ```
-
-## How to access slides
-[https://infraguide.org](https://infraguide.org/workshop-slides/)
-
