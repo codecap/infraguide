@@ -21,7 +21,7 @@ breadcrumbs:
     </div>
   </div>
   <div class="slides-grid slides-grid--hero">
-    <a class="slide-link slide-link--primary" href="{{ '/learn/ceph/slides.html' | relative_url }}">View slides</a>
+    <a class="slide-link slide-link--primary" href="#workshop-slides">Workshop Slides</a>
     <a class="slide-link slide-link--cheatsheet" href="{{ '/cheat-sheets/ceph/' | relative_url }}">Cheat Sheet</a>
   </div>
   <p>
@@ -82,7 +82,7 @@ breadcrumbs:
   </ul>
 </div>
 
-<div class="section">
+<div class="section" id="workshop-slides">
   <h2 class="section-label">Workshop slides</h2>
   <div class="slides-grid">
     <a class="slide-link slide-link--primary" href="{{ '/learn/ceph/slides.html' | relative_url }}">View slides</a>

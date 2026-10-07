@@ -21,7 +21,7 @@ breadcrumbs:
     </div>
   </div>
   <div class="slides-grid slides-grid--hero">
-    <a class="slide-link slide-link--primary" href="{{ '/learn/openstack/slides.html' | relative_url }}">View slides</a>
+    <a class="slide-link slide-link--primary" href="#workshop-slides">Workshop Slides</a>
     <a class="slide-link slide-link--cheatsheet" href="{{ '/cheat-sheets/openstack/' | relative_url }}">Cheat Sheet</a>
   </div>
   <p>
@@ -82,13 +82,26 @@ breadcrumbs:
   </ul>
 </div>
 
-<div class="section">
+<div class="section" id="workshop-slides">
   <h2 class="section-label">Workshop slides</h2>
+  <p><strong>OpenStack</strong></p>
   <div class="slides-grid">
     <a class="slide-link slide-link--primary" href="{{ '/learn/openstack/slides.html' | relative_url }}">View slides</a>
     <a class="slide-link" href="{{ '/learn/openstack/slides.pdf' | relative_url }}">Download PDF</a>
     <a class="slide-link" href="{{ '/learn/openstack/slides.pptx' | relative_url }}">Download PPTX</a>
     <a class="slide-link slide-link--cheatsheet" href="{{ '/cheat-sheets/openstack/' | relative_url }}">Cheat Sheet</a>
+  </div>
+  <p><strong>Testing</strong></p>
+  <div class="slides-grid">
+    <a class="slide-link slide-link--primary" href="{{ '/learn/openstack/slides-testing.html' | relative_url }}">View slides</a>
+    <a class="slide-link" href="{{ '/learn/openstack/slides-testing.pdf' | relative_url }}">Download PDF</a>
+    <a class="slide-link" href="{{ '/learn/openstack/slides-testing.pptx' | relative_url }}">Download PPTX</a>
+  </div>
+  <p><strong>Automation</strong></p>
+  <div class="slides-grid">
+    <a class="slide-link slide-link--primary" href="{{ '/learn/openstack/slides-automation.html' | relative_url }}">View slides</a>
+    <a class="slide-link" href="{{ '/learn/openstack/slides-automation.pdf' | relative_url }}">Download PDF</a>
+    <a class="slide-link" href="{{ '/learn/openstack/slides-automation.pptx' | relative_url }}">Download PPTX</a>
   </div>
   <div class="pill-row">
     <span class="pill">Free</span>
