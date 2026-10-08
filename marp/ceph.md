@@ -5,7 +5,7 @@ author:      infraguide.org
 keywords:    openstack,ceph,workshops,operations,troubleshoouting
 url:
 image:
-backgroundImage: url(https://raw.githubusercontent.com/codecap/infraguide/refs/heads/main/assets/marp/background.jpg)
+backgroundImage: url(../assets/marp/background.jpg)
 transition: cover
 paginate: true
 footer: "[infraguide.org](https://infraguide.org) | Questions or need a guided workshop? → ping@infraguide.org | [Imprint](https://infraguide.org/imprint/) · [Privacy](https://infraguide.org/privacy/)"
@@ -101,7 +101,7 @@ mermaid.initialize({ startOnLoad: true, theme: 'default' });
 
 ---
 # Ceph Network
-![bg right:50% 90%](https://raw.githubusercontent.com/codecap/infraguide/refs/heads/main/assets/marp/ceph-environment.drawio.svg)
+![bg right:50% 90%](../assets/marp/ceph-environment.drawio.svg)
 
 ---
 # Air-Gapped Environment

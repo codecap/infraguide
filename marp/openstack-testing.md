@@ -6,7 +6,7 @@ keywords:    openstack,ceph,workshops,operations,troubleshoouting
 url:         
 image:
 transition: cover
-backgroundImage: url(https://raw.githubusercontent.com/codecap/infraguide/refs/heads/main/assets/marp/background.jpg)
+backgroundImage: url(../assets/marp/background.jpg)
 paginate: true
 footer: "[infraguide.org](https://infraguide.org) | Questions or need a guided workshop? → ping@infraguide.org | [Imprint](https://infraguide.org/imprint/) · [Privacy](https://infraguide.org/privacy/)"
 style: |

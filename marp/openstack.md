@@ -5,7 +5,7 @@ author:      infraguide.org
 keywords:    openstack,ceph,workshops,operations,troubleshoouting
 url:
 image:
-backgroundImage: url(https://raw.githubusercontent.com/codecap/infraguide/refs/heads/main/assets/marp/background.jpg)
+backgroundImage: url(../assets/marp/background.jpg)
 transition: cover
 paginate: true
 footer: "[infraguide.org](https://infraguide.org) | Questions or need a guided workshop? → ping@infraguide.org | [Imprint](https://infraguide.org/imprint/) · [Privacy](https://infraguide.org/privacy/)"
@@ -153,7 +153,7 @@ mermaid.initialize({ startOnLoad: true, theme: 'default' });
 
 ---
 # Environment Network
-![bg right:50% 90%](https://raw.githubusercontent.com/codecap/infraguide/refs/heads/main/assets/marp/openstack-environment.drawio.svg)
+![bg right:50% 90%](../assets/marp/openstack-environment.drawio.svg)
 
 ---
 # Air-Gapped Environment
@@ -933,7 +933,7 @@ openstack server create                  \
 ---
 # Networking
 ## **How to access?**
-![bg right:40% 90%](https://raw.githubusercontent.com/codecap/infaguide/refs/heads/main/assets/marp/openstack/networking-how-to-access.svg)
+![bg right:40% 90%](../assets/marp/openstack/networking-how-to-access.svg)
 
 ```bash
 # Create a config for a VLAN interface                                      📋
