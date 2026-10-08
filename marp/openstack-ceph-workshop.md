@@ -1,7 +1,7 @@
 ---
 title:       Introduction
 description: OpenStack & Ceph
-author:      Vladislav Nazarenko (vnazarenko@📯socket.de)
+author:      infraguide.org
 keywords:    openstack,ceph,workshops,operations,troubleshooting
 url:
 image:
