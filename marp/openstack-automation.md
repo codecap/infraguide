@@ -3,7 +3,7 @@ title: "OpenStack Automation"
 description: "Free OpenStack workshop slides: automating a private cloud with cloud-init, Ansible and Terraform."
 keywords: "openstack,automation,cloud-init,ansible,terraform,private cloud,workshop"
 author: infraguide.org
-backgroundImage: url(../assets/marp/background.jpg)
+backgroundImage: url(https://infraguide.org/assets/marp/background.jpg)
 transition: cover
 paginate: true
 footer: "[infraguide.org](https://infraguide.org) | Questions or need a guided workshop? → ping@infraguide.org | [Imprint](https://infraguide.org/imprint/) · [Privacy](https://infraguide.org/privacy/)"

@@ -5,7 +5,7 @@ description: "Free OpenStack workshop slides: automated testing of a private clo
 keywords:  openstack,testing,test automation,private cloud,workshop
 author: infraguide.org
 transition: cover
-backgroundImage: url(../assets/marp/background.jpg)
+backgroundImage: url(https://infraguide.org/assets/marp/background.jpg)
 paginate: true
 footer: "[infraguide.org](https://infraguide.org) | Questions or need a guided workshop? → ping@infraguide.org | [Imprint](https://infraguide.org/imprint/) · [Privacy](https://infraguide.org/privacy/)"
 style: |

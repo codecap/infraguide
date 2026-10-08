@@ -3,7 +3,7 @@ title: "OpenStack & Ceph Workshop: Introduction"
 description: "Free OpenStack workshop slides: introduction, prerequisites, overview and a guide"
 keywords: "openstack,workshop,introduction,prerequisites,overview,guide"
 author:  infraguide.org
-backgroundImage: url(../assets/marp/background.jpg)
+backgroundImage: url(https://infraguide.org/assets/marp/background.jpg)
 transition: cover
 paginate: true
 footer: "[infraguide.org](https://infraguide.org) | Questions or need a guided workshop? → ping@infraguide.org | [Imprint](https://infraguide.org/imprint/) · [Privacy](https://infraguide.org/privacy/)"

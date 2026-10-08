@@ -4,7 +4,7 @@ description: OpenStack & Ceph
 author:      infraguide.org
 keywords:    openstack,ceph,workshops,operations,troubleshoouting
 transition: cover
-backgroundImage: url(../assets/marp/background.jpg)
+backgroundImage: url(https://infraguide.org/assets/marp/background.jpg)
 paginate: true
 footer: "[infraguide.org](https://infraguide.org) | Questions or need a guided workshop? → ping@infraguide.org | [Imprint](https://infraguide.org/imprint/) · [Privacy](https://infraguide.org/privacy/)"
 style: |

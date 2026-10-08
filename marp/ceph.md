@@ -3,7 +3,7 @@ title: "Ceph Workshop Slides"
 description: "Free Ceph workshop slides: Deploy and operate a Ceph cluster from scratch."
 author:      infraguide.org
 keywords:    ceph,storage,rbd,cephfs,radosgw,workshop,operations
-backgroundImage: url(../assets/marp/background.jpg)
+backgroundImage: url(https://infraguide.org/assets/marp/background.jpg)
 transition: cover
 paginate: true
 footer: "[infraguide.org](https://infraguide.org) | Questions or need a guided workshop? → ping@infraguide.org | [Imprint](https://infraguide.org/imprint/) · [Privacy](https://infraguide.org/privacy/)"
@@ -99,7 +99,7 @@ mermaid.initialize({ startOnLoad: true, theme: 'default' });
 
 ---
 # Ceph Network
-![bg right:50% 90%](../assets/marp/ceph-environment.drawio.svg)
+![bg right:50% 90%](https://infraguide.org/assets/marp/ceph-environment.drawio.svg)
 
 ---
 # Air-Gapped Environment
