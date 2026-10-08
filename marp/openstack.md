@@ -26,7 +26,7 @@ mermaid.initialize({ startOnLoad: true, theme: 'default' });
 </script>
 
 # OpenStack
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 
 
 [//]: # (https://docs.redhat.com/en/documentation/red_hat_openstack_platform/9/html/architecture_guide/components)
@@ -58,7 +58,7 @@ mermaid.initialize({ startOnLoad: true, theme: 'default' });
 
 ---
 # OpenStack Distributions
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 [Catalog](https://www.openstack.org/marketplace/distros/)
 
 - [OSISM](https://www.openstack.org/marketplace/distros/distribution/osism/osism-distro)
@@ -69,70 +69,70 @@ mermaid.initialize({ startOnLoad: true, theme: 'default' });
 
 ---
 # Architecture
-![ bg right:65% 80%](https://www.openstack.org/static/000588f8b89d94da80eba6101f72ff7a/openstack-map-v20240401.png)
+![ bg right:65% 80%](https://infraguide.org/assets/marp/pics/openstack/openstack-map.png)
 
 ---
 # Architecture
-![ bg right:65% 80%](https://www.redhat.com/rhdc/managed-files/sysadmin/2021-08/Ceph-storage-cluster-%28RADOS%29.png)
+![ bg right:65% 80%](https://infraguide.org/assets/marp/pics/common/ceph-rados-cluster-redhat.png)
 
 ---
 # Architecture
-![ bg right:65% 80%](https://access.redhat.com/webassets/avalon/d/Red_Hat_OpenStack_Platform-9-Architecture_Guide-en-US/images/fce6394275bd3444892c5d3a91ccf17c/RHEL_OSP_arch_347192_1015_JCS_01_Interface-Overview.png)
+![ bg right:65% 80%](https://infraguide.org/assets/marp/pics/openstack/openstack-redhat-overview.png)
 
 ---
 # Architecture
-![ bg right:65% 80%](https://access.redhat.com/webassets/avalon/d/Red_Hat_OpenStack_Platform-9-Architecture_Guide-en-US/images/c6afcf33c1422e761f467c40b6980396/RHEL_OSP_arch_347192_1015_JCS_Ex-Basic-Arch.png)
+![ bg right:65% 80%](https://infraguide.org/assets/marp/pics/openstack/openstack-redhat-basic-architecture.png)
 
 ---
 # Architecture
-![ bg right:65% 80%](https://access.redhat.com/webassets/avalon/d/Red_Hat_OpenStack_Platform-9-Architecture_Guide-en-US/images/ef505e423b37c7cbecbe6dfa4021f384/RHEL_OSP_arch_347192_1015_JCS_04_Interface-Identity.png)
+![ bg right:65% 80%](https://infraguide.org/assets/marp/pics/openstack/openstack-redhat-identity.png)
 
 ---
 # Architecture
-![ bg right:65% 80%](https://access.redhat.com/webassets/avalon/d/Red_Hat_OpenStack_Platform-8-Architecture_Guide-en-US/images/661ccaef79099e48e1d4e33e48e52cfc/RHEL_OSP_arch_347192_1015_JCS_05_Interface-Networking.png)
+![ bg right:65% 80%](https://infraguide.org/assets/marp/pics/openstack/openstack-redhat-networking.png)
 
 ---
 # Architecture
-![ bg right:65% 80%](https://access.redhat.com/webassets/avalon/d/Red_Hat_OpenStack_Platform-8-Architecture_Guide-en-US/images/aa867c517b4e6f46edf34efb04eba1cb/RHEL_OSP_arch_347192_1015_JCS_06_Interface-Block-Storage.png)
+![ bg right:65% 80%](https://infraguide.org/assets/marp/pics/openstack/openstack-redhat-block-storage.png)
 
 ---
 # Architecture
-![ bg right:65% 80%](https://access.redhat.com/webassets/avalon/d/Red_Hat_OpenStack_Platform-8-Architecture_Guide-en-US/images/59429a3c3b9440fe0441da62a3095a9a/RHEL_OSP_arch_347192_1015_JCS_07_Interface-Compute.png)
+![ bg right:65% 80%](https://infraguide.org/assets/marp/pics/openstack/openstack-redhat-compute.png)
 
 ---
 # Architecture
-![ bg right:65% 80%](https://access.redhat.com/webassets/avalon/d/Red_Hat_OpenStack_Platform-8-Architecture_Guide-en-US/images/3d273bee788ec5deb1fd11a22b7e1487/RHEL_OSP_arch_347192_1015_JCS_08_Interface-Image.png)
+![ bg right:65% 80%](https://infraguide.org/assets/marp/pics/openstack/openstack-redhat-image.png)
 
 ---
 # Architecture
-![ bg right:65% 80%](https://access.redhat.com/webassets/avalon/d/Red_Hat_OpenStack_Platform-9-Architecture_Guide-en-US/images/05df8dacdfb319319665befc022e4159/RHEL_OSP_arch_347192_1015_JCS_02_Interface-Dashboard.png)
+![ bg right:65% 80%](https://infraguide.org/assets/marp/pics/openstack/openstack-redhat-dashboard.png)
 
 
 ---
 # Users
 
-![bg right:75% 80%](https://www.svgrepo.com/show/303419/walmart-logo.svg)
-![bg right:75% 80%](https://www.svgrepo.com/show/303330/nasa-6-logo.svg)
-![bg right:75% 80%](https://upload.wikimedia.org/wikipedia/de/c/c2/Huawei-Logo.svg)
-![bg right:75% 80%](https://www.svgrepo.com/show/331321/blizzard.svg)
-![bg right:75% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_239/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F57c722c5-cern-logo.png)
-![bg right:75% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_313/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F60fd1f45-deutsche-telekom.png)
-![bg right:75% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_313/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F1e543d4d-Bloomberg-Logo.png)
+![bg right:75% 80%](https://infraguide.org/assets/marp/pics/openstack/logo-walmart.svg)
+![bg right:75% 80%](https://infraguide.org/assets/marp/pics/openstack/logo-nasa.svg)
+![bg right:75% 80%](https://infraguide.org/assets/marp/pics/openstack/logo-huawei.svg)
+![bg right:75% 80%](https://infraguide.org/assets/marp/pics/openstack/logo-blizzard.svg)
+![bg right:75% 80%](https://infraguide.org/assets/marp/pics/common/logo-cern.png)
+![bg right:75% 80%](https://infraguide.org/assets/marp/pics/common/logo-deutsche-telekom.png)
+![bg right:75% 80%](https://infraguide.org/assets/marp/pics/common/logo-bloomberg.png)
 
 ---
 # Contributors
-![bg right:60% 80%](https://www.svgrepo.com/show/354271/redhat.svg)
-![bg right:60% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_348/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F1c72c15a-canonical-logo.png)
-![bg right:60% 80%](https://upload.wikimedia.org/wikipedia/commons/a/a4/Mirantis_logo.svg)
-![bg right:60% 80%](https://upload.wikimedia.org/wikipedia/de/c/c2/Huawei-Logo.svg)
-![bg right:60% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_189/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2Fc3382d32-cisco-logo.png)
-![bg right:60% 80%](https://www.svgrepo.com/show/303630/nvidia-logo.svg)
-![bg right:60% 80%](https://www.svgrepo.com/show/349412/intel.svg)
+![bg right:60% 80%](https://infraguide.org/assets/marp/pics/openstack/logo-redhat.svg)
+![bg right:60% 80%](https://infraguide.org/assets/marp/pics/common/logo-canonical.png)
+![bg right:60% 80%](https://infraguide.org/assets/marp/pics/openstack/logo-mirantis.svg)
+![bg right:60% 80%](https://infraguide.org/assets/marp/pics/openstack/logo-huawei.svg)
+![bg right:60% 80%](https://infraguide.org/assets/marp/pics/common/logo-cisco.png)
+![bg right:60% 80%](https://infraguide.org/assets/marp/pics/openstack/logo-nvidia.svg)
+![bg right:60% 80%](https://infraguide.org/assets/marp/pics/openstack/logo-intel.svg)
 
 
 ---
 # Deployment Approaches
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 - openstack-ansible
 - kolla-ansible
 - OpenStack on OpenShift
@@ -143,7 +143,7 @@ mermaid.initialize({ startOnLoad: true, theme: 'default' });
 
 ---
 # Deploy OpenStack
-![bg right:30% 90%](https://superuser.openinfra.org/wp-content/uploads/2025/01/1_q6dlalwfoVWwUqFmo4I-9g.png)
+![bg right:30% 90%](https://infraguide.org/assets/marp/pics/openstack/openstack-deploy-superuser.png)
 
 ---
 # OpenStack Network
@@ -155,7 +155,7 @@ mermaid.initialize({ startOnLoad: true, theme: 'default' });
 
 ---
 # Air-Gapped Environment
-![bg right:50% 90%](https://upload.wikimedia.org/wikipedia/commons/d/da/Air_gap_network.png)
+![bg right:50% 90%](https://infraguide.org/assets/marp/pics/common/air-gap-network-wikimedia.png)
 
 ---
 # Workshop Hardware and VMs
@@ -168,7 +168,7 @@ mermaid.initialize({ startOnLoad: true, theme: 'default' });
 # Infrastructure
 <div class="mermaid">
 graph LR
-    internet[Internet <img src="https://www.svgrepo.com/show/243037/clouds-cloud.svg" width="60"/>]
+    internet[Internet <img src="https://infraguide.org/assets/marp/pics/common/icon-cloud.svg" width="60"/>]
     subgraph Infrastructure
         direction TB
         registry("Registry\n(Harbor)")
@@ -202,7 +202,7 @@ graph LR
 
 ---
 # Deploy OpenStack
-![bg right:30% 90%](https://superuser.openinfra.org/wp-content/uploads/2025/01/1_q6dlalwfoVWwUqFmo4I-9g.png)
+![bg right:30% 90%](https://infraguide.org/assets/marp/pics/openstack/openstack-deploy-superuser.png)
 
 ```bash
 # Prepare Python virtual environment                                        📋
@@ -232,7 +232,7 @@ source ~/.profile
 
 ---
 # Deploy OpenStack
-![bg right:30% 90%](https://superuser.openinfra.org/wp-content/uploads/2025/01/1_q6dlalwfoVWwUqFmo4I-9g.png)
+![bg right:30% 90%](https://infraguide.org/assets/marp/pics/openstack/openstack-deploy-superuser.png)
 ```bash
 # Prepare ansible inventory                                                 📋
 
@@ -256,7 +256,7 @@ kolla-genpwd -p custom-config/wrx/passwords.yml
 
 ---
 # Deploy OpenStack
-![bg right:30% 90%](https://superuser.openinfra.org/wp-content/uploads/2025/01/1_q6dlalwfoVWwUqFmo4I-9g.png)
+![bg right:30% 90%](https://infraguide.org/assets/marp/pics/openstack/openstack-deploy-superuser.png)
 ```bash
 # Overview of kolla-ansible commands                                        📋
 
@@ -278,7 +278,7 @@ kolla-ansible prune-images         -i inventory/wrx
 
 ---
 # Deploy OpenStack
-![bg right:30% 90%](https://superuser.openinfra.org/wp-content/uploads/2025/01/1_q6dlalwfoVWwUqFmo4I-9g.png)
+![bg right:30% 90%](https://infraguide.org/assets/marp/pics/openstack/openstack-deploy-superuser.png)
 ```bash
 # Prepare the kolla-ansible deployment                                      📋
 
@@ -292,7 +292,7 @@ kolla-ansible pull                 -i inventory/wrx
 
 ---
 # Deploy OpenStack
-![bg right:30% 90%](https://superuser.openinfra.org/wp-content/uploads/2025/01/1_q6dlalwfoVWwUqFmo4I-9g.png)
+![bg right:30% 90%](https://infraguide.org/assets/marp/pics/openstack/openstack-deploy-superuser.png)
 ```bash
 # Prepare the kolla-ansible deployment                                      📋
 
@@ -306,7 +306,7 @@ kolla-ansible check                -i inventory/wrx
 
 ---
 # Bootstrap a Test Environment
-![bg right:30% 90%](https://superuser.openinfra.org/wp-content/uploads/2025/01/1_q6dlalwfoVWwUqFmo4I-9g.png)
+![bg right:30% 90%](https://infraguide.org/assets/marp/pics/openstack/openstack-deploy-superuser.png)
 ```bash
 # Create first basic test resources                                         📋
 KOLLA_CONFIG_PATH=~/openstack/custom-config/wrx/    \
@@ -321,7 +321,7 @@ DEMO_NET_DNS=10.30.0.1                              \
 
 ---
 # Access
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 <style scoped>
 table, thead, tbody, tr, th, td {
   background-color: transparent !important;
@@ -341,11 +341,11 @@ Check the following files to use with CLI:
 
 ---
 # Operations
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 
 ---
 # Service Overview
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Review the OpenStack environment                                          📋
 openstack service  list
@@ -360,7 +360,7 @@ openstack orchestration service list
 
 ---
 # Replace a Network Node
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # 🔍 Review data stored on the node. Is there anything to back up?          📋
 docker volume ls
@@ -383,7 +383,7 @@ kolla-ansible reconfigure       -i inventory/wrx --limit ~network03
 ```
 ---
 # Replace a Controller Node
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # 🔍 Review data stored on the node. Is there anything to back up?          📋
 docker volume ls
@@ -413,7 +413,7 @@ kolla-ansible reconfigure       -i inventory/wrx                       --tags   
 
 ---
 # Replace a Compute Node
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # 🔍 Review data stored on the node. Is there anything to back up?          📋
 docker volume ls
@@ -451,7 +451,7 @@ kolla-ansible reconfigure       -i inventory/wrx --limit ~<COMPUTE_NAME>
 
 ---
 # Debugging
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # 🩺 Check                                                                  📋
 openstack compute service list
@@ -473,14 +473,14 @@ openstack server list    --all  --long
 ```
 ---
 # Scale-out
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 * How to scale out controllers?
 * How to scale out network nodes?
 * How to scale out compute nodes?
 
 ---
 # Add a New Compute Host
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # 📝 Modify inventory, put the new compute host into the hypervisor section 📋
 vim inventory/wrx/20_openstack
@@ -502,18 +502,18 @@ docker exec -ti nova_libvirt virsh list  --all # on the host
 
 ---
 # Remove a Compute Host
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 
 ---
 # Reboot an OpenStack Host
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 * How to reboot controllers?
 * How to reboot network nodes?
 * How to reboot compute nodes?
 
 ---
 # Debugging RabbitMQ
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 
 ```bash
 # Some commands to debug RabbitMQ errors                                    📋
@@ -534,15 +534,15 @@ rabbitmqctl delete_queue  <QUEUE_NAME>
 
 ---
 # Upgrade
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 
 ---
 # SLURP Model
-![bg right:50% 90%](https://releases.openstack.org/_images/slurp.png)
+![bg right:50% 90%](https://infraguide.org/assets/marp/pics/openstack/openstack-slurp-model.png)
 
 ---
 # Roll out the Next Release
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # 📝 Update kolla-ansible                                                   📋
 CUR_KA_VER=$(pip list | grep kolla | awk '{print $NF}' | awk -F . '{print $1}')
@@ -564,7 +564,7 @@ kolla-ansible install-deps
 ---
 # Roll out the Next Release
 ## Inventory
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Update inventory                                                          📋
 mv inventory/multinode inventory/multinode.old
@@ -583,7 +583,7 @@ diff -y --suppress-common-lines  inventory/multinode  inventory/multinode.old
 ---
 # Roll out the Next Release
 ## Passwords
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Update passwords                                                          📋
 mv custom-config/wrx/passwords.yml custom-config/wrx/passwords.yml.old
@@ -602,7 +602,7 @@ diff -y --suppress-common-lines  custom-config/wrx/passwords.yml custom-config/w
 ---
 # Roll out the Next Release
 ## Go
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # 💾 Create config backups                                                  📋
 ansible  all -b -m ansible.builtin.shell -a \
@@ -624,7 +624,7 @@ kolla-ansible upgrade      -i inventory/wrx
 ```
 ---
 # High Availability
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 * Keepalived & HAProxy (controllers)
 * Stateless API Services
 * MariaDB Galera Cluster as State Store
@@ -633,7 +633,7 @@ kolla-ansible upgrade      -i inventory/wrx
 
 ---
 # Debugging Common
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Some useful commands for debugging                                        📋
 
@@ -659,7 +659,7 @@ grep -r [RESOURCE_ID] /var/log/kolla/[SERVICE]
 
 ---
 # Backup and Recovery
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 * MySQL   Backup
 * Config  Backup (can be restored by kolla)
 * Volumes Backup (can be ⚠️ partially restored)
@@ -667,7 +667,7 @@ grep -r [RESOURCE_ID] /var/log/kolla/[SERVICE]
 
 ---
 # Database Backup and Recovery
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Create a new backup                                                       📋
 kolla-ansible mariadb-backup -i inventory/wrx
@@ -683,7 +683,7 @@ kolla-ansible mariadb-recovery -i inventory/wrx
 ```
 ---
 # Monitoring
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 <style scoped>
 table, thead, tbody, tr, th, td {
   background-color: transparent !important;
@@ -702,7 +702,7 @@ table, thead, tbody, tr, th, td {
 ---
 # Expand / Deploy a New Service
 # Central Logging
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # 🔌 Enable central logging                                                 📋
 cat custom-config/wrx/globals.d/logging.yml
@@ -724,12 +724,12 @@ Visit:
 
 ---
 # Using OpenStack
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 
 
 ---
 # Images
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Prepare images                                                            📋
 mkdir -p  ~/cloud-images/
@@ -758,7 +758,7 @@ DEBIAN_LINK="https://cloud.debian.org/images/cloud/trixie/latest/$DEBIAN_IMG_NAM
 
 ---
 # Images
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Download images                                                           📋
 for i in  alma~$ALMA_VERSION~$ALMA_LINK       \
@@ -791,7 +791,7 @@ openstack image list --long
 
 ---
 # Authentication / Authorization
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Set permissions                                                           📋
 PRJ_NAME=workshop
@@ -815,7 +815,7 @@ openstack quota show $PRJ_NAME
 
 ---
 # How to authenticate with CLI
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Prepare an openrc file to be used with the OpenStack CLI                  📋
 cp  custom-config/wrx/admin-openrc.sh  custom-config/wrx/workshop-openrc.sh
@@ -848,7 +848,7 @@ openstack server  list
 ---
 # Networking
 ## **External Network**
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 
 ```bash
 # Create external network (VLAN backed)                                     📋
@@ -876,7 +876,7 @@ openstack subnet create  ${EXT_NET_NAME}-subnet \
 ---
 # Networking
 ## **Project Network**
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Create project network (VXLAN backed)                                     📋
 # as workshop user in workshop project
@@ -900,7 +900,7 @@ openstack router set --external-gateway shared3010 workshop-router
 ---
 # Networking
 ##  **Virtual Machines**
-![bg right:50% 30%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # as workshop user in workshop project
 
@@ -960,7 +960,7 @@ netplan apply
 ---
 # Networking
 ## **How to access?**
-![bg right:50% 30%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Copy the ssh key from deployment to testing node                          📋
 scp ~/.ssh/id_ecdsa* testing.mgmt.wrx.sckt.net:~/.ssh/
@@ -1002,7 +1002,7 @@ ssh -i ~/.ssh/id_ecdsa ubuntu@<IP>
 ---
 # Networking
 ## **Debugging**
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Check VMs and IPs assigned to them                                        📋
 openstack server list --long
@@ -1028,11 +1028,11 @@ ip netns
 
 ---
 # Network Namespaces
-![bg right:50% 90%](https://www.funtoo.org/images/thumb/c/ce/2host-4vm.png/733px-2host-4vm.png)
+![bg right:50% 90%](https://infraguide.org/assets/marp/pics/openstack/network-namespaces-funtoo.png)
 
 ---
 # User Config with Cloud-Init
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Create user-data.yaml                                                     📋
 cat > user-data.yaml <<EOF
@@ -1057,7 +1057,7 @@ EOF
 
 ---
 # User Config with Cloud-Init
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Create a new VM with an additional volume                                 📋
 root_uuid=$(
@@ -1088,7 +1088,7 @@ openstack server add floating ip vm2 $vm2_ip
 ```
 ---
 # User Config - Inspect the Created VM
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Log in from testing node                                                  📋
 ssh -i ~/.ssh/id_ecdsa ubuntu@<FLOATING_IP>
@@ -1102,7 +1102,7 @@ cat /var/lib/data/test/hello.html
 
 ---
 # Debugging
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Inspect the instance                                                      📋
 openstack server show vm2
@@ -1133,7 +1133,7 @@ cloud-init status --long
 
 ---
 # Block Devices
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # How many VMs are running? How many volumes should we see?                 📋
 openstack volume list
@@ -1161,7 +1161,7 @@ cat  /mnt/test
 ---
 # Block Devices
 ## **Revert a Volume**
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Restore from the snapshot                                                 📋
 openstack server stop   vm1
@@ -1177,7 +1177,7 @@ openstack server start         vm1
 ---
 # Block Devices
 ## **More Operations**
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 # Create a volume from an image                                             📋
 openstack volume create --image cirros --size 1 vm1-cirros
@@ -1193,7 +1193,7 @@ openstack image list
 
 ---
 # Resource Segregation
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 - Projects
 - Host Aggregates
 - Volume Backends
@@ -1202,12 +1202,12 @@ openstack image list
 
 ---
 # Availability Zones
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 is a human-readable label that represents a **physically isolated slice of data center infrastructure**. It is the primary tool used to group hardware into separate **fault domains** so that a single physical failure does not take down an entire cloud application.
 
 ---
 # Availability Zones
-![bg right:30% 50%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 * Power Distribution Unit
 * Data Center (Room)
 * Cooling Domain
@@ -1216,7 +1216,7 @@ is a human-readable label that represents a **physically isolated slice of data 
 
 ---
 # Availability Zones
-![bg right:50% 30%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 openstack aggregate create --zone az1 prd-az1
 openstack aggregate create --zone az2 prd-az2
@@ -1235,7 +1235,7 @@ openstack availability zone list --volume
 
 ---
 # Host Aggregates
-![bg right:50% 30%](https://www.svgrepo.com/show/354145/openstack-icon.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/openstack/icon-openstack.svg)
 ```bash
 openstack aggregate create hw-type-A
 openstack aggregate create hw-type-B
@@ -1257,7 +1257,7 @@ openstack aggregate show windows
 
 ---
 # Host Aggregates vs. Availability Zones
-![bg right:50% 90%](https://web-assets.dd-static.net/42588/1776303838-openstack-host-aggregates-flavors-availability-zones-aggregates1.png?format=auto&fit=bounds&quality=75&disable=upscale&width=1026&dpr=1)
+![bg right:50% 90%](https://infraguide.org/assets/marp/pics/openstack/openstack-host-aggregates-azs.jpg)
 
 ---
 # Links

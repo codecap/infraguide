@@ -4,3 +4,7 @@ allowLocalFiles: true
 parallel: 1
 inputDir: ./
 output: ../workshop-slides/
+options:
+  emoji:
+    shortcode: false
+    unicode: false

@@ -29,7 +29,7 @@ mermaid.initialize({ startOnLoad: true, theme: 'default' });
 
 ---
 # Ansible
-![bg right:30% 50%](https://www.svgrepo.com/show/373429/ansible.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack-automation/icon-ansible.svg)
 
 ```bash
 # On testing node                                                           📋
@@ -54,7 +54,7 @@ ansible-galaxy collection install -r requirements.yml --force
 
 ---
 # Credentials
-![bg right:30% 50%](https://www.svgrepo.com/show/529035/key-minimalistic-square-3.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack-automation/icon-key.svg)
 ```bash
 cat > ~/automation-openrc.sh<<"EOF"
 
@@ -77,7 +77,7 @@ EOF
 ```
 ---
 # Credentials
-![bg right:30% 50%](https://www.svgrepo.com/show/529035/key-minimalistic-square-3.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/openstack-automation/icon-key.svg)
 ```bash
 cat > clouds.yml <<EOF
 ---
@@ -99,7 +99,7 @@ EOF
 
 ---
 # Run
-![bg right:50% 30%](https://www.svgrepo.com/show/373429/ansible.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/openstack-automation/icon-ansible.svg)
 ```bash
 # Create automation project
 source ~/admin-openrc.sh 
@@ -117,7 +117,7 @@ ansible-playbook playbooks/destroy-infra.yml
 
 ---
 # Terraform
-![bg right:50% 30%](https://www.svgrepo.com/show/354447/terraform-icon.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/openstack-automation/icon-terraform.svg)
 
 ```bash
 # Install Terraform on testing node                                         📋
@@ -152,7 +152,7 @@ TF_VAR_os_password=$OS_PASSWORD terraform apply -auto-approve
 
 ---
 # Testinfra
-![bg right:50% 30%](https://testinfra.readthedocs.io/en/latest/_static/logo.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/openstack-automation/logo-testinfra.svg)
 
 ```bash
 cd ../testinfra/

@@ -43,7 +43,7 @@ mermaid.initialize({ startOnLoad: true, theme: 'default' });
 ---
 # Tempest
 ## **Install**
-![bg right:50% 30%](https://www.openstack.org/software/images/mascots/tempest.png)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/openstack-testing/logo-tempest.png)
 [Release Notes Tempest v45](https://docs.openstack.org/releasenotes/tempest/v45.0.0.html)
 ```bash
 # Install Tempest on testing node                                           📋
@@ -60,7 +60,7 @@ pip install --proxy http://proxy.wrx.sckt.net:3128 -r \
 ---
 # Tempest
 ## **Configuration**
-![bg right:50% 30%](https://www.openstack.org/software/images/mascots/tempest.png)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/openstack-testing/logo-tempest.png)
 ```bash
 # Copy admin-openrc.sh file from deployment to testing node                 📋
 scp ~/openstack/custom-config/wrx/admin-openrc.sh testing.mgmt:~/

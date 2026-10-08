@@ -99,7 +99,7 @@ We will need at least a single baremetal node with either:
 
 ---
 # Proxmox
-![bg right:40% 30%](https://www.svgrepo.com/show/282117/tools-hammer.svg)
+![bg right:40% 30%](https://infraguide.org/assets/marp/pics/preparations/icon-tools-hammer.svg)
 
 ```bash
 # On the baremetal node as root                                             📋
@@ -115,7 +115,7 @@ curl -sS -L $CONF_SCRIPT | bash
 
 ---
 # Prepare a Template VM for Guests
-![bg right:40% 50%](https://www.svgrepo.com/show/331552/proxmox.svg)
+![bg right:40% 50%](https://infraguide.org/assets/marp/pics/preparations/icon-proxmox.svg)
 
 ```bash
 # On the baremetal node as root                                             📋
@@ -131,7 +131,7 @@ curl -sS -L $CONF_SCRIPT | bash
 
 ---
 # Configuration Data
-![bg right:45% 25%](https://api.iconify.design/file-icons:config.svg)
+![bg right:45% 25%](https://infraguide.org/assets/marp/pics/preparations/icon-config.svg)
 [Link](https://github.com/codecap/openstack-workshop/blob/main/conf/env.yaml)
 ```yaml
 resolve_conf:
@@ -190,7 +190,7 @@ create-vm --id 10 --name dns.wrx.sckt.net --cpu 1 --ram 4096 --disks '[8]' --net
 ```
 ---
 # How to use scripts
-![bg right:45% 25%](https://api.iconify.design/file-icons:easybuild.svg)
+![bg right:45% 25%](https://infraguide.org/assets/marp/pics/preparations/icon-easybuild.svg)
 
 ```bash
 # Create a new environment
@@ -206,7 +206,7 @@ print-create-env-commands  | grep <NODE_FILTER> | bash
 
 ---
 # Create a workshop environment
-![bg right:40% 30%](https://www.svgrepo.com/show/282117/tools-hammer.svg)
+![bg right:40% 30%](https://infraguide.org/assets/marp/pics/preparations/icon-tools-hammer.svg)
 
 ```bash
 # On the baremetal node as root                                             📋
@@ -223,7 +223,7 @@ curl -sS -L $CONF_SCRIPT | bash
 ---
 # Configure a Tunnel
 ## To access environment
-![bg right:40% 30%](https://www.svgrepo.com/show/375447/identity-aware-proxy.svg)
+![bg right:40% 30%](https://infraguide.org/assets/marp/pics/preparations/icon-identity-aware-proxy.svg)
 
 ```bash
 * Generate a new ECDSA key with **PuTTYgen** and save it on your system
@@ -257,7 +257,7 @@ curl -sS -L $CONF_SCRIPT | bash
 
 ---
 # Configure Proxy
-![bg right:40% 30%](https://www.svgrepo.com/show/375447/identity-aware-proxy.svg)
+![bg right:40% 30%](https://infraguide.org/assets/marp/pics/preparations/icon-identity-aware-proxy.svg)
 ```bash
 * Open Firefox
 * Go to Settings

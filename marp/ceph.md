@@ -26,7 +26,7 @@ mermaid.initialize({ startOnLoad: true, theme: 'default' });
 </script>
 
 # Ceph
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 
 [//]: # (https://dev.to/prianshu-dev/ceph-explained-the-distributed-storage-backbone-powering-modern-infrastructure-44nc) 
 [//]: # (https://docs.ceph.com/en/latest/architecture/)
@@ -48,41 +48,41 @@ mermaid.initialize({ startOnLoad: true, theme: 'default' });
 
 ---
 # Architecture
-![bg right:65% 90%](https://www.ironnetworks.com/sites/default/files/products/CEPH-graphic.png)
+![bg right:65% 90%](https://infraguide.org/assets/marp/pics/ceph/ceph-architecture-ironnetworks.png)
 
 ---
 # Architecture
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
-![image](https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F2au17xy0419hsx797qe0.png)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
+![image](https://infraguide.org/assets/marp/pics/ceph/ceph-architecture-devto.png)
 
 ---
 # Architecture
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
-![image](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1920/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F581ff61d-ceph-chart-2.png)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
+![image](https://infraguide.org/assets/marp/pics/ceph/ceph-architecture-chart-2.png)
 
 ---
 # Architecture
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
-![image](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1800/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F3522db7e-ceph-chart-1.png)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
+![image](https://infraguide.org/assets/marp/pics/ceph/ceph-architecture-chart-1.png)
 
 ---
 # Users
-![bg right:75% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_239/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F57c722c5-cern-logo.png)
-![bg right:75% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_313/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F60fd1f45-deutsche-telekom.png)
-![bg right:75% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_313/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F1e543d4d-Bloomberg-Logo.png)
-![bg right:75% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_189/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2Fc3382d32-cisco-logo.png)
-![bg right:75% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_433/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F6ec58036-dreamhost-logo.png)
-![bg right:75% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_463/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F39eef9bb-digitalocean-logo.png)
+![bg right:75% 80%](https://infraguide.org/assets/marp/pics/common/logo-cern.png)
+![bg right:75% 80%](https://infraguide.org/assets/marp/pics/common/logo-deutsche-telekom.png)
+![bg right:75% 80%](https://infraguide.org/assets/marp/pics/common/logo-bloomberg.png)
+![bg right:75% 80%](https://infraguide.org/assets/marp/pics/common/logo-cisco.png)
+![bg right:75% 80%](https://infraguide.org/assets/marp/pics/ceph/logo-dreamhost.png)
+![bg right:75% 80%](https://infraguide.org/assets/marp/pics/ceph/logo-digitalocean.png)
 
 ---
 # Contributors
-![bg right:60% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_348/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F1c72c15a-canonical-logo.png)
-![bg right:60% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_239/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F57c722c5-cern-logo.png)
-![bg right:60% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_189/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2Fc3382d32-cisco-logo.png)
-![bg right:60% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_220/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F14ee306c-fujitsu-logo.png)
-![bg right:60% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_121/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F2141954b-intel-new-logo.png)
-![bg right:60% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_382/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2F5f1090ca-redhat-logo.png)
-![bg right:60% 80%](https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_247/https%3A%2F%2Fassets.ubuntu.com%2Fv1%2Ffac75dd0-sanndisk-logo.png)
+![bg right:60% 80%](https://infraguide.org/assets/marp/pics/common/logo-canonical.png)
+![bg right:60% 80%](https://infraguide.org/assets/marp/pics/common/logo-cern.png)
+![bg right:60% 80%](https://infraguide.org/assets/marp/pics/common/logo-cisco.png)
+![bg right:60% 80%](https://infraguide.org/assets/marp/pics/ceph/logo-fujitsu.png)
+![bg right:60% 80%](https://infraguide.org/assets/marp/pics/ceph/logo-intel-new.png)
+![bg right:60% 80%](https://infraguide.org/assets/marp/pics/ceph/logo-redhat-ceph.png)
+![bg right:60% 80%](https://infraguide.org/assets/marp/pics/ceph/logo-sandisk.png)
 
 ---
 # Ceph Deployment Approaches
@@ -103,7 +103,7 @@ mermaid.initialize({ startOnLoad: true, theme: 'default' });
 
 ---
 # Air-Gapped Environment
-![bg right:50% 90%](https://upload.wikimedia.org/wikipedia/commons/d/da/Air_gap_network.png)
+![bg right:50% 90%](https://infraguide.org/assets/marp/pics/common/air-gap-network-wikimedia.png)
 
 ---
 # Workshop Hardware and VMs
@@ -116,7 +116,7 @@ mermaid.initialize({ startOnLoad: true, theme: 'default' });
 # Infrastructure
 <div class="mermaid">
 graph LR
-    internet[Internet <img src="https://www.svgrepo.com/show/243037/clouds-cloud.svg" width="60"/>]
+    internet[Internet <img src="https://infraguide.org/assets/marp/pics/common/icon-cloud.svg" width="60"/>]
     subgraph Infrastructure
         direction TB
         registry("Registry\n(Harbor)")
@@ -149,7 +149,7 @@ graph LR
 
 ---
 # Deploy Ceph with Cephadm
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 # as deploy on deployment host                                              📋
 sudo apt install cephadm ceph-common python3-jinja2 -y
@@ -166,7 +166,7 @@ done
 
 ---
 # Deploy Ceph with Cephadm
-![bg right:50% 30%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 #  as deploy on deployment host                                             📋
 CEPH_VERSION="19.2.1"
@@ -209,7 +209,7 @@ sudo ceph orch apply -i $CEPH_SPEC
 
 ---
 # Deploy Ceph with Cephadm
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 **Set crush rules**
 ```bash
                                                                             📋
@@ -223,7 +223,7 @@ ceph osd crush rule rm replicated_rule
 
 ---
 # Deploy Ceph with Cephadm
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ### Create client keys for OpenStack services
 ```bash
 # as root on deployment node, create the .keyring files                     📋
@@ -268,7 +268,7 @@ done
 
 ---
 # Prepare for OpenStack
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 
 **Create pools for OpenStack services**
 
@@ -284,7 +284,7 @@ done
 
 ---
 # Prepare for OpenStack
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 
 **Configure Ceph to be used as backend for OpenStack Swift (Object Storage)**
 
@@ -315,7 +315,7 @@ ceph orch restart rgw.default
 
 ---
 # Test
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 # On deployment node (as root or with sudo)                                 📋
 ceph orch ls
@@ -329,7 +329,7 @@ ceph osd tree
 
 ---
 # State Overview
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 - [Ceph/Dashboard](https://cephmon01.strg.wrx.sckt.net:8443)
 - [Grafana/Monitoring](https://cephgra01.strg.wrx.sckt.net:3000)
 - [Prometheus/Monitoring](http://cephgra01.strg.wrx.sckt.net:9095)
@@ -338,7 +338,7 @@ ceph osd tree
 
 ---
 # Ceph Basics
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 
 [//]: # (FIXME: rulesets and rules)
 
@@ -351,19 +351,19 @@ ceph osd tree
 ---
 # Placement Groups
 [//]: # (FIXME: picture)
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 
-![image](https://access.redhat.com/webassets/avalon/d/Red_Hat_Ceph_Storage-5-Architecture_Guide-en-US/images/08af4a1fab18995fda3aad1c3ede873e/arc-04.png)
+![image](https://infraguide.org/assets/marp/pics/ceph/ceph-placement-groups-redhat.png)
 
 ---
 # Placement Groups
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
-![image](https://media.licdn.com/dms/image/v2/C4E12AQGGNrXrOo2PyA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1625477968913?e=1784160000&v=beta&t=o1KEXUfgB71do85SWHCN8fIgKgtCxUQMjptZVQE6qTk)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
+![image](https://infraguide.org/assets/marp/pics/ceph/ceph-placement-groups-linkedin.png)
 
 
 ---
 # Object Storage Daemon (OSD)
-![bg right:30% 50%](https://trilio.io/wp-content/uploads/2025/06/image3.jpg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/ceph-osd-trilio.jpg)
 
 **Ceph OSDs** store data on behalf of Ceph clients. Additionally, Ceph OSDs utilize the CPU, memory and networking of Ceph nodes to perform data replication, erasure coding, rebalancing, recovery, monitoring and reporting functions.
 
@@ -372,8 +372,8 @@ ceph osd tree
 
 ---
 # Interfaces
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
-![width:600](https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3e114eiq560vyc74l24x.webp)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
+![width:600](https://infraguide.org/assets/marp/pics/ceph/ceph-interfaces-devto.webp)
 
 [//]: # (RBD)
 [//]: # (CephFS)
@@ -381,18 +381,18 @@ ceph osd tree
 
 ---
 # How OpenStack uses Ceph
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
-![width:600](https://www.redhat.com/rhdc/managed-files/sysadmin/2021-08/Ceph-storage-cluster-%28RADOS%29.png)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
+![width:600](https://infraguide.org/assets/marp/pics/common/ceph-rados-cluster-redhat.png)
 
 ---
 # Replication
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
-![image](https://docs.ceph.com/en/latest/_images/ditaa-cbefbab082db946a072d6a1761a5df6f49e3c227.png)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
+![image](https://infraguide.org/assets/marp/pics/ceph/ceph-replication-docs.png)
 
 ---
 # Erasure Coding
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
-![image width:600](https://access.redhat.com/webassets/avalon/d/Red_Hat_Ceph_Storage-5-Architecture_Guide-en-US/images/7d449de6b0ccbe0d9283291d1756474d/arc-06.png)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
+![image width:600](https://infraguide.org/assets/marp/pics/ceph/ceph-erasure-coding-redhat.png)
 
 ---
 # Cluster Components
@@ -429,7 +429,7 @@ You can view the decompiled map in a text editor.
 
 ---
 # Authentication
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 
 Ceph uses a **cephx authentication system** similar to Kerberos to authenticate users and daemons. Both the clients and the monitors in the cluster have a copy of the client's secret key.
 
@@ -444,7 +444,7 @@ Ceph uses a **cephx authentication system** similar to Kerberos to authenticate 
 
 ---
 # Review the cluster
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 # Cluster status                                                            📋
 ceph -s
@@ -465,7 +465,7 @@ ceph tell mgr.* version
 
 ---
 # OSDs
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
                                                                             📋
 ceph osd status
@@ -477,7 +477,7 @@ ceph osd versions
 ```
 ---
 # Pools
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
                                                                             📋
 ceph osd pool ls
@@ -496,7 +496,7 @@ ceph osd pool set ...
 ```
 ---
 # Placement Groups
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
                                                                             📋
 ceph pg ls
@@ -507,7 +507,7 @@ ceph pg dump_stuck unclean
 
 ---
 # Clients
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 # List all entities                                                         📋
 ceph auth ls
@@ -526,7 +526,7 @@ ceph auth rm client.testuser
 
 ---
 # RBD Volumes
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 # Create a pool named 'vms' for our block devices                           📋   
 ceph osd pool create test 32 32
@@ -553,7 +553,7 @@ echo "Hello from Ceph RBD Storage!" > /mnt/test.txt
 
 ---
 # RBD Snapshots
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 # Create a new snapshot                                                     📋
 rbd snap create test/demo-disk@snap1
@@ -580,7 +580,7 @@ rbd unmap /dev/rbd/test/demo-disk
 
 ---
 # File Systems
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 # Create the metadata pool (needs high-speed disks like SSDs if possible)   📋
 ceph osd pool create testfs_metadata 32 32
@@ -605,7 +605,7 @@ ceph-fuse -n client.guest -k /etc/ceph/ceph.client.guest.keyring /mnt/ --client_
 
 ---
 # File Systems and Snapshots
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 # Create a working project folder                                           📋
 mkdir -p /mnt/project1
@@ -632,7 +632,7 @@ rmdir  /mnt/project1/.snap/snapshot_backup_v1
 
 ---
 # RadosGW / S3
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 # Create a user to access S3                                                📋
 radosgw-admin user create --uid=demo-user --display-name="Demo S3 User"
@@ -644,7 +644,7 @@ radosgw-admin user info --uid  demo-user
 
 ---
 # aws-cli example
-![bg right:50% 30%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 # Install and configure awscli                                              📋
 pip3 install awscli awscli-plugin-endpoint
@@ -686,7 +686,7 @@ cat  /tmp/test.txt
 
 ---
 # mc example
-![bg right:50% 30%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 # Install and configure mc client                                           📋
 sudo curl --proxy proxy.wrx.sckt.net:3128            \
@@ -708,7 +708,7 @@ mc cat s3/demo-bucket/project1/test.txt
 ---
 # Operations
 ## Update system packages and reboot
-![bg right:55% 25%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:55% 25%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 
 [//]: # (FIXME: the same with ceph orch host maintenance enter)
 
@@ -746,7 +746,7 @@ ceph osd unset noout
 ---
 # Operations
 ## Upgrade
-![bg right:55% 25%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:55% 25%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 
 ```bash
 # Upgrade ceph cluster                                                      📋
@@ -808,7 +808,7 @@ apt install -y cephadm-<VERSION> ceph-common-<VERSION>
 # Replace a Mon Node
 [//]: # (FIXME: test)
 
-![bg right:50% 30%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 # 🚧 on deployment node remove cephmon03 from the cluster                   📋
 for l in _admin mds mgr mon nfs rbd-mirror rgw
@@ -842,7 +842,7 @@ ceph orch ps
 
 ---
 # Replace an OSD
-![bg right:50% 30%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 
 [//]: # (FIXME: test)
 
@@ -882,7 +882,7 @@ ceph orch daemon rm osd.<OSD.NR> --force
 
 ---
 # Replace an OSD
-![bg right:50% 30%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 
 ```bash
 # 🚧 Set initial weight to 0 to control recovery                            📋
@@ -912,7 +912,7 @@ ceph osd unset norecover
 ---
 # Replace an OSD
 ## **Workarounds**
-![bg right:50% 30%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 
 ```bash
 # If --zap didn't work, the following tools can help to clean up
@@ -933,7 +933,7 @@ wipefs --all --force <DEVICE>
 
 ---
 # Rebuild an OSD Node
-![bg right:50% 30%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 # Prepare the rebuild                                                       📋
 ceph osd set noout
@@ -965,21 +965,21 @@ ceph osd unset norecover
 
 ---
 # Add an OSD Node
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 
 ```
 
 ---
 # Remove an OSD Node
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 
 ```
 
 ---
 # Modify and activate a spec
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 
 ```
@@ -987,7 +987,7 @@ ceph osd unset norecover
 ---
 # Failure Domain
 [//]: # (FIXME:)
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ```bash
 # Bucket types
 ceph osd crush dump  | jq .types
@@ -1017,7 +1017,7 @@ ceph osd pool set <POOL> crush_rule replicated_rack_rule
 
 ---
 # Benchmarking
-![bg right:30% 50%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:30% 50%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 
 [//]: # (FIXME:)
 
@@ -1053,7 +1053,7 @@ rbd rm  test/benchmark
 
 ---
 # Performance tests
-![bg right:45% 30%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:45% 30%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ### **Simple - Standard tests with dd**
 ```bash
 # Big file
@@ -1065,7 +1065,7 @@ dd if=/dev/zero of=./testfile bs=512 count=1000 oflag=dsync
 
 ---
 # Performance tests
-![bg right:50% 30%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ### **Sequential Throughput (1MB)**
 *Simulates: Large file transfers, VM migrations, backups.*
 ```bash
@@ -1085,7 +1085,7 @@ fio                  \
 ```
 ---
 # Performance tests
-![bg right:50% 30%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ### **Random IOPS (4KB)**
 *Simulates: General OS responsiveness and small metadata operations.*
 ```bash
@@ -1107,7 +1107,7 @@ fio                  \
 
 ---
 # Performance tests
-![bg right:50% 30%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ### **PostgreSQL (8KB Blocks)**
 ```bash
 fio                \
@@ -1125,7 +1125,7 @@ fio                \
 ```
 ---
 # Performance tests
-![bg right:50% 30%](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ceph.svg)
+![bg right:50% 30%](https://infraguide.org/assets/marp/pics/ceph/icon-ceph.svg)
 ### **MySQL/MariaDB (16KB Blocks)**
 ```bash
 fio               \
