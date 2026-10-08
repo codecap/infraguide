@@ -1,10 +1,9 @@
 ---
-title:       Testing
-description: OpenStack & Ceph
-author:      infraguide.org
-keywords:    openstack,ceph,workshops,operations,troubleshoouting
-url:         
-image:
+
+title:  "OpenStack Testing"
+description: "Free OpenStack workshop slides: automated testing of a private cloud."
+keywords:  openstack,testing,test automation,private cloud,workshop
+author: infraguide.org
 transition: cover
 backgroundImage: url(../assets/marp/background.jpg)
 paginate: true

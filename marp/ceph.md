@@ -1,10 +1,8 @@
 ---
-title:       Ceph
-description: OpenStack & Ceph
+title: "Ceph Workshop Slides"
+description: "Free Ceph workshop slides: Deploy and operate a Ceph cluster from scratch."
 author:      infraguide.org
-keywords:    openstack,ceph,workshops,operations,troubleshoouting
-url:
-image:
+keywords:    ceph,storage,rbd,cephfs,radosgw,workshop,operations
 backgroundImage: url(../assets/marp/background.jpg)
 transition: cover
 paginate: true

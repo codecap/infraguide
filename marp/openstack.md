@@ -1,10 +1,8 @@
 ---
-title:       OpenStack
-description: OpenStack & Ceph
+title:       "OpenStack Workshop Slides"
+description: "Free OpenStack workshop slides: Deploy and operate a multi-node OpenStack cloud."
+keywords:    "openstack,private cloud,workshop,workshops,operations,troubleshoouting deployment,operations,networking,monitoring,troubleshooting,automation,testing"
 author:      infraguide.org
-keywords:    openstack,ceph,workshops,operations,troubleshoouting
-url:
-image:
 backgroundImage: url(../assets/marp/background.jpg)
 transition: cover
 paginate: true

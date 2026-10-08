@@ -1,10 +1,8 @@
 ---
-title:       Automation
-description: OpenStack & Ceph
-author:      infraguide.org
-keywords:    openstack,ceph,workshops,operations,troubleshoouting
-url:
-image:
+title: "OpenStack Automation"
+description: "Free OpenStack workshop slides: automating a private cloud with cloud-init, Ansible and Terraform."
+keywords: "openstack,automation,cloud-init,ansible,terraform,private cloud,workshop"
+author: infraguide.org
 backgroundImage: url(../assets/marp/background.jpg)
 transition: cover
 paginate: true

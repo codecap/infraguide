@@ -1,14 +1,12 @@
 ---
-title:       Introduction
-description: OpenStack & Ceph
-author:      infraguide.org
-keywords:    openstack,ceph,workshops,operations,troubleshooting
-url:
-image:
+title: "OpenStack & Ceph Workshop: Introduction"
+description: "Free OpenStack workshop slides: introduction, prerequisites, overview and a guide"
+keywords: "openstack,workshop,introduction,prerequisites,overview,guide"
+author:  infraguide.org
 backgroundImage: url(../assets/marp/background.jpg)
 transition: cover
 paginate: true
-footer: "[infraguide.org](https://infraguide.org) | Questions or need a guided workshop? → ping@socket.de | [Imprint](https://infraguide.org/imprint/) · [Privacy](https://infraguide.org/privacy/)"
+footer: "[infraguide.org](https://infraguide.org) | Questions or need a guided workshop? → ping@infraguide.org | [Imprint](https://infraguide.org/imprint/) · [Privacy](https://infraguide.org/privacy/)"
 style: |
   footer {
     font-size: 7px;

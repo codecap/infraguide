@@ -3,8 +3,6 @@ title:       Preparations
 description: OpenStack & Ceph
 author:      infraguide.org
 keywords:    openstack,ceph,workshops,operations,troubleshoouting
-url:         
-image:
 transition: cover
 backgroundImage: url(../assets/marp/background.jpg)
 paginate: true
