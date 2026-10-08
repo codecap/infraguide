@@ -78,7 +78,7 @@ description: Labs, guides, articles, tools, certifications and cheat sheets for 
 </div>
 
 <div class="section">
-  <span class="section-label">Works with</span>
+  <span class="section-label">Technologies</span>
   <div class="logo-strip">
     <span class="logo-chip"><img src="{{ '/assets/img/logos/openstack.svg' | relative_url }}" alt="OpenStack"/></span>
     <span class="logo-chip"><img src="{{ '/assets/img/logos/ceph.svg' | relative_url }}" alt="Ceph"/></span>
