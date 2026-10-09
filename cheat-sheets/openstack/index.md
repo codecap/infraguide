@@ -20,16 +20,17 @@ Want to see these commands in context? Build the [OpenStack lab](/learn/openstac
 
 ### Authentication
 ```bash
+# Help and debugging
 openstack command list
 # show the REST calls and responses
 openstack --debug <COMMAND>
 
-# Credentials from an openrc file or from clouds.yaml
+# Credentials: openrc file or clouds.yaml
 source <OPENRC_FILE>
 env | grep OS_
 openstack --os-cloud <CLOUD> server list
 
-# Application credential: scoped, expiring credential for scripts
+# Application credentials: scoped and expiring, for scripts
 openstack application credential create <NAME> --role <ROLE> --expiration <ISO8601_DATE>
 openstack application credential list
 openstack application credential show <NAME_OR_ID>
@@ -43,7 +44,7 @@ openstack server list -f json
 openstack server list -f csv --quote minimal
 openstack server show <SERVER> -f shell
 
-# Columns, repeat -c per column
+# Columns (repeat -c per column)
 openstack server list -c ID -c Name -c Status -c Networks
 openstack volume list -c ID -c Name -c Size -c Status
 
@@ -53,10 +54,12 @@ openstack server list --name <REGEX>
 openstack server list --sort-column Name
 openstack server list --sort-column Status --sort-descending
 
-# Paging: use the last ID of a page as the marker for the next
+# Paging
+# the last ID of a page is the marker for the next one
 openstack server list --limit <N> --marker <LAST_ID>
 
-# Scripting: a single value, one per line
+# Scripting
+# a single value, one per line
 openstack server show <SERVER> -f value -c id
 openstack server list -f value -c ID | xargs -I{} openstack server show {}
 ```
@@ -94,12 +97,12 @@ openstack user password set
 # delete user
 openstack user delete <USER_ID>
 
-# User with its own domain and default project
+# User in a domain with a default project
 openstack user create --domain <DOMAIN> --project <PROJECT> \
   --description "<DESCRIPTION>" --email <EMAIL> --password <PASSWORD> \
   --enable <USER>
 
-# enable / disable a user, change the password
+# Enable, disable, change the password
 openstack user set <USER_ID> --enable
 openstack user set <USER_ID> --disable
 openstack user set <USER_ID> --password <PASSWORD>
@@ -122,12 +125,12 @@ openstack group remove user <GROUP_ID> <USER_ID>
 # delete group
 openstack group delete <GROUP_ID>
 
-# Group in the default domain, add and check a member
+# Group in the default domain: add and check a member
 openstack group create --domain Default --description "<DESCRIPTION>" <GROUP>
 openstack group add user <GROUP> <USER>
 openstack group contains user <GROUP> <USER>
 
-# Group in another domain, members come from that domain too
+# Group in another domain (members come from that domain too)
 openstack group create --domain <DOMAIN> --description "<DESCRIPTION>" <GROUP>
 openstack group add user      --group-domain <DOMAIN> <GROUP> <USER>
 openstack group contains user --group-domain <DOMAIN> <GROUP> <USER>
@@ -157,13 +160,13 @@ openstack role remove --project <PROJECT_ID> \
 # Role in a domain
 openstack role create --domain Default <ROLE>
 
-# role assignments, with names instead of IDs
+# Role assignments (names instead of IDs)
 openstack role list
 openstack role show <ROLE_ID>
 openstack role assignment list --names
 openstack role assignment list --user <USER_ID> --names
 
-# implied roles: the prior role includes the implied one
+# Implied roles (the prior role includes the implied one)
 openstack implied role list
 openstack implied role create <PRIOR_ROLE> --implied-role <IMPLIED_ROLE>
 openstack implied role delete <PRIOR_ROLE> --implied-role <IMPLIED_ROLE>
@@ -171,7 +174,6 @@ openstack implied role delete <PRIOR_ROLE> --implied-role <IMPLIED_ROLE>
 
 ### Tokens
 ```bash
-# Tokens
 openstack token issue
 openstack token issue -f yaml
 openstack token revoke <TOKEN>
@@ -222,6 +224,7 @@ openstack network agent list --long
 openstack compute service list --long
 openstack volume service list --long
 
+# Endpoints and services
 openstack endpoint list
 openstack endpoint list --service <SERVICE>
 openstack endpoint show <ENDPOINT_ID>
@@ -249,7 +252,8 @@ openstack flavor set <KEY> <VALUE> <FLAVOR_NAME>
 # delete flavor
 openstack flavor delete <FLAVOR_NAME>
 
-# Schedule on the custom resource class of the node, not on VCPU / RAM / disk
+# Baremetal flavor
+# schedule on the custom resource class of the node, not on VCPU / RAM / disk
 openstack flavor create --ram <RAM_MB> --disk <DISK_GB> --vcpus <VCPUS> <FLAVOR_NAME>
 openstack flavor set <FLAVOR_NAME> \
   --property resources:CUSTOM_<RESOURCE_CLASS>=1 \
@@ -257,7 +261,7 @@ openstack flavor set <FLAVOR_NAME> \
   --property resources:MEMORY_MB=0 \
   --property resources:DISK_GB=0
 
-# all flavors including private ones, with ephemeral disk
+# All flavors, ephemeral disk, aggregate extra spec
 openstack flavor list --all
 openstack flavor create --vcpus <VCPUS> --ram <RAM_MB> --disk <DISK_GB> \
   --ephemeral <EPHEMERAL_GB> <FLAVOR_NAME>
@@ -277,14 +281,14 @@ openstack keypair create --private-key <FILE_PATH> <KEY_PAIR_NAME>
 # delete key pair
 openstack keypair delete <KEY_PAIR_NAME>
 
-# upload an existing public key, or let OpenStack generate a pair
+# Upload an existing public key or generate a pair
 openstack keypair create --public-key <PUBLIC_KEY_FILE> <KEY_PAIR_NAME>
 openstack keypair create <KEY_PAIR_NAME> > <PRIVATE_KEY_FILE>
 ```
 
 ### Instances
 ```bash
-# --- Listing & inspecting ---
+# Listing & inspecting
 openstack server list
 openstack server list --all-projects          # admin only
 openstack server list --host <HYPERVISOR>
@@ -292,7 +296,7 @@ openstack server list --status ERROR
 openstack server show <SERVER>
 openstack server show <SERVER> -f yaml
 
-# --- Creating ---
+# Creating
 openstack server create \
   --flavor <FLAVOR> \
   --image <IMAGE> \
@@ -311,13 +315,13 @@ openstack server create \
   --hint group=<SERVER_GROUP_ID> \
   <VM_NAME>
 
-# --- Power state ---
+# Power state
 openstack server stop <SERVER>
 openstack server start <SERVER>
 openstack server reboot <SERVER>
 openstack server reboot --hard <SERVER>
 
-# --- Pause / suspend / shelve (persist CPU/memory state) ---
+# Pause / suspend / shelve (persist CPU/memory state)
 openstack server pause <SERVER>
 openstack server unpause <SERVER>
 openstack server suspend <SERVER>
@@ -325,56 +329,56 @@ openstack server resume <SERVER>
 openstack server shelve <SERVER>
 openstack server unshelve <SERVER>
 
-# --- Lock / unlock (prevent accidental actions) ---
+# Lock / unlock (prevent accidental actions)
 openstack server lock <SERVER>
 openstack server unlock <SERVER>
 
-# --- Rebuild & rescue ---
+# Rebuild & rescue
 openstack server rebuild --image <IMAGE> <SERVER>
 openstack server rescue <SERVER> [--image <IMAGE>]
 openstack server unrescue <SERVER>
 
-# --- Resize ---
+# Resize
 openstack server resize --flavor <NEW_FLAVOR> <SERVER>
 openstack server resize confirm <SERVER>
 openstack server resize revert <SERVER>
 
-# --- Image creation from running instance ---
+# Image creation from running instance
 openstack server image create --name <SNAPSHOT_NAME> <SERVER>
 
-# --- Console & logging ---
+# Console & logging
 openstack console url show <SERVER>           # SPICE/noVNC URL
 openstack server console log show <SERVER>
 openstack server console log show --lines 100 <SERVER>
 
-# --- SSH (via floating IP or direct network) ---
+# SSH (via floating IP or direct network)
 openstack server ssh <SERVER> --login <USER>
 
-# --- Volumes ---
+# Volumes
 openstack server add volume <SERVER> <VOLUME> [--device <DEVICE_PATH>]
 openstack server remove volume <SERVER> <VOLUME>
 openstack server volume list <SERVER>
 
-# --- Networks & IPs ---
+# Networks & IPs
 openstack server add network <SERVER> <NETWORK>
 openstack server remove network <SERVER> <NETWORK>
 openstack server add floating ip <SERVER> <FLOATING_IP>
 openstack server remove floating ip <SERVER> <FLOATING_IP>
 openstack server port list <SERVER>
 
-# --- Security groups ---
+# Security groups
 openstack server add security group <SERVER> <SG>
 openstack server remove security group <SERVER> <SG>
 
-# --- Metadata ---
+# Metadata
 openstack server set --property key=value <SERVER>
 openstack server unset --property key <SERVER>
 
-# --- Delete ---
+# Delete
 openstack server delete <SERVER>
 openstack server delete --wait <SERVER>       # block until gone
 
-# --- Migrate & evacuate ---
+# Migrate & evacuate
 openstack server migrate <SERVER>             # cold migrate (let scheduler choose)
 openstack server migrate --host <TARGET_HOST> <SERVER>
 openstack server migrate --live-migration --host <TARGET_HOST> <SERVER>
@@ -399,15 +403,16 @@ openstack server group delete <GROUP>
 
 ### Events & compute services
 ```bash
+# Server events
 openstack server event list <SERVER>
 openstack server event show <SERVER> <REQUEST_ID>
+
+# Compute services
 openstack compute service list
+# take a host out of scheduling, and back
 openstack compute service set --disable --disable-reason "maintenance" <HOST> nova-compute
 openstack compute service set --enable <HOST> nova-compute
 openstack compute service delete <ID>
-
-# Take a compute host out of scheduling
-openstack compute service set --disable <HOST> nova-compute
 ```
 
 ### Hypervisors & availability
@@ -457,7 +462,7 @@ openstack image show <IMAGE_NAME>
 openstack image import --disk-format qcow2 --container-format bare \
   --uri <URI> <IMAGE_NAME>
 
-# Hardware properties, the guest sees them as virtio devices
+# Hardware properties (the guest sees virtio devices)
 openstack image set <IMAGE> --property hw_disk_bus=virtio
 openstack image set <IMAGE> --property hw_scsi_model=virtio-scsi
 openstack image set <IMAGE> --property hw_vif_model=virtio
@@ -472,21 +477,22 @@ openstack image set <IMAGE> --public
 openstack image set <IMAGE> --private
 openstack image set <IMAGE> --shared
 
-# Share a shared image with another project
+# Share an image with another project
 openstack image member create <IMAGE> <PROJECT>
 openstack image member list <IMAGE>
 openstack image member delete <IMAGE> <PROJECT>
 # the other project accepts it
 openstack image set --accept <IMAGE>
 
-# Make an image unusable without deleting it
+# Deactivate / activate (unusable but not deleted)
 openstack image set <IMAGE> --deactivate
 openstack image set <IMAGE> --activate
 ```
 
 ### Octavia amphora image
 ```bash
-# Octavia amphora image, the release is taken from the kolla-ansible config
+# Octavia amphora image
+# the release is taken from the kolla-ansible config
 os_release=$(
   cat $VIRTUAL_ENV/share/kolla-ansible/ansible/group_vars/all.yml \
     | y2j \
@@ -505,14 +511,14 @@ openstack image create <IMAGE_NAME> \
 
 ## Block storage
 ```bash
-# --- Volume types ---
+# Volume types
 openstack volume type list
 openstack volume type show <TYPE>
 openstack volume type create <NAME>
 openstack volume type set <TYPE> --property volume_backend_name=<BACKEND>
 openstack volume type delete <TYPE>
 
-# --- Volumes ---
+# Volumes
 openstack volume list
 openstack volume show <VOLUME>
 openstack volume create --size <GB> --type <VOLUME_TYPE> <NAME>
@@ -528,17 +534,17 @@ openstack volume set <VOLUME> --read-only
 openstack volume delete <VOLUME>
 openstack volume delete --force <VOLUME>
 
-# --- Attach / detach ---
+# Attach / detach
 openstack volume attach <VOLUME> <SERVER>
 openstack volume detach <VOLUME> <SERVER>
 
-# --- Extend ---
+# Extend
 openstack volume set <VOLUME> --size <NEW_GB>   # extend (most backends)
 
-# --- Retype ---
+# Retype
 openstack volume retype --migration-policy on-demand <VOLUME> <NEW_TYPE>
 
-# --- Snapshots ---
+# Snapshots
 openstack volume snapshot list
 openstack volume snapshot show <SNAPSHOT>
 openstack volume snapshot create --name <NAME> <VOLUME>
@@ -546,7 +552,7 @@ openstack volume snapshot create --name <NAME> --force <VOLUME>        # while i
 openstack volume snapshot set <SNAPSHOT> --name <NEW_NAME>
 openstack volume snapshot delete <SNAPSHOT>
 
-# --- Backups ---
+# Backups
 openstack volume backup list
 openstack volume backup show <BACKUP>
 openstack volume backup create --name <NAME> <VOLUME>
@@ -554,13 +560,13 @@ openstack volume backup create --name <NAME> --incremental <VOLUME>
 openstack volume backup restore <BACKUP> [<VOLUME>]
 openstack volume backup delete <BACKUP>
 
-# --- Volume transfer (move between projects) ---
+# Volume transfer (move between projects)
 openstack volume transfer request list
 openstack volume transfer request create <VOLUME>
 openstack volume transfer request accept <TRANSFER_ID> --auth-key <KEY>
 openstack volume transfer request delete <TRANSFER_ID>
 
-# --- QoS ---
+# QoS
 openstack volume qos list
 openstack volume qos show <QOS>
 openstack volume qos create --consumer front-end \
@@ -757,7 +763,9 @@ openstack server add floating ip <SERVER> <FLOATING_IP>
 
 ### Agents (operators)
 ```bash
-# With ML2/OVN there are no L3 or DHCP agents. openstack network agent list shows ovn-controller entries (one per compute/network node) and OVN Metadata Agent entries. Router and DHCP scheduling is handled automatically by OVN.
+# ML2/OVN agents
+# there are no L3 or DHCP agents, the list shows ovn-controller (one per compute/network node)
+# and OVN metadata agent entries; OVN schedules routers and DHCP automatically
 
 openstack network agent list                           # ovn-controller + OVN-metadata-agent
 openstack network agent show <AGENT>
@@ -766,7 +774,7 @@ openstack network agent set <AGENT> --disable          # mark chassis unavailabl
 
 ### Gateway chassis
 ```bash
-# Controls where NAT / floating-IP SNAT is performed
+# Gateway chassis: where NAT / floating-IP SNAT is performed
 # OVN schedules gateway ports automatically; to pin a router's gateway port:
 openstack port list --device-owner network:router_gateway --router <ROUTER>
 # For explicit chassis binding (advanced / operator use via ovn-nbctl):
@@ -776,7 +784,7 @@ sudo ovn-nbctl lrp-get-gateway-chassis <LRP_NAME>
 
 ### OVN debug (operators)
 ```bash
-# --- Northbound (logical topology) ---
+# Northbound (logical topology)
 sudo ovn-nbctl show                                    # logical switches, routers, ports
 sudo ovn-nbctl ls-list                                 # logical switches
 sudo ovn-nbctl lr-list                                 # logical routers
@@ -785,17 +793,17 @@ sudo ovn-nbctl lrp-list <LOGICAL_ROUTER>               # logical router ports
 sudo ovn-nbctl acl-list <LOGICAL_SWITCH>               # ACLs (security-group rules)
 sudo ovn-nbctl dhcp-options-list                       # native DHCP options
 
-# --- Southbound (physical topology / flows) ---
+# Southbound (physical topology / flows)
 sudo ovn-sbctl show                                    # chassis and port bindings
 sudo ovn-sbctl chassis-list                            # registered hypervisors
 sudo ovn-sbctl lflow-list                              # all logical flows
 sudo ovn-sbctl lflow-list <LOGICAL_ROUTER_UUID>        # flows scoped to a router
 
-# --- Packet tracing (replace values with actual UUIDs/MACs/IPs) ---
+# Packet tracing (replace values with actual UUIDs/MACs/IPs)
 sudo ovn-trace <LOGICAL_SWITCH_NAME> \
   'inport=="<LSP_NAME>"; eth.src=<SRC_MAC>; ip4.src=<SRC_IP>; ip4.dst=<DST_IP>; ip.ttl=64'
 
-# --- OVS dataplane on compute ---
+# OVS dataplane on compute
 sudo ovs-vsctl show
 sudo ovs-ofctl dump-flows br-int
 sudo ovs-appctl fdb/show br-int
@@ -803,7 +811,8 @@ sudo ovs-appctl fdb/show br-int
 
 ### OVS bridges & ports
 ```bash
-# Bridges and ports on this node; br-int is the integration bridge, br-ex or similar the provider one
+# Bridges and ports
+# br-int is the integration bridge, br-ex or similar the provider one
 sudo ovs-vsctl show
 sudo ovs-vsctl list-br
 sudo ovs-vsctl list-ports <BRIDGE>
@@ -813,7 +822,7 @@ sudo ovs-vsctl get Interface <INTERFACE> statistics
 sudo ovs-ofctl show <BRIDGE>
 sudo ovs-vsctl find interface ofport=<PORT_NUMBER>
 
-# Provider network to bridge mapping, one entry per physnet
+# Provider network to bridge mapping (one entry per physnet)
 sudo ovs-vsctl get open . external-ids:ovn-bridge-mappings
 sudo ovs-vsctl set open . external-ids:ovn-bridge-mappings=<PHYSNET>:<BRIDGE>
 # all OVN settings of this node: chassis name, encap type and IP, SB database
@@ -830,7 +839,8 @@ sudo ovs-vsctl get port <PORT> tag trunks vlan_mode
 
 ### OVS flows & tracing
 ```bash
-# Flows of a bridge, for the whole table or one table
+# Flows of a bridge
+# the whole bridge or one table
 sudo ovs-ofctl dump-flows <BRIDGE>
 sudo ovs-ofctl dump-flows <BRIDGE> table=<TABLE>
 # flows matching a packet, with port and interface names instead of numbers
@@ -841,7 +851,7 @@ sudo ovs-ofctl dump-ports-desc <BRIDGE>
 # watch flow changes live
 sudo ovs-ofctl monitor <BRIDGE> watch:
 
-# Datapath flows actually in use by the kernel / userspace datapath
+# Datapath flows in use (kernel or userspace datapath)
 sudo ovs-appctl dpctl/dump-flows
 sudo ovs-dpctl show
 
@@ -849,7 +859,7 @@ sudo ovs-dpctl show
 sudo ovs-appctl ofproto/trace <BRIDGE> \
   in_port=<PORT>,<PROTOCOL>,dl_src=<SRC_MAC>,dl_dst=<DST_MAC>,nw_src=<SRC_IP>,nw_dst=<DST_IP>
 
-# Connection tracking table (security groups and NAT)
+# Connection tracking (security groups and NAT)
 sudo ovs-appctl dpctl/dump-conntrack
 # ⚠️ drops all tracked connections on this node
 sudo ovs-appctl dpctl/flush-conntrack
@@ -860,21 +870,22 @@ sudo ovs-tcpdump -i <INTERFACE> -n
 
 ### OVN database queries
 ```bash
-# The Neutron created data is in the northbound DB, read it, do not edit it
+# Northbound DB
+# Neutron creates this data, read it but do not edit it
 sudo ovn-nbctl list Logical_Switch_Port <LSP_NAME>
 sudo ovn-nbctl list Logical_Router_Port
 sudo ovn-nbctl lr-nat-list <LOGICAL_ROUTER>
 sudo ovn-nbctl lr-route-list <LOGICAL_ROUTER>
 sudo ovn-nbctl lb-list
 
-# Chassis and where a port is bound
+# Chassis and port bindings
 sudo ovn-sbctl list chassis
 sudo ovn-sbctl get chassis <CHASSIS_NAME> hostname
 sudo ovn-sbctl find chassis name=<CHASSIS_NAME>
 sudo ovn-sbctl list port_binding
 sudo ovn-sbctl find port_binding logical_port=<LSP_NAME>
 
-# Query a remote database, ports are 6641 (northbound) and 6642 (southbound)
+# Remote database (6641 northbound, 6642 southbound)
 sudo ovn-nbctl --db=tcp:<DB_IP>:6641 show
 sudo ovn-sbctl --db=tcp:<DB_IP>:6642 lflow-list
 
@@ -884,7 +895,8 @@ sudo ovsdb-client list-tables Open_vSwitch
 sudo ovsdb-client dump unix:/var/run/openvswitch/db.sock Open_vSwitch
 sudo ovsdb-client monitor Open_vSwitch Port
 
-# Services on a node, the unit is openvswitch or openvswitch-switch depending on the distro;
+# Services on a node
+# the unit is openvswitch or openvswitch-switch depending on the distro;
 # with kolla-ansible they run as containers: docker logs ovn_controller
 sudo systemctl status openvswitch-switch ovn-controller
 sudo journalctl -u ovn-controller -f
@@ -892,7 +904,7 @@ sudo journalctl -u ovn-controller -f
 
 ## Load balancing (Octavia)
 ```bash
-# --- Load balancers ---
+# Load balancers
 openstack loadbalancer list
 openstack loadbalancer show <LB>
 openstack loadbalancer create --name <NAME> --vip-subnet-id <SUBNET_ID>
@@ -902,7 +914,7 @@ openstack loadbalancer status show <LB>
 openstack loadbalancer stats show <LB>
 openstack loadbalancer failover <LB>
 
-# --- Listeners ---
+# Listeners
 openstack loadbalancer listener list
 openstack loadbalancer listener show <LISTENER>
 openstack loadbalancer listener create \
@@ -919,7 +931,7 @@ openstack loadbalancer listener create \
 openstack loadbalancer listener set <LISTENER> --connection-limit 10000
 openstack loadbalancer listener delete <LISTENER>
 
-# --- Pools ---
+# Pools
 openstack loadbalancer pool list
 openstack loadbalancer pool show <POOL>
 openstack loadbalancer pool create \
@@ -935,7 +947,7 @@ openstack loadbalancer pool create \
 openstack loadbalancer pool set <POOL> --lb-algorithm LEAST_CONNECTIONS
 openstack loadbalancer pool delete <POOL>
 
-# --- Members ---
+# Members
 openstack loadbalancer member list <POOL>
 openstack loadbalancer member show <POOL> <MEMBER>
 openstack loadbalancer member create \
@@ -947,7 +959,7 @@ openstack loadbalancer member create \
 openstack loadbalancer member set <POOL> <MEMBER> --weight 2
 openstack loadbalancer member delete <POOL> <MEMBER>
 
-# --- Health monitors ---
+# Health monitors
 openstack loadbalancer healthmonitor list
 openstack loadbalancer healthmonitor show <HM>
 openstack loadbalancer healthmonitor create \
@@ -962,7 +974,7 @@ openstack loadbalancer healthmonitor create \
 openstack loadbalancer healthmonitor set <HM> --delay 10
 openstack loadbalancer healthmonitor delete <HM>
 
-# --- L7 policies (HTTP redirect / URL rewrite) ---
+# L7 policies (HTTP redirect / URL rewrite)
 openstack loadbalancer l7policy list
 openstack loadbalancer l7policy create \
   --listener <LISTENER> \
@@ -981,6 +993,7 @@ openstack loadbalancer l7policy delete <L7POLICY>
 
 ### Walkthrough: first load balancer
 ```bash
+# Credentials
 source <OPENRC_FILE>
 
 # Flavor profiles: single amphora and active-standby
@@ -1016,36 +1029,38 @@ openstack loadbalancer pool create --name <POOL_NAME> \
 openstack loadbalancer healthmonitor create --type TCP \
   --delay 15 --max-retries 4 --timeout 10 --wait <POOL_NAME>
 
-# Add a member, <MEMBER_IP> is the address of the backend instance
+# Member
+# <MEMBER_IP> is the address of the backend instance
 openstack server show <SERVER> -c addresses -f json \
   | jq '.addresses["<NETWORK>"][0]' -Mr
 openstack loadbalancer member create --subnet-id <SUBNET> \
   --address <MEMBER_IP> --protocol-port <PORT> --wait <POOL_NAME>
 
-# Clean up, removes listeners, pools and members as well
+# Clean up
+# removes listeners, pools and members as well
 openstack loadbalancer delete <LB_NAME> --cascade
 ```
 
 ## Placement
 ```bash
-# --- Resource providers ---
+# Resource providers
 openstack resource provider list
 openstack resource provider show <UUID>
 openstack resource provider create <NAME>
 openstack resource provider delete <UUID>
 
-# --- Inventory ---
+# Inventory
 openstack resource provider inventory list <UUID>
 openstack resource provider inventory show <UUID> <RESOURCE_CLASS>
 openstack resource provider inventory set <UUID> <RESOURCE_CLASS> \
   --total <N> --reserved <N> --min-unit <N> --max-unit <N> --step-size <N>
 openstack resource provider inventory delete <UUID> <RESOURCE_CLASS>
 
-# --- Aggregates ---
+# Aggregates
 openstack resource provider aggregate list <UUID>
 openstack resource provider aggregate set <UUID> --aggregate <AGG_UUID>
 
-# --- Traits ---
+# Traits
 openstack resource provider trait list <UUID>
 openstack resource provider trait set <UUID> --trait <TRAIT_NAME>
 openstack resource provider trait delete <UUID>
@@ -1053,7 +1068,7 @@ openstack trait list
 openstack trait show <TRAIT>
 openstack trait create <CUSTOM_TRAIT_NAME>
 
-# --- Allocations ---
+# Allocations
 openstack resource provider usage show <UUID>
 openstack allocation candidate list --resource VCPU=2,MEMORY_MB=4096,DISK_GB=50
 openstack allocation show <CONSUMER_UUID>
@@ -1062,14 +1077,14 @@ openstack allocation delete <CONSUMER_UUID>
 
 ## Shared filesystems (Manila)
 ```bash
-# --- Share types ---
+# Share types
 openstack share type list
 openstack share type show <TYPE>
 openstack share type create <NAME> <DRIVER_HANDLES_SHARE_SERVERS>
 openstack share type set <TYPE> --extra-spec <KEY>=<VALUE>
 openstack share type delete <TYPE>
 
-# --- Share networks ---
+# Share networks
 openstack share network list
 openstack share network show <SN>
 openstack share network create \
@@ -1078,7 +1093,7 @@ openstack share network create \
   --name <NAME>
 openstack share network delete <SN>
 
-# --- Shares ---
+# Shares
 openstack share list
 openstack share show <SHARE>
 openstack share create NFS 50 --name <NAME> --share-network <SN>
@@ -1088,26 +1103,26 @@ openstack share extend <SHARE> <NEW_SIZE_GB>
 openstack share shrink <SHARE> <NEW_SIZE_GB>
 openstack share delete <SHARE>
 
-# --- Access rules ---
+# Access rules
 openstack share access list <SHARE>
 openstack share access show <SHARE> <ACCESS_ID>
 openstack share access create <SHARE> ip <CIDR>
 openstack share access create <SHARE> user <USERNAME>
 openstack share access delete <SHARE> <ACCESS_ID>
 
-# --- Snapshots ---
+# Snapshots
 openstack share snapshot list
 openstack share snapshot show <SNAPSHOT>
 openstack share snapshot create --name <NAME> <SHARE>
 openstack share snapshot delete <SNAPSHOT>
 
-# --- Export locations ---
+# Export locations
 openstack share export location list <SHARE>
 ```
 
 ## Bare metal (Ironic)
 ```bash
-# --- Nodes ---
+# Nodes
 openstack baremetal node list
 openstack baremetal node show <NODE>
 openstack baremetal node create \
@@ -1130,7 +1145,7 @@ openstack baremetal node maintenance set <NODE> --reason "..."
 openstack baremetal node maintenance unset <NODE>
 openstack baremetal node delete <NODE>
 
-# --- Ports ---
+# Ports
 openstack baremetal port list
 openstack baremetal port list --node <UUID>
 openstack baremetal port show <PORT>
@@ -1139,26 +1154,26 @@ openstack baremetal port create \
   --address <MAC> \
   --pxe-enabled true
 
-# --- Port groups (bonding) ---
+# Port groups (bonding)
 openstack baremetal port group list
 openstack baremetal port group create --node <UUID> --address <MAC>
 
-# --- Chassis ---
+# Chassis
 openstack baremetal chassis list
 openstack baremetal chassis create --description "rack-01"
 
-# --- Drivers ---
+# Drivers
 openstack baremetal driver list
 openstack baremetal driver show <DRIVER>
 
-# --- Introspection (ironic-inspector) ---
+# Introspection (ironic-inspector)
 openstack baremetal introspection list
 openstack baremetal introspection start <NODE>
 openstack baremetal introspection status <NODE>
 openstack baremetal introspection data save <NODE>
 openstack baremetal introspection abort <NODE>
 
-# --- Allocations ---
+# Allocations
 openstack baremetal allocation list
 openstack baremetal allocation create --resource-class <RC> --name <NAME>
 openstack baremetal allocation show <ALLOCATION>
@@ -1167,7 +1182,7 @@ openstack baremetal allocation delete <ALLOCATION>
 
 ## DNS (Designate)
 ```bash
-# --- Zones ---
+# Zones
 openstack zone list
 openstack zone show <ZONE>
 openstack zone create --email <EMAIL> <ZONE_FQDN>
@@ -1180,7 +1195,7 @@ openstack zone delete <ZONE>
 openstack zone transfer request create <ZONE>
 openstack zone transfer accept request <TRANSFER_ID> --key <KEY>
 
-# --- Record sets ---
+# Record sets
 openstack recordset list <ZONE>
 openstack recordset list <ZONE> --type A
 openstack recordset show <ZONE> <RECORDSET>
@@ -1192,7 +1207,7 @@ openstack recordset create <ZONE> <NAME> --type TXT --record "v=spf1 mx -all"
 openstack recordset set <ZONE> <RECORDSET> --record <NEW_IP>
 openstack recordset delete <ZONE> <RECORDSET>
 
-# --- Nameservers & pools (operators) ---
+# Nameservers & pools (operators)
 openstack dns service status list
 openstack ptr record list
 openstack ptr record set <FLOATINGIP_ID> <FQDN>
@@ -1203,7 +1218,7 @@ openstack ptr record unset <FLOATINGIP_ID>
 
 ### Service status
 ```bash
-# --- Service status ---
+# Service status
 openstack compute service list
 openstack network agent list
 openstack volume service list
@@ -1212,30 +1227,35 @@ openstack baremetal conductor list
 
 ### Compute node
 ```bash
-# Instances as libvirt sees them, <INSTANCE_UUID> is the Nova server ID
+# Instances as libvirt sees them
+# <INSTANCE_UUID> is the Nova server ID
 sudo virsh list --all
 sudo virsh dominfo <INSTANCE_UUID>
-# logs; with kolla-ansible: docker logs nova_compute
+
+# Logs
+# with kolla-ansible: docker logs nova_compute
 sudo journalctl -u openstack-nova-compute -f
-# can the scheduler place it?
+
+# Can the scheduler place it?
 openstack allocation candidate list --resource VCPU=<N>,MEMORY_MB=<MB>,DISK_GB=<GB>
-# console log of the instance
+
+# Console log of the instance
 openstack server console log show --lines 200 <SERVER>
 ```
 
 ### Debugging
 ```bash
-# --- RabbitMQ ---
+# RabbitMQ
 rabbitmqctl list_queues name messages consumers
 rabbitmqctl list_connections
 rabbitmqctl list_exchanges
 rabbitmqctl node_health_check
 
-# --- MariaDB / Galera ---
+# MariaDB / Galera
 mysql -e "SHOW STATUS LIKE 'wsrep%';"
 mysql -e "SHOW PROCESSLIST;"
 
-# --- OVN (Neutron ML2/OVN) ---
+# OVN (Neutron ML2/OVN)
 sudo ovn-nbctl show                          # logical topology
 sudo ovn-sbctl show                          # chassis / binding topology
 sudo ovn-nbctl ls-list
@@ -1244,21 +1264,21 @@ sudo ovn-sbctl chassis-list
 sudo ovs-vsctl show                          # OVS dataplane on compute
 sudo ovs-ofctl dump-flows br-int
 
-# --- Network namespaces (ML2/OVN has no qrouter or qdhcp; only ovnmeta-*) ---
+# Network namespaces (ML2/OVN has no qrouter or qdhcp; only ovnmeta-*)
 ip netns list                                # expect ovnmeta-<NET_UUID> namespaces only
 sudo ip netns exec ovnmeta-<NET_UUID> ip addr show
 
-# --- Nova reset / recovery patterns (follow runbooks; do not run blindly) ---
+# Nova reset / recovery patterns (follow runbooks; do not run blindly)
 # Disable a failed compute host:
 openstack compute service set --disable --disable-reason "host down" <HOST> nova-compute
 # Evacuate all instances off the host (admin):
 # openstack server list --all-projects --host <HOST> -f value -c ID \
 #   | xargs -I{} openstack server evacuate {}
 
-# --- Cinder volume stuck in detaching ---
+# Cinder volume stuck in detaching
 # openstack volume set --state available <VOLUME>   # use with care; operator runbook
 
-# --- Neutron: reschedule DHCP agent ---
+# Neutron: reschedule DHCP agent
 openstack network dhcp agent remove network <DEAD_AGENT_ID> <NETWORK>
 openstack network dhcp agent add network <NEW_AGENT_ID> <NETWORK>
 ```
