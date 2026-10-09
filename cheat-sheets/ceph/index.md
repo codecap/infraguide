@@ -347,6 +347,43 @@ ceph osd pool set <POOL> bulk true
 ceph osd pool set <POOL> pg_num_min <N>
 ```
 
+## Monitoring & telemetry
+```bash
+# Progress of recovery, rebalancing and other long-running events
+ceph progress
+ceph progress json
+
+# Recent cluster log, <CHANNEL> is cluster or audit
+ceph log last <COUNT> info <CHANNEL>
+
+# Deploy the monitoring stack with the orchestrator
+ceph orch apply prometheus
+ceph orch apply grafana
+ceph orch apply alertmanager
+ceph orch apply node-exporter
+ceph orch ls --service-type prometheus
+
+# Prometheus metrics endpoint of the active mgr, port 9283
+ceph mgr module enable prometheus
+ceph mgr services
+curl -s http://<MGR_HOST>:9283/metrics | head
+
+# Dashboard
+ceph mgr module enable dashboard
+ceph dashboard create-self-signed-cert
+ceph dashboard ac-user-create <USER> -i <PASSWORD_FILE> administrator
+ceph dashboard ac-user-show
+ceph dashboard ac-user-delete <USER>
+ceph dashboard set-grafana-api-url http://<GRAFANA_HOST>:3000
+ceph dashboard set-alertmanager-api-host http://<ALERTMANAGER_HOST>:9093
+
+# Telemetry: anonymous usage reports sent to the Ceph project
+ceph telemetry show
+ceph telemetry status
+ceph telemetry on --license sharing-1-0
+ceph telemetry off
+```
+
 ## Ceph orch
 
 ### cephadm
