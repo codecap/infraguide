@@ -61,10 +61,8 @@ ceph osd dump
 # review: check SIZE, USE%, PGS.
 ceph osd df
 ceph osd df tree
-```
 
-### Reweight, out and in
-```bash
+# Reweight, out and in
 # change reweight / allocation
 # 0 will remove all data from device
 ceph osd reweight <OSD_NR> 0.5
@@ -89,10 +87,8 @@ ceph osd reweight-by-utilization 120
 # check again
 ceph osd tree
 ceph osd df tree
-```
 
-### Recovery and flapping flags
-```bash
+# Recovery and flapping flags
 # Disable Recovery
 ceph osd set nobackfill
 ceph osd set norecover
@@ -113,10 +109,8 @@ ceph osd set noout
 
 ceph osd add-noout <OSD_NAME>
 ceph osd rm-noout  <OSD_NAME>
-```
 
-### Utilization and full ratios
-```bash
+# Utilization and full ratios
 ceph df
 ceph osd df
 
@@ -124,10 +118,8 @@ ceph osd df
 ceph osd set-nearfull-ratio     <RATIO> # OSD_NEARFULL health check
 ceph osd set-full-ratio         <RATIO> # clients can not write data
 ceph osd set-backfillfull-ratio <RATIO> # backfills will not start
-```
 
-### Benchmark OSDs
-```bash
+# Benchmark OSDs
 # benchmark specific osd
 ceph tell <OSD_NAME> bench
 ceph --format plain tell <OSD_NAME> bench
@@ -151,29 +143,23 @@ ceph osd pool rename ...
 
 ceph osd pool repair <POOL>
 ceph osd pool scrub  <POOL>
-```
 
-### Create a replicated pool
-```bash
 # Create a pool for block devices
 ceph osd pool create <POOL> 32 32
 ceph osd pool application enable <POOL> rbd
 ceph osd pool set <POOL> crush_rule <RULE_NAME>
-```
 
-### Create an erasure coded pool
-```bash
+# Create an erasure coded pool
 # profile which can sustain loss of 2(m) osds by distributing objects on 5 (3+2) osds totally
 # which means 66% overhead only
+# FIXME: how to crate the <PROFILE>?
 ceph osd erasure-code-profile set <PROFILE> k=3 m=2 crush-failure-domain=rack
 ceph osd erasure-code-profile get <PROFILE>
 ceph osd pool create <POOL> 32 erasure <PROFILE>
 ceph osd pool application enable <POOL> rgw
 ceph osd pool ls detail
-```
 
-### Delete a pool
-```bash
+# Delete a pool
 ceph config set mon mon_allow_pool_delete true
 ceph osd pool rm <POOL> <POOL> --yes-i-really-really-mean-it
 ceph config set mon mon_allow_pool_delete false
@@ -232,10 +218,8 @@ ceph orch client-keyring ls
 # control cephadm deployment
 ceph orch pause
 ceph orch resume
-```
 
-### Hosts
-```bash
+# Hosts
 # configure hosts to be used within ceph orch
 ceph cephadm generate-key
 ceph cephadm get-pub-key > ceph.pub
@@ -243,10 +227,8 @@ ssh-copy-id -f -i ceph.pub root@<HOSTNAME>
 
 # repeat per host
 ceph orch host add <HOSTNAME>
-```
 
-### Services and daemons
-```bash
+# Services and daemons
 # modify / redeploy services
 ceph orch apply mds <FS_NAME> --placement=3
 ceph orch apply rgw <REALM_NAME> <ZONE_NAME> --placement=3 --port=7480
@@ -275,10 +257,8 @@ ceph orch osd rm status
 
 # Remove a ceph service, name from 'ceph orch ls' # TODO: correct ?
 ceph orch rm <SERVICE_TYPE>.<SERVICE_ID>
-```
 
-### Upgrade
-```bash
+# Upgrade
 # list available versions
 ceph orch upgrade ls
 # start an upgrade to ceph version X.Y.Z
@@ -417,7 +397,7 @@ ceph osd unset noout
 ceph osd unset norecover
 ```
 
-## rados
+## Rados
 ```bash
 # list pools
 rados lspools
@@ -427,10 +407,8 @@ rados --pool <POOL>  ls
 rados -p <POOL> put <OBJECT> - <<< 'hello world'
 # fetch an object
 rados -p <POOL> get <OBJECT> -
-```
 
-## rados block device (rbd)
-```bash
+# Rados block device (rbd)
 # create an image
 rbd create --image-feature layering --size 1024 <POOL>/<IMAGE>
 
@@ -444,10 +422,8 @@ rbd resize --size 2G <POOL>/<IMAGE>
 
 # Delete an image/volume
 rbd rm <POOL>/<IMAGE>
-```
 
-### Map and use
-```bash
+# Map and use
 rbd device list
 # map an image to a block device
 rbd map <POOL>/<IMAGE>
@@ -459,10 +435,8 @@ ls -lh /dev/rbd<N>  /dev/rbd/<POOL>/<IMAGE>
 mkfs.ext4 /dev/rbd/<POOL>/<IMAGE>
 mount     /dev/rbd/<POOL>/<IMAGE> <MOUNTPOINT>
 echo "Hello from Ceph RBD Storage!" > <MOUNTPOINT>/<FILE>
-```
 
-### Snapshots
-```bash
+# Snapshots
 # create a snapshot
 rbd snap create <POOL>/<IMAGE>@<SNAP>
 # protect a snapshot
@@ -500,28 +474,15 @@ ceph auth get <ENTITY>
 
 # Mount
 ceph-fuse -n <ENTITY> -k /etc/ceph/ceph.<ENTITY>.keyring <MOUNTPOINT> --client_mds_namespace=<FS_NAME>
-```
 
-### MDS
-```bash
+# mount CephFS as a Kernel Filesystem (<USER> is <ENTITY> without 'client.')
+mount -t ceph <MON_IP>:6789:/ <MOUNTPOINT> -o name=<USER>,secretfile=/etc/ceph/ceph.<ENTITY>.keyring
+
 # show statistics
 ceph mds stat
 
-# create an entity to use within mds
-ceph auth get-or-create <ENTITY> \
-  mds 'allow' mon 'allow r' osd 'allow rw pool=<DATA_POOL>' \
-  > /etc/ceph/ceph.<ENTITY>.keyring
-ceph auth get-key <ENTITY> > <SECRET_FILE>
 
-# mount CephFS as a Kernel Filesystem (<USER> is <ENTITY> without 'client.')
-mount -t ceph <MON_IP>:6789:/ <MOUNTPOINT> -o name=<USER>,secretfile=<SECRET_FILE>
-
-# mount as fuse
-ceph-fuse --name <ENTITY> <MOUNTPOINT>
-```
-
-### Snapshots
-```bash
+# Snapshots
 # Create a working project folder
 mkdir -p <MOUNTPOINT>/<DIR>
 
