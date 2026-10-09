@@ -18,23 +18,11 @@ Want to see these commands in context? Build the [OpenStack lab](/learn/openstac
 
 ## CLI basics
 
-### Authentication
+### Help and debugging
 ```bash
-# Help and debugging
 openstack command list
 # show the REST calls and responses
 openstack --debug <COMMAND>
-
-# Credentials: openrc file or clouds.yaml
-source <OPENRC_FILE>
-env | grep OS_
-openstack --os-cloud <CLOUD> server list
-
-# Application credentials: scoped and expiring, for scripts
-openstack application credential create <NAME> --role <ROLE> --expiration <ISO8601_DATE>
-openstack application credential list
-openstack application credential show <NAME_OR_ID>
-openstack application credential delete <NAME_OR_ID>
 ```
 
 ### Output formatting
@@ -172,13 +160,6 @@ openstack implied role create <PRIOR_ROLE> --implied-role <IMPLIED_ROLE>
 openstack implied role delete <PRIOR_ROLE> --implied-role <IMPLIED_ROLE>
 ```
 
-### Tokens
-```bash
-openstack token issue
-openstack token issue -f yaml
-openstack token revoke <TOKEN>
-```
-
 ### Quotas
 ```bash
 # Default and project quotas
@@ -234,6 +215,25 @@ openstack service show <SERVICE>
 openstack region list
 openstack region show <REGION>
 openstack region create <REGION>
+```
+
+### Authentication
+```bash
+# Credentials: openrc file or clouds.yaml
+source <OPENRC_FILE>
+env | grep OS_
+openstack --os-cloud <CLOUD> server list
+
+# Tokens
+openstack token issue
+openstack token issue -f yaml
+openstack token revoke <TOKEN>
+
+# Application credentials: scoped and expiring, for scripts
+openstack application credential create <NAME> --role <ROLE> --expiration <ISO8601_DATE>
+openstack application credential list
+openstack application credential show <NAME_OR_ID>
+openstack application credential delete <NAME_OR_ID>
 ```
 
 ## Compute
