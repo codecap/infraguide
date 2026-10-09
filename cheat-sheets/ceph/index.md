@@ -789,6 +789,35 @@ rados --pool <POOL>  ls
 rados -p <POOL> put <OBJECT> - <<< 'hello world'
 # fetch an object
 rados -p <POOL> get <OBJECT> -
+# size and mtime
+rados -p <POOL> stat <OBJECT>
+rados -p <POOL> rm <OBJECT>
+rados -p <POOL> cp <OBJECT> <NEW_OBJECT>
+# per pool usage
+rados df
+
+# Namespaces, --all lists every namespace
+rados -p <POOL> ls --all
+rados -p <POOL> -N <NAMESPACE> ls
+
+# Extended attributes
+rados -p <POOL> listxattr <OBJECT>
+rados -p <POOL> getxattr <OBJECT> <KEY>
+rados -p <POOL> setxattr <OBJECT> <KEY> <VALUE>
+rados -p <POOL> rmxattr  <OBJECT> <KEY>
+
+# Omap (key/value data of an object)
+rados -p <POOL> listomapkeys <OBJECT>
+rados -p <POOL> listomapvals <OBJECT>
+rados -p <POOL> getomapval <OBJECT> <KEY>
+rados -p <POOL> setomapval <OBJECT> <KEY> <VALUE>
+rados -p <POOL> rmomapkey  <OBJECT> <KEY>
+
+# Copy all objects to another pool, which must exist. Snapshots are not copied
+rados cppool <SRC_POOL> <DST_POOL>
+# export a pool to a file or directory, and import it into a pool
+rados export --create <POOL> <FILE>
+rados import <FILE> <POOL>
 
 # Rados block device (rbd)
 # create an image
