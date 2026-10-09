@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "OpenStack CLI Cheat Sheet: Common Commands | infraguide.org"
-description: "OpenStack CLI cheat sheet: commands for users, projects, flavors, images, networks, volumes, instances and floating IPs. Copy and paste ready."
+description: "OpenStack CLI cheat sheet with commands for identity, instances, images, volumes, networking, OVN, load balancing, Manila, Ironic and Designate. Copy and paste ready."
 breadcrumbs:
   - name: cheat-sheets
     url: /cheat-sheets/
@@ -16,13 +16,9 @@ Common openstack commands, grouped by service. Replace the values in angle brack
 
 Want to see these commands in context? Build the [OpenStack lab](/learn/openstack/).
 
-## Services
-```bash
-# list OpenStack services
-openstack catalog list
-```
+## Identity
 
-## Domains
+### Domains
 ```bash
 # list domains
 openstack domain list
@@ -36,7 +32,7 @@ openstack domain set <KEY> <VALUE> <DOMAIN_ID>
 openstack domain delete <DOMAIN_ID>
 ```
 
-## Users
+### Users
 ```bash
 # list users
 openstack user list
@@ -50,9 +46,14 @@ openstack user set <KEY> <VALUE> <USER_ID>
 openstack user password set
 # delete user
 openstack user delete <USER_ID>
+
+# User with its own domain and default project
+openstack user create --domain <DOMAIN> --project <PROJECT> \
+  --description "<DESCRIPTION>" --email <EMAIL> --password <PASSWORD> \
+  --enable <USER>
 ```
 
-## Groups
+### Groups
 ```bash
 # list groups
 openstack group list
@@ -68,9 +69,19 @@ openstack group add user <GROUP_ID> <USER_ID>
 openstack group remove user <GROUP_ID> <USER_ID>
 # delete group
 openstack group delete <GROUP_ID>
+
+# Group in the default domain, add and check a member
+openstack group create --domain Default --description "<DESCRIPTION>" <GROUP>
+openstack group add user <GROUP> <USER>
+openstack group contains user <GROUP> <USER>
+
+# Group in another domain, members come from that domain too
+openstack group create --domain <DOMAIN> --description "<DESCRIPTION>" <GROUP>
+openstack group add user      --group-domain <DOMAIN> <GROUP> <USER>
+openstack group contains user --group-domain <DOMAIN> <GROUP> <USER>
 ```
 
-## Projects
+### Projects
 ```bash
 # list projects
 openstack project list
@@ -82,7 +93,70 @@ openstack project set <KEY> <VALUE> <PROJECT_ID>
 openstack project delete <PROJECT_ID>
 ```
 
-## Flavors
+### Roles
+```bash
+# assign role on project
+openstack role add --project <PROJECT_ID> \
+  {--user <USER_ID>|--group <GROUP_ID>} <ROLE_NAME>
+# remove role on project
+openstack role remove --project <PROJECT_ID> \
+  {--user <USER_ID>|--group <GROUP_ID>} <ROLE_NAME>
+
+# Role in a domain
+openstack role create --domain Default <ROLE>
+```
+
+### Tokens
+```bash
+# Tokens
+openstack token issue
+openstack token issue -f yaml
+openstack token revoke <TOKEN>
+```
+
+### Quotas
+```bash
+# Default and project quotas
+# list default quotas
+openstack quota show --default
+# update default quotas
+openstack quota set <KEY> <VALUE> --class default
+# list project quotas
+openstack quota show <PROJECT_ID>
+# update project quotas
+openstack quota set <KEY> <VALUE> <PROJECT_ID>
+
+# Compute quotas and limits
+openstack quota show
+openstack quota show <PROJECT>
+openstack quota set --instances <N> --cores <N> --ram <MB> <PROJECT>
+openstack quota set --server-groups <N> --server-group-members <N> <PROJECT>
+openstack quota delete <PROJECT>              # revert to defaults
+openstack limits show --absolute
+openstack limits show --rate
+```
+
+### Catalog & services
+```bash
+# list OpenStack services
+openstack catalog list
+
+# Register a service and its endpoints
+openstack service create --name <NAME> --description "<DESCRIPTION>" <TYPE>
+openstack endpoint create --region <REGION> <NAME> public   http://<HOST>:<PORT>
+openstack endpoint create --region <REGION> <NAME> internal http://<HOST>:<PORT>
+openstack endpoint create --region <REGION> <NAME> admin    http://<HOST>:<PORT>
+
+# Service status
+openstack service list --long
+openstack network agent list --long
+openstack compute service list --long
+openstack volume service list --long
+```
+
+## Compute
+
+### Flavors
 ```bash
 # list flavors
 openstack flavor list
@@ -95,101 +169,17 @@ openstack flavor create --vcpus <VCPUS> --ram <RAM_MB> \
 openstack flavor set <KEY> <VALUE> <FLAVOR_NAME>
 # delete flavor
 openstack flavor delete <FLAVOR_NAME>
+
+# Schedule on the custom resource class of the node, not on VCPU / RAM / disk
+openstack flavor create --ram <RAM_MB> --disk <DISK_GB> --vcpus <VCPUS> <FLAVOR_NAME>
+openstack flavor set <FLAVOR_NAME> \
+  --property resources:CUSTOM_<RESOURCE_CLASS>=1 \
+  --property resources:VCPU=0 \
+  --property resources:MEMORY_MB=0 \
+  --property resources:DISK_GB=0
 ```
 
-## Roles
-```bash
-# assign role on project
-openstack role add --project <PROJECT_ID> \
-  {--user <USER_ID>|--group <GROUP_ID>} <ROLE_NAME>
-# remove role on project
-openstack role remove --project <PROJECT_ID> \
-  {--user <USER_ID>|--group <GROUP_ID>} <ROLE_NAME>
-```
-
-## Images
-```bash
-# list images
-openstack image list
-# show image details
-openstack image show <IMAGE_ID>
-# create image
-openstack image create --disk-format qcow2 \
-  --file <FILE_PATH> <IMAGE_NAME>
-# update image
-openstack image set <KEY> <VALUE> <IMAGE_ID>
-# delete image
-openstack image delete <IMAGE_ID>
-```
-
-## Networks
-```bash
-# list networks
-openstack network list
-# show network details
-openstack network show <NETWORK_ID>
-# create network
-openstack network create <NETWORK_NAME>
-# update network
-openstack network set <KEY> <VALUE> <NETWORK_ID>
-# delete network
-openstack network delete <NETWORK_ID>
-```
-
-## Subnets
-```bash
-# list subnets
-openstack subnet list
-# show subnet details
-openstack subnet show <SUBNET_ID>
-# create subnet
-openstack subnet create --network <NETWORK_ID> \
-  --subnet-range <SUBNET_CIDR> <SUBNET_NAME>
-# update subnet
-openstack subnet set <KEY> <VALUE> <SUBNET_ID>
-# delete subnet
-openstack subnet delete <SUBNET_ID>
-```
-
-## Security groups
-```bash
-# list security groups
-openstack security group list
-# show security group details
-openstack security group show <SECURITY_GROUP_ID>
-# create security group
-openstack security group create <SECURITY_GROUP_NAME>
-# update security group
-openstack security group set <KEY> <VALUE> <SECURITY_GROUP_ID>
-# list rules in the security group
-openstack security group rule list <SECURITY_GROUP_ID>
-# add rule to the security group
-openstack security group rule create <KEY> <VALUE> ... <SECURITY_GROUP_ID>
-# delete rule from the security group
-openstack security group rule delete <RULE_ID>
-# delete security group
-openstack security group delete <SECURITY_GROUP_ID>
-```
-
-## Routers
-```bash
-# list routers
-openstack router list
-# show router details
-openstack router show <ROUTER_ID>
-# create router
-openstack router create <ROUTER_NAME>
-# update router
-openstack router set <KEY> <VALUE> <ROUTER_ID>
-# attach subnet to router
-openstack router add subnet <ROUTER_ID> <SUBNET_ID>
-# detach subnet from router
-openstack router remove subnet <ROUTER_ID> <SUBNET_ID>
-# delete router
-openstack router delete <ROUTER_ID>
-```
-
-## Key pairs
+### Key pairs
 ```bash
 # list key pairs
 openstack keypair list
@@ -201,204 +191,7 @@ openstack keypair create --private-key <FILE_PATH> <KEY_PAIR_NAME>
 openstack keypair delete <KEY_PAIR_NAME>
 ```
 
-## Quotas
-```bash
-# list default quotas
-openstack quota show --default
-# update default quotas
-openstack quota set <KEY> <VALUE> --class default
-# list project quotas
-openstack quota show <PROJECT_ID>
-# update project quotas
-openstack quota set <KEY> <VALUE> <PROJECT_ID>
-```
-
-## Volumes
-```bash
-# list volumes
-openstack volume list
-# show volume details
-openstack volume show <VOLUME_ID>
-# create volume
-openstack volume create --size <SIZE_GB> <VOLUME_NAME>
-# update volume
-openstack volume set <KEY> <VALUE> <VOLUME_ID>
-# delete volume
-openstack volume delete <VOLUME_ID>
-```
-
-## Instances
-```bash
-# list instances
-openstack server list
-# show instance details
-openstack server show <INSTANCE_ID>
-# create instance
-openstack server create --flavor <FLAVOR_NAME> \
-  --image <IMAGE_ID> --network <NETWORK_ID> \
-  --key-name <KEY_PAIR_NAME> <INSTANCE_NAME>
-# update instance
-openstack server set <KEY> <VALUE> <INSTANCE_ID>
-# attach volume to instance
-openstack server add volume <INSTANCE_ID> <VOLUME_ID>
-# detach volume from instance
-openstack server remove volume <INSTANCE_ID> <VOLUME_ID>
-# delete instance
-openstack server delete <INSTANCE_ID>
-```
-
-## Floating IPs
-```bash
-# list floating IPs
-openstack floating ip list
-# create floating IP
-openstack floating ip create <NETWORK_ID>
-# attach floating IP to instance
-openstack server add floating ip <INSTANCE_ID> <FLOATING_IP_ID>
-# detach floating IP from instance
-openstack server remove floating ip <INSTANCE_ID> <FLOATING_IP_ID>
-# delete floating IP
-openstack floating ip delete <FLOATING_IP_ID>
-```
-
-## Permissions: users, groups, roles
-```bash
-# User with its own domain and default project
-openstack user create --domain <DOMAIN> --project <PROJECT> \
-  --description "<DESCRIPTION>" --email <EMAIL> --password <PASSWORD> \
-  --enable <USER>
-
-# Role in a domain
-openstack role create --domain Default <ROLE>
-
-# Group in the default domain, add and check a member
-openstack group create --domain Default --description "<DESCRIPTION>" <GROUP>
-openstack group add user <GROUP> <USER>
-openstack group contains user <GROUP> <USER>
-
-# Group in another domain, members come from that domain too
-openstack group create --domain <DOMAIN> --description "<DESCRIPTION>" <GROUP>
-openstack group add user      --group-domain <DOMAIN> <GROUP> <USER>
-openstack group contains user --group-domain <DOMAIN> <GROUP> <USER>
-
-# Tokens
-openstack token issue
-openstack token issue -f yaml
-openstack token revoke <TOKEN>
-```
-
-## Catalog & services
-```bash
-# Register a service and its endpoints
-openstack service create --name <NAME> --description "<DESCRIPTION>" <TYPE>
-openstack endpoint create --region <REGION> <NAME> public   http://<HOST>:<PORT>
-openstack endpoint create --region <REGION> <NAME> internal http://<HOST>:<PORT>
-openstack endpoint create --region <REGION> <NAME> admin    http://<HOST>:<PORT>
-
-# Service status
-openstack service list --long
-openstack network agent list --long
-openstack compute service list --long
-openstack volume service list --long
-
-# Take a compute host out of scheduling
-openstack compute service set --disable <HOST> nova-compute
-```
-
-## Images: examples
-```bash
-openstack image create --file <IMAGE_FILE> --private \
-  --property description="<DESCRIPTION>" <IMAGE_NAME>
-openstack image set --min-ram <MB> <IMAGE_NAME>
-openstack image set --property os_shutdown_timeout=<SECONDS> <IMAGE_NAME>
-openstack image show <IMAGE_NAME>
-
-# Octavia amphora image, the release is taken from the kolla-ansible config
-os_release=$(
-  cat $VIRTUAL_ENV/share/kolla-ansible/ansible/group_vars/all.yml \
-    | y2j \
-    | jq .openstack_release -Mr
-)
-amphora_image_file=octavia-amphora-haproxy-${os_release}.qcow2
-amphora_image_url="https://<IMAGE_HOST>/$amphora_image_file"
-mkdir -p ~/cloud-images/
-curl -o ~/cloud-images/$amphora_image_file $amphora_image_url
-
-openstack image create <IMAGE_NAME> \
-  --container-format bare --disk-format qcow2 --private --tag amphora \
-  --file ~/cloud-images/$amphora_image_file \
-  --property hw_architecture='x86_64' --property hw_rng_model=virtio
-```
-
-## Baremetal flavor
-```bash
-# Schedule on the custom resource class of the node, not on VCPU / RAM / disk
-openstack flavor create --ram <RAM_MB> --disk <DISK_GB> --vcpus <VCPUS> <FLAVOR_NAME>
-openstack flavor set <FLAVOR_NAME> \
-  --property resources:CUSTOM_<RESOURCE_CLASS>=1 \
-  --property resources:VCPU=0 \
-  --property resources:MEMORY_MB=0 \
-  --property resources:DISK_GB=0
-```
-
-## Provider network setup
-```bash
-# VLAN provider network, subnet and router with an external gateway
-openstack network create <NETWORK_NAME> \
-  --provider-network-type vlan \
-  --provider-physical-network <PHYSNET> \
-  --project <PROJECT>
-
-openstack subnet create <SUBNET_NAME> \
-  --subnet-range <CIDR> \
-  --gateway <GATEWAY_IP> \
-  --network <NETWORK_NAME> \
-  --project <PROJECT>
-
-openstack router create <ROUTER_NAME> --project <PROJECT>
-openstack router add subnet <ROUTER_NAME> <SUBNET_NAME>
-openstack router set --external-gateway <EXT_NETWORK> <ROUTER_NAME>
-
-# Floating IP from the external network, attach it to an instance
-openstack floating ip create <EXT_NETWORK>
-openstack server add floating ip <SERVER> <FLOATING_IP>
-```
-
-## Placement
-```bash
-# --- Resource providers ---
-openstack resource provider list
-openstack resource provider show <UUID>
-openstack resource provider create <NAME>
-openstack resource provider delete <UUID>
-
-# --- Inventory ---
-openstack resource provider inventory list <UUID>
-openstack resource provider inventory show <UUID> <RESOURCE_CLASS>
-openstack resource provider inventory set <UUID> <RESOURCE_CLASS> \
-  --total <N> --reserved <N> --min-unit <N> --max-unit <N> --step-size <N>
-openstack resource provider inventory delete <UUID> <RESOURCE_CLASS>
-
-# --- Aggregates ---
-openstack resource provider aggregate list <UUID>
-openstack resource provider aggregate set <UUID> --aggregate <AGG_UUID>
-
-# --- Traits ---
-openstack resource provider trait list <UUID>
-openstack resource provider trait set <UUID> --trait <TRAIT_NAME>
-openstack resource provider trait delete <UUID>
-openstack trait list
-openstack trait show <TRAIT>
-openstack trait create <CUSTOM_TRAIT_NAME>
-
-# --- Allocations ---
-openstack resource provider usage show <UUID>
-openstack allocation candidate list --resource VCPU=2,MEMORY_MB=4096,DISK_GB=50
-openstack allocation show <CONSUMER_UUID>
-openstack allocation delete <CONSUMER_UUID>
-```
-
-## Nova
+### Instances
 ```bash
 # --- Listing & inspecting ---
 openstack server list
@@ -490,14 +283,14 @@ openstack server unset --property key <SERVER>
 openstack server delete <SERVER>
 openstack server delete --wait <SERVER>       # block until gone
 
-
+# --- Migrate & evacuate ---
 openstack server migrate <SERVER>             # cold migrate (let scheduler choose)
 openstack server migrate --host <TARGET_HOST> <SERVER>
-openstack server live migration <SERVER> <TARGET_HOST>
-openstack server live migration <SERVER> --block-migration   # shared storage not required
+openstack server migrate --live-migration --host <TARGET_HOST> <SERVER>
+openstack server migrate --live-migration --block-migration <SERVER>   # shared storage not required
 
-openstack server evacuation <SERVER>          # host dead; rebuild on another
-openstack server evacuation <SERVER> --host <TARGET>
+openstack server evacuate <SERVER>           # host dead; rebuild on another
+openstack server evacuate --host <TARGET_HOST> <SERVER>
 
 openstack server migration list --server <SERVER>
 openstack server migration show <SERVER> <MIGRATION_ID>
@@ -513,7 +306,7 @@ openstack server group create --policy soft-anti-affinity <NAME>
 openstack server group delete <GROUP>
 ```
 
-### Events / Debugging
+### Events & compute services
 ```bash
 openstack server event list <SERVER>
 openstack server event show <SERVER> <REQUEST_ID>
@@ -521,6 +314,9 @@ openstack compute service list
 openstack compute service set --disable --disable-reason "maintenance" <HOST> nova-compute
 openstack compute service set --enable <HOST> nova-compute
 openstack compute service delete <ID>
+
+# Take a compute host out of scheduling
+openstack compute service set --disable <HOST> nova-compute
 ```
 
 ### Hypervisors & availability
@@ -545,15 +341,112 @@ openstack aggregate unset --property key <AGGREGATE>
 openstack aggregate delete <AGGREGATE>
 ```
 
-### Quotas (Nova)
+## Images
 ```bash
-openstack quota show
-openstack quota show <PROJECT>
-openstack quota set --instances 20 --cores 40 --ram 81920 <PROJECT>
-openstack quota set --server-groups 10 --server-group-members 5 <PROJECT>
-openstack quota delete <PROJECT>              # revert to defaults
-openstack limits show --absolute
-openstack limits show --rate
+# list images
+openstack image list
+# show image details
+openstack image show <IMAGE_ID>
+# create image
+openstack image create --disk-format qcow2 \
+  --file <FILE_PATH> <IMAGE_NAME>
+# update image
+openstack image set <KEY> <VALUE> <IMAGE_ID>
+# delete image
+openstack image delete <IMAGE_ID>
+
+# Private image with properties
+openstack image create --file <IMAGE_FILE> --private \
+  --property description="<DESCRIPTION>" <IMAGE_NAME>
+openstack image set --min-ram <MB> <IMAGE_NAME>
+openstack image set --property os_shutdown_timeout=<SECONDS> <IMAGE_NAME>
+openstack image show <IMAGE_NAME>
+```
+
+### Octavia amphora image
+```bash
+# Octavia amphora image, the release is taken from the kolla-ansible config
+os_release=$(
+  cat $VIRTUAL_ENV/share/kolla-ansible/ansible/group_vars/all.yml \
+    | y2j \
+    | jq .openstack_release -Mr
+)
+amphora_image_file=octavia-amphora-haproxy-${os_release}.qcow2
+amphora_image_url="https://<IMAGE_HOST>/$amphora_image_file"
+mkdir -p ~/cloud-images/
+curl -o ~/cloud-images/$amphora_image_file $amphora_image_url
+
+openstack image create <IMAGE_NAME> \
+  --container-format bare --disk-format qcow2 --private --tag amphora \
+  --file ~/cloud-images/$amphora_image_file \
+  --property hw_architecture='x86_64' --property hw_rng_model=virtio
+```
+
+## Block storage
+```bash
+# --- Volume types ---
+openstack volume type list
+openstack volume type show <TYPE>
+openstack volume type create <NAME>
+openstack volume type set <TYPE> --property volume_backend_name=<BACKEND>
+openstack volume type delete <TYPE>
+
+# --- Volumes ---
+openstack volume list
+openstack volume show <VOLUME>
+openstack volume create --size <GB> --type <VOLUME_TYPE> <NAME>
+openstack volume create --size <GB> --source <SOURCE_VOLUME> <NAME>   # clone
+openstack volume create --size <GB> --snapshot <SNAPSHOT> <NAME>      # from snapshot
+openstack volume create --size <GB> --image <IMAGE> <NAME>            # from image
+openstack volume set <VOLUME> --name <NEW_NAME>
+openstack volume set <VOLUME> --description "..."
+openstack volume set <VOLUME> --bootable
+openstack volume set <VOLUME> --non-bootable
+openstack volume set <VOLUME> --read-write
+openstack volume set <VOLUME> --read-only
+openstack volume delete <VOLUME>
+openstack volume delete --force <VOLUME>
+
+# --- Attach / detach ---
+openstack volume attach <VOLUME> <SERVER>
+openstack volume detach <VOLUME> <SERVER>
+
+# --- Extend ---
+openstack volume set <VOLUME> --size <NEW_GB>   # extend (most backends)
+
+# --- Retype ---
+openstack volume retype --migration-policy on-demand <VOLUME> <NEW_TYPE>
+
+# --- Snapshots ---
+openstack volume snapshot list
+openstack volume snapshot show <SNAPSHOT>
+openstack volume snapshot create --name <NAME> <VOLUME>
+openstack volume snapshot create --name <NAME> --force <VOLUME>        # while in-use
+openstack volume snapshot set <SNAPSHOT> --name <NEW_NAME>
+openstack volume snapshot delete <SNAPSHOT>
+
+# --- Backups ---
+openstack volume backup list
+openstack volume backup show <BACKUP>
+openstack volume backup create --name <NAME> <VOLUME>
+openstack volume backup create --name <NAME> --incremental <VOLUME>
+openstack volume backup restore <BACKUP> [<VOLUME>]
+openstack volume backup delete <BACKUP>
+
+# --- Volume transfer (move between projects) ---
+openstack volume transfer request list
+openstack volume transfer request create <VOLUME>
+openstack volume transfer request accept <TRANSFER_ID> --auth-key <KEY>
+openstack volume transfer request delete <TRANSFER_ID>
+
+# --- QoS ---
+openstack volume qos list
+openstack volume qos show <QOS>
+openstack volume qos create --consumer front-end \
+  --property total_iops_sec=1000 <NAME>
+openstack volume qos associate <QOS> <VOLUME_TYPE>
+openstack volume qos disassociate <QOS> <VOLUME_TYPE>
+openstack volume qos delete <QOS>
 ```
 
 ## Networking
@@ -716,6 +609,31 @@ openstack network trunk unset --subport <PORT> <TRUNK>
 openstack network trunk delete <TRUNK>
 ```
 
+### Provider network setup (example)
+```bash
+# VLAN provider network, subnet and router with an external gateway
+openstack network create <NETWORK_NAME> \
+  --provider-network-type vlan \
+  --provider-physical-network <PHYSNET> \
+  --project <PROJECT>
+
+openstack subnet create <SUBNET_NAME> \
+  --subnet-range <CIDR> \
+  --gateway <GATEWAY_IP> \
+  --network <NETWORK_NAME> \
+  --project <PROJECT>
+
+openstack router create <ROUTER_NAME> --project <PROJECT>
+openstack router add subnet <ROUTER_NAME> <SUBNET_NAME>
+openstack router set --external-gateway <EXT_NETWORK> <ROUTER_NAME>
+
+# Floating IP from the external network, attach it to an instance
+openstack floating ip create <EXT_NETWORK>
+openstack server add floating ip <SERVER> <FLOATING_IP>
+```
+
+## OVN
+
 ### Agents (operators)
 ```bash
 # With ML2/OVN there are no L3 or DHCP agents. openstack network agent list shows ovn-controller entries (one per compute/network node) and OVN Metadata Agent entries. Router and DHCP scheduling is handled automatically by OVN.
@@ -762,7 +680,7 @@ sudo ovs-ofctl dump-flows br-int
 sudo ovs-appctl fdb/show br-int
 ```
 
-## Load Balancing
+## Load balancing (Octavia)
 ```bash
 # --- Load balancers ---
 openstack loadbalancer list
@@ -898,74 +816,41 @@ openstack loadbalancer member create --subnet-id <SUBNET> \
 openstack loadbalancer delete <LB_NAME> --cascade
 ```
 
-## Block Storage
+## Placement
 ```bash
-# --- Volume types ---
-openstack volume type list
-openstack volume type show <TYPE>
-openstack volume type create <NAME>
-openstack volume type set <TYPE> --property volume_backend_name=<BACKEND>
-openstack volume type delete <TYPE>
+# --- Resource providers ---
+openstack resource provider list
+openstack resource provider show <UUID>
+openstack resource provider create <NAME>
+openstack resource provider delete <UUID>
 
-# --- Volumes ---
-openstack volume list
-openstack volume show <VOLUME>
-openstack volume create --size <GB> --type <VOLUME_TYPE> <NAME>
-openstack volume create --size <GB> --source <SOURCE_VOLUME> <NAME>   # clone
-openstack volume create --size <GB> --snapshot <SNAPSHOT> <NAME>      # from snapshot
-openstack volume create --size <GB> --image <IMAGE> <NAME>            # from image
-openstack volume set <VOLUME> --name <NEW_NAME>
-openstack volume set <VOLUME> --description "..."
-openstack volume set <VOLUME> --bootable
-openstack volume set <VOLUME> --non-bootable
-openstack volume set <VOLUME> --read-write
-openstack volume set <VOLUME> --read-only
-openstack volume delete <VOLUME>
-openstack volume delete --force <VOLUME>
+# --- Inventory ---
+openstack resource provider inventory list <UUID>
+openstack resource provider inventory show <UUID> <RESOURCE_CLASS>
+openstack resource provider inventory set <UUID> <RESOURCE_CLASS> \
+  --total <N> --reserved <N> --min-unit <N> --max-unit <N> --step-size <N>
+openstack resource provider inventory delete <UUID> <RESOURCE_CLASS>
 
-# --- Attach / detach ---
-openstack volume attach <VOLUME> <SERVER>
-openstack volume detach <VOLUME> <SERVER>
+# --- Aggregates ---
+openstack resource provider aggregate list <UUID>
+openstack resource provider aggregate set <UUID> --aggregate <AGG_UUID>
 
-# --- Extend ---
-openstack volume set <VOLUME> --size <NEW_GB>   # extend (most backends)
+# --- Traits ---
+openstack resource provider trait list <UUID>
+openstack resource provider trait set <UUID> --trait <TRAIT_NAME>
+openstack resource provider trait delete <UUID>
+openstack trait list
+openstack trait show <TRAIT>
+openstack trait create <CUSTOM_TRAIT_NAME>
 
-# --- Retype ---
-openstack volume retype --migration-policy on-demand <VOLUME> <NEW_TYPE>
-
-# --- Snapshots ---
-openstack volume snapshot list
-openstack volume snapshot show <SNAPSHOT>
-openstack volume snapshot create --name <NAME> <VOLUME>
-openstack volume snapshot create --name <NAME> --force <VOLUME>        # while in-use
-openstack volume snapshot set <SNAPSHOT> --name <NEW_NAME>
-openstack volume snapshot delete <SNAPSHOT>
-
-# --- Backups ---
-openstack volume backup list
-openstack volume backup show <BACKUP>
-openstack volume backup create --name <NAME> <VOLUME>
-openstack volume backup create --name <NAME> --incremental <VOLUME>
-openstack volume backup restore <BACKUP> [<VOLUME>]
-openstack volume backup delete <BACKUP>
-
-# --- Volume transfer (move between projects) ---
-openstack volume transfer request list
-openstack volume transfer request create <VOLUME>
-openstack volume transfer request accept <TRANSFER_ID> --auth-key <KEY>
-openstack volume transfer request delete <TRANSFER_ID>
-
-# --- QoS ---
-openstack volume qos list
-openstack volume qos show <QOS>
-openstack volume qos create --consumer front-end \
-  --property total_iops_sec=1000 <NAME>
-openstack volume qos associate <QOS> <VOLUME_TYPE>
-openstack volume qos disassociate <QOS> <VOLUME_TYPE>
-openstack volume qos delete <QOS>
+# --- Allocations ---
+openstack resource provider usage show <UUID>
+openstack allocation candidate list --resource VCPU=2,MEMORY_MB=4096,DISK_GB=50
+openstack allocation show <CONSUMER_UUID>
+openstack allocation delete <CONSUMER_UUID>
 ```
 
-## Manila — Shared Filesystems
+## Shared filesystems (Manila)
 ```bash
 # --- Share types ---
 openstack share type list
@@ -1010,7 +895,7 @@ openstack share snapshot delete <SNAPSHOT>
 openstack share export location list <SHARE>
 ```
 
-## Ironic — Bare Metal
+## Bare metal (Ironic)
 ```bash
 # --- Nodes ---
 openstack baremetal node list
@@ -1070,7 +955,7 @@ openstack baremetal allocation show <ALLOCATION>
 openstack baremetal allocation delete <ALLOCATION>
 ```
 
-## Designate — DNS
+## DNS (Designate)
 ```bash
 # --- Zones ---
 openstack zone list
@@ -1104,7 +989,9 @@ openstack ptr record set <FLOATINGIP_ID> <FQDN>
 openstack ptr record unset <FLOATINGIP_ID>
 ```
 
-## Service & Control Plane Ops
+## Operations
+
+### Service status
 ```bash
 # --- Service status ---
 openstack compute service list
@@ -1113,7 +1000,7 @@ openstack volume service list
 openstack baremetal conductor list
 ```
 
-## Debugging
+### Debugging
 ```bash
 # --- RabbitMQ ---
 rabbitmqctl list_queues name messages consumers
