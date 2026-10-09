@@ -295,6 +295,54 @@ ceph osd crush rule create-replicated <RULE_NAME> default rack
 ceph osd crush rule ls
 ceph osd crush rule dump <RULE_NAME>
 ceph osd pool set <POOL> crush_rule <RULE_NAME>
+# rule for a device class, e.g. ssd or hdd
+ceph osd crush rule create-replicated <RULE_NAME> default host <CLASS>
+# rule for an erasure coded pool
+ceph osd crush rule create-erasure <RULE_NAME> <PROFILE>
+ceph osd crush rule rm <RULE_NAME>
+
+# Show the tree, --show-shadow adds the per-class trees
+ceph osd crush tree
+ceph osd crush tree --show-shadow
+
+# Change the hierarchy
+# link a bucket under a second parent / remove that link
+ceph osd crush link   <BUCKET> <TYPE>=<PARENT>
+ceph osd crush unlink <BUCKET> <PARENT>
+# set the crush weight and location of an OSD
+ceph osd crush set <OSD_NAME> <WEIGHT> <TYPE>=<BUCKET>
+# remove a bucket or an OSD from the map
+ceph osd crush remove <NAME>
+
+# Tunables
+ceph osd crush show-tunables
+# <PROFILE> is optimal, default or a release name, data movement on change
+ceph osd crush tunables <PROFILE>
+```
+
+### Edit the CRUSH map by hand
+```bash
+# Get and decompile
+ceph osd getcrushmap -o <CRUSHMAP_BIN>
+crushtool -d <CRUSHMAP_BIN> -o <CRUSHMAP_TXT>
+
+# Edit rules, buckets or tunables
+vi <CRUSHMAP_TXT>
+
+# Compile
+crushtool -c <CRUSHMAP_TXT> -o <CRUSHMAP_NEW_BIN>
+
+# Test before injecting: mappings and utilization of a rule
+crushtool -i <CRUSHMAP_NEW_BIN> --test --rule <RULE_ID> --num-rep <SIZE> \
+  --show-mappings
+crushtool -i <CRUSHMAP_NEW_BIN> --test --rule <RULE_ID> --num-rep <SIZE> \
+  --show-utilization
+# inputs that CRUSH fails to map to <SIZE> OSDs
+crushtool -i <CRUSHMAP_NEW_BIN> --test --rule <RULE_ID> --num-rep <SIZE> \
+  --show-bad-mappings
+
+# ⚠️ Inject, triggers data movement, keep <CRUSHMAP_BIN> as a way back
+ceph osd setcrushmap -i <CRUSHMAP_NEW_BIN>
 ```
 
 ## Balancer & autoscaler
