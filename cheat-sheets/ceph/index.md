@@ -708,6 +708,60 @@ mount -t ceph <MON_IP>:6789:/ <MOUNTPOINT> -o name=<USER>,secretfile=/etc/ceph/c
 # show statistics
 ceph mds stat
 
+# Settings
+ceph fs get <FS_NAME>
+# number of active MDS daemons, the rest become standby
+ceph fs set <FS_NAME> max_mds <N>
+ceph fs set <FS_NAME> allow_standby_replay true
+ceph fs set <FS_NAME> standby_count_wanted <N>
+
+# Clients
+ceph tell mds.<MDS_NAME> session ls
+ceph tell mds.<MDS_NAME> session evict id=<CLIENT_ID>
+
+# Failover and recovery
+# fail an MDS rank, a standby takes over
+ceph mds fail <MDS_NAME>
+# take the filesystem offline, and back online
+ceph fs fail <FS_NAME>
+ceph fs set  <FS_NAME> joinable true
+
+# Scrub
+ceph tell mds.<FS_NAME>:0 scrub start / recursive
+ceph tell mds.<FS_NAME>:0 scrub status
+
+# Pin a directory to an MDS rank
+setfattr -n ceph.dir.pin -v <RANK> <MOUNTPOINT>/<DIR>
+
+# Quota on a directory, 0 removes it
+setfattr -n ceph.quota.max_bytes -v <BYTES> <MOUNTPOINT>/<DIR>
+setfattr -n ceph.quota.max_files -v <COUNT> <MOUNTPOINT>/<DIR>
+getfattr -n ceph.quota.max_bytes <MOUNTPOINT>/<DIR>
+getfattr -n ceph.quota.max_files <MOUNTPOINT>/<DIR>
+
+# Subvolumes: managed directories with quota and snapshots
+ceph fs subvolumegroup create <FS_NAME> <GROUP>
+ceph fs subvolumegroup ls     <FS_NAME>
+ceph fs subvolume create <FS_NAME> <SUBVOLUME> --group_name <GROUP> --size <BYTES>
+ceph fs subvolume ls     <FS_NAME> --group_name <GROUP>
+ceph fs subvolume info   <FS_NAME> <SUBVOLUME> --group_name <GROUP>
+# path to use in the mount
+ceph fs subvolume getpath <FS_NAME> <SUBVOLUME> --group_name <GROUP>
+ceph fs subvolume resize  <FS_NAME> <SUBVOLUME> <BYTES> --group_name <GROUP>
+ceph fs subvolume snapshot create <FS_NAME> <SUBVOLUME> <SNAP> --group_name <GROUP>
+ceph fs subvolume snapshot ls     <FS_NAME> <SUBVOLUME> --group_name <GROUP>
+ceph fs subvolume rm <FS_NAME> <SUBVOLUME> --group_name <GROUP>
+
+# Scheduled snapshots
+ceph mgr module enable snap_schedule
+ceph fs snap-schedule add <PATH> <INTERVAL> --fs <FS_NAME>
+# keep 24 hourly and 7 daily snapshots
+ceph fs snap-schedule retention add <PATH> h 24 --fs <FS_NAME>
+ceph fs snap-schedule retention add <PATH> d 7  --fs <FS_NAME>
+ceph fs snap-schedule status <PATH> --fs <FS_NAME>
+ceph fs snap-schedule list   <PATH> --fs <FS_NAME>
+ceph fs snap-schedule remove <PATH> <INTERVAL> --fs <FS_NAME>
+
 
 # Snapshots
 # Create a working project folder
