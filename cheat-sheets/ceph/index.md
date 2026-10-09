@@ -808,6 +808,151 @@ radosgw-admin user info --uid=<UID>
 radosgw-admin user suspend --uid=<UID>
 # enable a user
 radosgw-admin user enable --uid=<UID>
+
+# remove a user, --purge-data also deletes their buckets and objects
+radosgw-admin user rm --uid=<UID> --purge-data
+
+# S3 keys
+radosgw-admin key create --uid=<UID> --key-type=s3
+radosgw-admin key rm --uid=<UID> --access-key=<ACCESS_KEY>
+
+# Swift subuser and key
+radosgw-admin subuser create --uid=<UID> --subuser=<UID>:<SUBUSER> --access=full
+radosgw-admin key create --uid=<UID> --subuser=<UID>:<SUBUSER> --key-type=swift
+
+# Buckets
+radosgw-admin bucket list
+radosgw-admin bucket list --uid=<UID>
+# size and object count, all buckets without --bucket
+radosgw-admin bucket stats --bucket=<BUCKET>
+# check the index, --fix repairs it
+radosgw-admin bucket check --bucket=<BUCKET>
+# move a bucket to another user
+radosgw-admin bucket unlink --uid=<UID> --bucket=<BUCKET>
+radosgw-admin bucket link   --uid=<NEW_UID> --bucket=<BUCKET>
+# delete a bucket including its objects
+radosgw-admin bucket rm --bucket=<BUCKET> --purge-objects
+
+# Quota, <SCOPE> is user or bucket
+radosgw-admin quota set --quota-scope=<SCOPE> --uid=<UID> \
+  --max-size=<SIZE> --max-objects=<COUNT>
+radosgw-admin quota enable  --quota-scope=<SCOPE> --uid=<UID>
+radosgw-admin quota disable --quota-scope=<SCOPE> --uid=<UID>
+
+# Usage (needs rgw_enable_usage_log = true)
+radosgw-admin usage show --uid=<UID> --start-date=<YYYY-MM-DD> --end-date=<YYYY-MM-DD>
+radosgw-admin usage trim --uid=<UID>
+
+# Garbage collection and lifecycle
+radosgw-admin gc list --include-all
+radosgw-admin gc process
+radosgw-admin lc list
+radosgw-admin lc process
+radosgw-admin lc get --bucket=<BUCKET>
+
+# Realm, zonegroup and zone (multisite)
+radosgw-admin realm list
+radosgw-admin zonegroup list
+radosgw-admin zone list
+radosgw-admin realm create --rgw-realm=<REALM> --default
+radosgw-admin zonegroup create --rgw-zonegroup=<ZONEGROUP> --rgw-realm=<REALM> \
+  --master --default
+radosgw-admin zone create --rgw-zonegroup=<ZONEGROUP> --rgw-zone=<ZONE> \
+  --master --default --endpoints=http://<RGW_HOST>:<PORT>
+radosgw-admin zone get --rgw-zone=<ZONE>
+# apply realm / zone changes
+radosgw-admin period update --commit
+
+# Multisite sync
+radosgw-admin sync status
+radosgw-admin sync error list
+radosgw-admin sync error trim
+
+# Deploy the gateway with the orchestrator
+ceph orch apply rgw <SERVICE_ID> --realm=<REALM> --zone=<ZONE> \
+  --placement="<COUNT> <HOST1> <HOST2>"
+ceph orch ls --service-type rgw
+```
+
+### S3 client
+```bash
+# Install and configure awscli
+pip3 install awscli awscli-plugin-endpoint
+
+mkdir ~/.aws
+cat > ~/.aws/config <<EOF
+[plugins]
+endpoint = awscli_plugin_endpoint
+[profile default]
+s3 =
+  endpoint_url = http://<RGW_HOST>
+  signature_version = s3v4
+  addressing_style = auto
+s3api =
+  endpoint_url = http://<RGW_HOST>
+EOF
+
+cat > ~/.aws/credentials <<EOF
+[default]
+aws_access_key_id = <ACCESS_KEY>
+aws_secret_access_key = <SECRET_KEY>
+EOF
+
+# Create a new bucket
+aws s3 mb s3://<BUCKET>
+
+# Upload a file
+echo "This is object data stored in Ceph RGW." > test.txt
+aws s3 cp test.txt s3://<BUCKET>/<PREFIX>/test.txt
+
+# Review
+aws s3 ls s3://<BUCKET>/
+aws s3 ls s3://<BUCKET>/<PREFIX>/
+
+# Download
+aws s3 cp s3://<BUCKET>/<PREFIX>/test.txt /tmp/test.txt
+cat /tmp/test.txt
+
+# Sync a directory
+aws s3 sync <DIR> s3://<BUCKET>/
+```
+
+### s3cmd
+```bash
+# interactive setup, writes ~/.s3cfg
+s3cmd --configure
+# then set in ~/.s3cfg:
+#   host_base   = <RGW_HOST>
+#   host_bucket = <RGW_HOST>
+#   use_https   = False
+
+s3cmd mb s3://<BUCKET>
+s3cmd ls
+s3cmd put <FILE> s3://<BUCKET>/<PREFIX>/
+s3cmd ls s3://<BUCKET>/<PREFIX>/
+s3cmd get s3://<BUCKET>/<PREFIX>/<FILE> <DIR>/
+s3cmd sync <DIR>/ s3://<BUCKET>/
+s3cmd rm s3://<BUCKET>/<PREFIX>/<FILE>
+# remove a bucket, --recursive --force empties it first
+s3cmd rb s3://<BUCKET>
+```
+
+### mc (MinIO client)
+```bash
+# Install, add --proxy <PROXY_HOST>:<PORT> to curl if needed
+sudo curl -o /usr/local/bin/mc -L \
+  https://dl.min.io/client/mc/release/linux-amd64/mc
+sudo chmod 755 /usr/local/bin/mc
+
+# Configure
+mc alias set <ALIAS> http://<RGW_HOST> <ACCESS_KEY> <SECRET_KEY>
+mc alias ls
+mc --autocompletion
+source ~/.bashrc
+
+# Test
+mc ls  <ALIAS>
+mc cat <ALIAS>/<BUCKET>/<PREFIX>/test.txt
 ```
 
 ## cephx
