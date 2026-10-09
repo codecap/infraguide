@@ -381,12 +381,51 @@ ceph orch upgrade start --image <REGISTRY>/ceph/ceph:v<CEPH_VERSION> --daemon-ty
 # continue to upgrade osd
 ceph orch upgrade start --image <REGISTRY>/ceph/ceph:v<CEPH_VERSION> --daemon-types osd
 
+# check an image before upgrading
+ceph orch upgrade check --image <REGISTRY>/ceph/ceph:v<CEPH_VERSION>
+
 # get upgrade status
 ceph orch upgrade status
+ceph orch upgrade pause
+ceph orch upgrade resume
 ceph orch upgrade stop
 ```
 
 ## Operations
+
+### Pre-upgrade backups & checks
+```bash
+# 💾 Back up the cluster maps and config
+mkdir -p <BACKUP_DIR>
+ceph mon getmap -o <BACKUP_DIR>/monmap.bin
+ceph osd getmap -o <BACKUP_DIR>/osdmap.bin
+ceph osd getcrushmap -o <BACKUP_DIR>/crushmap.bin
+ceph auth export -o <BACKUP_DIR>/ceph.auth.export
+ceph config dump > <BACKUP_DIR>/ceph-config.txt
+ceph orch ls --export > <BACKUP_DIR>/ceph-spec.yaml
+ceph osd dump > <BACKUP_DIR>/osd-dump.txt
+
+# 🩺 Cluster must be healthy
+ceph -s
+ceph health detail
+ceph versions
+
+# 🩺 Is it safe to stop these daemons? Use before restarting or removing them
+ceph osd ok-to-stop <OSD_NR> [<OSD_NR> ...]
+ceph mon ok-to-stop <MON_NAME>
+ceph mds ok-to-stop <MDS_NAME>
+ceph orch host ok-to-stop <HOSTNAME>
+
+# 🩺 Is it safe to destroy this OSD? Use before purging or replacing it
+ceph osd safe-to-destroy <OSD_NR>
+
+# 🛠️ Optional: avoid rebalancing during the upgrade
+ceph osd set noout
+ceph osd set norebalance
+# upgrade
+ceph osd unset norebalance
+ceph osd unset noout
+```
 
 ### Replace a Mon Node
 ```bash
