@@ -566,7 +566,7 @@ ceph orch apply -i <PATH_TO_CEPH_SPEC>
 ceph orch ps
 # list running daemons by type
 ceph orch ps --daemon-type mds
-# restart a single daemon, name from 'ceph orch ps', e.g. mon.cephmon01, osd.3
+# restart a single daemon, name from 'ceph orch ps', e.g. mon.<HOSTNAME>, osd.<OSD_NR>
 ceph orch daemon restart <DAEMON_NAME>
 # restart all daemons of a service, name from 'ceph orch ls', e.g. rgw.default
 ceph orch restart <SERVICE_TYPE>.<SERVICE_ID>

@@ -324,7 +324,7 @@ amphora_image_url="https://<IMAGE_HOST>/$amphora_image_file"
 mkdir -p ~/cloud-images/
 curl -o ~/cloud-images/$amphora_image_file $amphora_image_url
 
-openstack image create amphora-x64-haproxy \
+openstack image create <IMAGE_NAME> \
   --container-format bare --disk-format qcow2 --private --tag amphora \
   --file ~/cloud-images/$amphora_image_file \
   --property hw_architecture='x86_64' --property hw_rng_model=virtio
@@ -467,7 +467,7 @@ openstack server console log show --lines 100 <SERVER>
 openstack server ssh <SERVER> --login <USER>
 
 # --- Volumes ---
-openstack server add volume <SERVER> <VOLUME> [--device /dev/vdb]
+openstack server add volume <SERVER> <VOLUME> [--device <DEVICE_PATH>]
 openstack server remove volume <SERVER> <VOLUME>
 openstack server volume list <SERVER>
 
@@ -568,12 +568,12 @@ openstack network create <NAME> \
   --provider-segment <VNI_ID>           # OVN overlay (geneve is default tunnel type)
 openstack network create <NAME> \
   --provider-network-type vlan \
-  --provider-physical-network physnet1 \
+  --provider-physical-network <PHYSNET> \
   --provider-segment <VLAN_ID> \
   --share
 openstack network create <NAME> \
   --provider-network-type flat \
-  --provider-physical-network physnet1  # external / provider flat network
+  --provider-physical-network <PHYSNET>  # external / provider flat network
 openstack network set <NETWORK> --enable
 openstack network set <NETWORK> --disable
 openstack network delete <NETWORK>
@@ -584,10 +584,10 @@ openstack subnet create \
   --network <NET> \
   --subnet-range <CIDR> \
   --gateway <IP> \
-  --dns-nameserver 8.8.8.8 \
+  --dns-nameserver <DNS_IP> \
   --allocation-pool start=<IP>,end=<IP> \
   <NAME>
-openstack subnet set <SUBNET> --dns-nameserver 1.1.1.1
+openstack subnet set <SUBNET> --dns-nameserver <DNS_IP>
 openstack subnet delete <SUBNET>
 ```
 
@@ -670,7 +670,7 @@ openstack network segment list
 openstack network segment show <SEGMENT>
 openstack network segment create \
   --network <NET> \
-  --physical-network physnet1 \
+  --physical-network <PHYSNET> \
   --network-type vlan \
   --segmentation-id <VLAN_ID> \
   <NAME>
@@ -839,7 +839,7 @@ openstack loadbalancer l7policy list
 openstack loadbalancer l7policy create \
   --listener <LISTENER> \
   --action REDIRECT_TO_URL \
-  --redirect-url https://example.com \
+  --redirect-url <URL> \
   --position 1 \
   <NAME>
 openstack loadbalancer l7rule list <L7POLICY>
@@ -857,22 +857,22 @@ source <OPENRC_FILE>
 
 # Flavor profiles: single amphora and active-standby
 openstack loadbalancer flavorprofile create \
-  --name amphora-single-profile --provider amphora \
+  --name <SINGLE_PROFILE> --provider amphora \
   --flavor-data '{"loadbalancer_topology": "SINGLE"}'
 openstack loadbalancer flavorprofile create \
-  --name amphora-active-standby --provider amphora \
+  --name <HA_PROFILE> --provider amphora \
   --flavor-data '{"loadbalancer_topology": "ACTIVE_STANDBY"}'
 
 # Flavors on top of the profiles
-openstack loadbalancer flavor create --name standalone-lb \
-  --flavorprofile amphora-single-profile \
+openstack loadbalancer flavor create --name <SINGLE_FLAVOR> \
+  --flavorprofile <SINGLE_PROFILE> \
   --description "A non-high availability load balancer for testing." --enable
-openstack loadbalancer flavor create --name ha-lb \
-  --flavorprofile amphora-active-standby \
+openstack loadbalancer flavor create --name <HA_FLAVOR> \
+  --flavorprofile <HA_PROFILE> \
   --description "A high availability load balancer for testing." --enable
 
 # Load balancer
-openstack loadbalancer create --flavor ha-lb --vip-subnet-id <SUBNET> \
+openstack loadbalancer create --flavor <HA_FLAVOR> --vip-subnet-id <SUBNET> \
   --wait --name <LB_NAME>
 
 # Listener (frontend)
@@ -1075,7 +1075,7 @@ openstack baremetal allocation delete <ALLOCATION>
 # --- Zones ---
 openstack zone list
 openstack zone show <ZONE>
-openstack zone create --email admin@example.com <ZONE_FQDN>
+openstack zone create --email <EMAIL> <ZONE_FQDN>
 openstack zone create \
   --type SECONDARY \
   --masters <PRIMARY_NAMESERVER_IP> \
@@ -1092,7 +1092,7 @@ openstack recordset show <ZONE> <RECORDSET>
 openstack recordset create <ZONE> <NAME> --type A --record <IP>
 openstack recordset create <ZONE> <NAME> --type AAAA --record <IPV6>
 openstack recordset create <ZONE> <NAME> --type CNAME --record <TARGET>
-openstack recordset create <ZONE> <NAME> --type MX --record "10 mail.example.com."
+openstack recordset create <ZONE> <NAME> --type MX --record "<PRIORITY> <MAIL_SERVER_FQDN>"
 openstack recordset create <ZONE> <NAME> --type TXT --record "v=spf1 mx -all"
 openstack recordset set <ZONE> <RECORDSET> --record <NEW_IP>
 openstack recordset delete <ZONE> <RECORDSET>
