@@ -54,9 +54,19 @@ ceph tell mgr.* version
 ```bash
 ceph osd tree
 ceph osd status
+ceph osd stat
+ceph osd ls
 ceph osd info <OSD_NAME>
-ceph osd crush class ls
+ceph osd metadata <OSD_NR>
+ceph osd perf
+ceph osd blocked-by
 ceph osd dump
+ceph osd dump | grep flags
+
+# Device classes
+ceph osd crush class ls
+ceph osd crush rm-device-class  <OSD_NAME>
+ceph osd crush set-device-class <CLASS> <OSD_NAME>
 
 # review: check SIZE, USE%, PGS.
 ceph osd df
@@ -106,6 +116,16 @@ ceph osd set noup
 ceph osd set nodown
 ceph osd set noin
 ceph osd set noout
+
+# pause scrubbing
+ceph osd set noscrub
+ceph osd set nodeep-scrub
+ceph osd unset noscrub
+ceph osd unset nodeep-scrub
+
+# pause all client I/O
+ceph osd set pause
+ceph osd unset pause
 
 ceph osd add-noout <OSD_NAME>
 ceph osd rm-noout  <OSD_NAME>
