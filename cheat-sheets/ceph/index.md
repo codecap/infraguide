@@ -824,6 +824,43 @@ rbd import <FILE> <POOL>/<IMAGE>
 rbd export-diff <POOL>/<IMAGE>@<SNAP2> --from-snap <SNAP1> <DIFF_FILE>
 rbd import-diff <DIFF_FILE> <POOL>/<IMAGE>
 
+# Changes of an image since a snapshot, and real usage
+rbd diff <POOL>/<IMAGE> --from-snap <SNAP>
+rbd du <POOL>/<IMAGE>
+# free blocks that only contain zeros
+rbd sparsify <POOL>/<IMAGE>
+
+# Consistency groups: snapshot several images at once
+rbd group create <POOL>/<GROUP>
+rbd group image add <POOL>/<GROUP> <POOL>/<IMAGE>
+rbd group image list <POOL>/<GROUP>
+rbd group snap create <POOL>/<GROUP>@<SNAP>
+rbd group snap list   <POOL>/<GROUP>
+rbd group snap rollback <POOL>/<GROUP>@<SNAP>
+rbd group rm <POOL>/<GROUP>
+
+# Map with the userspace client (no kernel module needed)
+rbd-nbd map <POOL>/<IMAGE>
+rbd-nbd list-mapped
+rbd-nbd unmap /dev/nbd<N>
+
+# Mirroring between two clusters
+# <MODE> is pool (all images) or image (enable per image)
+rbd mirror pool enable <POOL> <MODE>
+rbd mirror pool info   <POOL>
+rbd mirror pool status <POOL> --verbose
+# snapshot based, journal is the alternative
+rbd mirror image enable  <POOL>/<IMAGE> snapshot
+rbd mirror image status  <POOL>/<IMAGE>
+# failover: demote on the old primary, promote on the new one
+rbd mirror image demote  <POOL>/<IMAGE>
+rbd mirror image promote <POOL>/<IMAGE>
+# old primary is down: promote with --force, then resync the old one after it is back
+rbd mirror image promote <POOL>/<IMAGE> --force
+rbd mirror image resync  <POOL>/<IMAGE>
+# deploy the mirror daemon
+ceph orch apply rbd-mirror --placement=<COUNT>
+
 # Performance
 rbd perf image iostat
 rbd perf image stats <POOL>
