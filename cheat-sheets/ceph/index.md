@@ -155,7 +155,9 @@ ceph osd pool ls detail
 ceph osd pool stats     <POOL>
 ceph osd pool get-quota <POOL>
 ceph osd pool get noautoscale
+ceph osd pool application get <POOL>
 
+ceph osd pool get <POOL> all
 ceph osd pool get <POOL> size
 ceph osd pool get <POOL> crush_rule
 ceph osd pool set ...
@@ -163,6 +165,17 @@ ceph osd pool rename ...
 
 ceph osd pool repair <POOL>
 ceph osd pool scrub  <POOL>
+
+# Quota
+ceph osd pool set-quota <POOL> max_bytes   <BYTES>
+ceph osd pool set-quota <POOL> max_objects <COUNT>
+# 0 removes the quota
+ceph osd pool set-quota <POOL> max_bytes 0
+
+# Protect a pool from deletion and from size / pg changes
+ceph osd pool set <POOL> nodelete     true
+ceph osd pool set <POOL> nosizechange true
+ceph osd pool set <POOL> nopgchange   true
 
 # Create a pool for block devices
 ceph osd pool create <POOL> 32 32
@@ -176,6 +189,8 @@ ceph osd pool set <POOL> crush_rule <RULE_NAME>
 ceph osd erasure-code-profile set <PROFILE> k=3 m=2 crush-failure-domain=rack
 ceph osd erasure-code-profile get <PROFILE>
 ceph osd pool create <POOL> 32 erasure <PROFILE>
+# required to use an EC pool for RBD or CephFS data
+ceph osd pool set <POOL> allow_ec_overwrites true
 ceph osd pool application enable <POOL> rgw
 ceph osd pool ls detail
 
