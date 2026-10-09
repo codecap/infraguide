@@ -262,6 +262,56 @@ ceph osd crush rule dump <RULE_NAME>
 ceph osd pool set <POOL> crush_rule <RULE_NAME>
 ```
 
+## Balancer & autoscaler
+```bash
+# Balancer: evens out PGs across OSDs
+ceph balancer status
+ceph balancer on
+ceph balancer off
+
+# upmap needs luminous+ clients
+ceph osd set-require-min-compat-client luminous
+ceph balancer mode upmap
+# alternatives: crush-compat, none
+
+# score the current distribution, lower is better
+ceph balancer eval
+ceph balancer eval <POOL>
+
+# manual run: create a plan, review it, execute it
+ceph balancer optimize <PLAN_NAME>
+ceph balancer show     <PLAN_NAME>
+ceph balancer eval     <PLAN_NAME>
+ceph balancer execute  <PLAN_NAME>
+ceph balancer rm       <PLAN_NAME>
+
+# limit how much data moves at once, fraction of PGs (default 0.05)
+ceph config set mgr target_max_misplaced_ratio 0.05
+
+# lower the share of primaries on an OSD, <AFFINITY> is between 0.0 and 1.0
+ceph osd primary-affinity <OSD_NR> <AFFINITY>
+
+# PG autoscaler: sizes pg_num per pool
+ceph osd pool autoscale-status
+
+# <MODE> is on, off or warn
+ceph osd pool set <POOL> pg_autoscale_mode <MODE>
+# default mode for new pools
+ceph config set global osd_pool_default_pg_autoscale_mode <MODE>
+
+# pause / resume autoscaling for the whole cluster
+ceph osd pool set noautoscale
+ceph osd pool unset noautoscale
+ceph osd pool get noautoscale
+
+# hints: expected share of the cluster capacity, <RATIO> between 0.0 and 1.0
+ceph osd pool set <POOL> target_size_ratio <RATIO>
+# start with the final number of PGs, avoids early data movement
+ceph osd pool set <POOL> bulk true
+# never go below this many PGs
+ceph osd pool set <POOL> pg_num_min <N>
+```
+
 ## Ceph orch
 ```bash
 # enable the module
