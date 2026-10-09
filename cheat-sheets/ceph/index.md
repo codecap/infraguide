@@ -11,6 +11,8 @@ breadcrumbs:
 
 Common ceph, rbd and rados commands, grouped by tool. Replace the values to match your cluster.
 
+{% include cheat-sheet-notation.md %}
+
 Want to see these commands in context? Build the [Ceph lab](/learn/ceph/).
 
 ## Cluster status & config
