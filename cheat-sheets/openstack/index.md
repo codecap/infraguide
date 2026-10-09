@@ -680,6 +680,95 @@ sudo ovs-ofctl dump-flows br-int
 sudo ovs-appctl fdb/show br-int
 ```
 
+### OVS bridges & ports
+```bash
+# Bridges and ports on this node; br-int is the integration bridge, br-ex or similar the provider one
+sudo ovs-vsctl show
+sudo ovs-vsctl list-br
+sudo ovs-vsctl list-ports <BRIDGE>
+sudo ovs-vsctl list interface <INTERFACE>
+sudo ovs-vsctl get Interface <INTERFACE> statistics
+# which OpenFlow port number belongs to an interface
+sudo ovs-ofctl show <BRIDGE>
+sudo ovs-vsctl find interface ofport=<PORT_NUMBER>
+
+# Provider network to bridge mapping, one entry per physnet
+sudo ovs-vsctl get open . external-ids:ovn-bridge-mappings
+sudo ovs-vsctl set open . external-ids:ovn-bridge-mappings=<PHYSNET>:<BRIDGE>
+# all OVN settings of this node: chassis name, encap type and IP, SB database
+sudo ovs-vsctl get open . external-ids
+
+# Bonds and VLAN settings of a port
+sudo ovs-appctl bond/show <BOND>
+sudo ovs-appctl lacp/show <BOND>
+sudo ovs-vsctl get port <PORT> tag trunks vlan_mode
+
+# ⚠️ Neutron and ovn-controller own the integration bridge and its ports,
+# do not add or delete ports or flows there by hand
+```
+
+### OVS flows & tracing
+```bash
+# Flows of a bridge, for the whole table or one table
+sudo ovs-ofctl dump-flows <BRIDGE>
+sudo ovs-ofctl dump-flows <BRIDGE> table=<TABLE>
+# flows matching a packet, with port and interface names instead of numbers
+sudo ovs-ofctl --names dump-flows <BRIDGE> "<MATCH>"
+# port counters and descriptions
+sudo ovs-ofctl dump-ports <BRIDGE>
+sudo ovs-ofctl dump-ports-desc <BRIDGE>
+# watch flow changes live
+sudo ovs-ofctl monitor <BRIDGE> watch:
+
+# Datapath flows actually in use by the kernel / userspace datapath
+sudo ovs-appctl dpctl/dump-flows
+sudo ovs-dpctl show
+
+# Trace a packet through the OpenFlow tables
+sudo ovs-appctl ofproto/trace <BRIDGE> \
+  in_port=<PORT>,<PROTOCOL>,dl_src=<SRC_MAC>,dl_dst=<DST_MAC>,nw_src=<SRC_IP>,nw_dst=<DST_IP>
+
+# Connection tracking table (security groups and NAT)
+sudo ovs-appctl dpctl/dump-conntrack
+# ⚠️ drops all tracked connections on this node
+sudo ovs-appctl dpctl/flush-conntrack
+
+# Capture on an OVS port
+sudo ovs-tcpdump -i <INTERFACE> -n
+```
+
+### OVN database queries
+```bash
+# The Neutron created data is in the northbound DB, read it, do not edit it
+sudo ovn-nbctl list Logical_Switch_Port <LSP_NAME>
+sudo ovn-nbctl list Logical_Router_Port
+sudo ovn-nbctl lr-nat-list <LOGICAL_ROUTER>
+sudo ovn-nbctl lr-route-list <LOGICAL_ROUTER>
+sudo ovn-nbctl lb-list
+
+# Chassis and where a port is bound
+sudo ovn-sbctl list chassis
+sudo ovn-sbctl get chassis <CHASSIS_NAME> hostname
+sudo ovn-sbctl find chassis name=<CHASSIS_NAME>
+sudo ovn-sbctl list port_binding
+sudo ovn-sbctl find port_binding logical_port=<LSP_NAME>
+
+# Query a remote database, ports are 6641 (northbound) and 6642 (southbound)
+sudo ovn-nbctl --db=tcp:<DB_IP>:6641 show
+sudo ovn-sbctl --db=tcp:<DB_IP>:6642 lflow-list
+
+# OVS database
+sudo ovsdb-client list-dbs
+sudo ovsdb-client list-tables Open_vSwitch
+sudo ovsdb-client dump unix:/var/run/openvswitch/db.sock Open_vSwitch
+sudo ovsdb-client monitor Open_vSwitch Port
+
+# Services on a node, the unit is openvswitch or openvswitch-switch depending on the distro;
+# with kolla-ansible they run as containers: docker logs ovn_controller
+sudo systemctl status openvswitch-switch ovn-controller
+sudo journalctl -u ovn-controller -f
+```
+
 ## Load balancing (Octavia)
 ```bash
 # --- Load balancers ---
