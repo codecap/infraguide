@@ -1196,6 +1196,68 @@ systemctl stop ceph-osd@<OSD_NR>
 ceph-objectstore-tool --op fuse --data-path /var/lib/ceph/osd/ceph-<OSD_NR> --mountpoint <MOUNTPOINT> &
 ls <MOUNTPOINT>
 systemctl start ceph-osd@<OSD_NR>
+
+# The OSD must be stopped. With cephadm, stop it and open a shell with its data path:
+ceph orch daemon stop osd.<OSD_NR>
+cephadm shell --name osd.<OSD_NR>
+
+# list the PGs on an OSD
+ceph-objectstore-tool --data-path /var/lib/ceph/osd/ceph-<OSD_NR> --op list-pgs
+
+# export a PG, e.g. to rescue it from a failing OSD
+ceph-objectstore-tool --data-path /var/lib/ceph/osd/ceph-<OSD_NR> \
+  --pgid <PG_ID> --op export --file <FILE>
+# import into another stopped OSD
+ceph-objectstore-tool --data-path /var/lib/ceph/osd/ceph-<OSD_NR> \
+  --op import --file <FILE>
+# remove a PG copy from this OSD
+ceph-objectstore-tool --data-path /var/lib/ceph/osd/ceph-<OSD_NR> \
+  --pgid <PG_ID> --op remove --force
+```
+
+## ceph-bluestore-tool
+```bash
+# Run with the OSD stopped, see ceph-objectstore-tool above for cephadm
+# labels of the device
+ceph-bluestore-tool show-label --dev /dev/<DEVICE>
+
+# check the OSD's store, repair fixes what fsck finds
+ceph-bluestore-tool fsck   --path /var/lib/ceph/osd/ceph-<OSD_NR>
+ceph-bluestore-tool repair --path /var/lib/ceph/osd/ceph-<OSD_NR>
+
+# sizes of the data, db and wal devices
+ceph-bluestore-tool bluefs-bdev-sizes --path /var/lib/ceph/osd/ceph-<OSD_NR>
+# use the full size after the underlying device (LV, disk) was grown
+ceph-bluestore-tool bluefs-bdev-expand --path /var/lib/ceph/osd/ceph-<OSD_NR>
+
+# recreate the OSD's data directory from the device labels
+ceph-bluestore-tool prime-osd-dir --dev /dev/<DEVICE> \
+  --path /var/lib/ceph/osd/ceph-<OSD_NR>
+```
+
+## Disaster recovery
+```bash
+# Mon map
+# fetch it from the cluster
+ceph mon getmap -o <FILE>
+# from a stopped mon
+ceph-mon -i <MON_ID> --extract-monmap <FILE>
+monmaptool --print <FILE>
+# remove a dead mon from the map, then inject it into the surviving mon (stopped)
+monmaptool --rm <DEAD_MON_ID> <FILE>
+ceph-mon -i <MON_ID> --inject-monmap <FILE>
+
+# Disk health and identification
+ceph device ls
+ceph device get-health-metrics <DEVICE_ID>
+ceph device predict-health <DEVICE_ID>
+# blink the locate LED, on / off
+ceph device light on  <DEVICE_ID> ident
+ceph device light off <DEVICE_ID> ident
+
+# Release and client compatibility gates, after all daemons are upgraded
+ceph osd require-osd-release <RELEASE>
+ceph osd set-require-min-compat-client <RELEASE>
 ```
 
 ## Benchmarking
