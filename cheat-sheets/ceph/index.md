@@ -347,6 +347,58 @@ ceph osd pool set <POOL> bulk true
 ceph osd pool set <POOL> pg_num_min <N>
 ```
 
+## Configuration & tuning
+```bash
+# Central config database
+ceph config dump
+# <WHO> is global, mon, osd, mds, mgr, client or a daemon like osd.3
+ceph config get <WHO> <KEY>
+ceph config set <WHO> <KEY> <VALUE>
+# back to the default
+ceph config rm  <WHO> <KEY>
+# effective values of a running daemon, with source (default, mon, file, override)
+ceph config show osd.<ID>
+ceph config show-with-defaults osd.<ID>
+# help and default of an option
+ceph config help <KEY>
+
+# Import an old ceph.conf into the config database
+ceph config assimilate-conf -i /etc/ceph/ceph.conf
+# minimal ceph.conf for clients
+ceph config generate-minimal-conf
+
+# Runtime override, not persistent
+ceph tell osd.<ID> config set <KEY> <VALUE>
+ceph tell osd.* injectargs '--osd_max_backfills=2'
+ceph tell mon.* injectargs '--mon_allow_pool_delete=true'
+# via the admin socket on the daemon's host
+ceph daemon osd.<ID> config get <KEY>
+
+# Key/value store of the mons, used by mgr modules and the orchestrator
+ceph config-key ls
+ceph config-key get <KEY>
+ceph config-key set <KEY> <VALUE>
+
+# Recovery and backfill speed vs client I/O
+ceph config set osd osd_max_backfills 1
+ceph config set osd osd_recovery_max_active 3
+ceph config set osd osd_recovery_op_priority 3
+# mclock (default since Quincy): pick a profile instead of single options
+# <PROFILE> is balanced, high_client_ops or high_recovery_ops
+ceph config set osd osd_mclock_profile <PROFILE>
+# allow manual backfill / recovery options with mclock
+ceph config set osd osd_mclock_override_recovery_settings true
+
+# Scrub window and intervals
+ceph config set osd osd_scrub_begin_hour <0-23>
+ceph config set osd osd_scrub_end_hour   <0-23>
+ceph config set osd osd_scrub_min_interval <SECONDS>
+ceph config set osd osd_deep_scrub_interval <SECONDS>
+
+# OSD memory
+ceph config set osd osd_memory_target <BYTES>
+```
+
 ## Monitoring & telemetry
 ```bash
 # Progress of recovery, rebalancing and other long-running events
