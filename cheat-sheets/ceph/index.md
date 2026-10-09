@@ -1158,6 +1158,33 @@ ceph auth get-key <ENTITY>
 
 ceph auth get <ENTITY>
 
+# change the caps of an entity, replaces all existing caps
+ceph auth caps <ENTITY> \
+  mon 'allow r' \
+  osd 'allow rw pool=<POOL>'
+
+# profiles for common roles
+ceph auth get-or-create client.<NAME> \
+  mon 'profile rbd' \
+  osd 'profile rbd pool=<POOL>' \
+  mgr 'profile rbd pool=<POOL>'
+
+# CephFS client limited to a directory
+ceph fs authorize <FS_NAME> client.<NAME> /<DIR> rw
+
+# export to / import from a keyring file
+ceph auth get <ENTITY> -o /etc/ceph/ceph.<ENTITY>.keyring
+ceph auth import -i /etc/ceph/ceph.<ENTITY>.keyring
+ceph auth export > <BACKUP_DIR>/ceph.auth
+
+# rotate the key of an entity (newer releases only)
+ceph auth rotate <ENTITY>
+
+# create a keyring offline
+ceph-authtool --create-keyring <KEYRING> --gen-key -n <ENTITY>
+ceph-authtool <KEYRING> -n <ENTITY> --cap mon 'allow r' --cap osd 'allow rw pool=<POOL>'
+ceph-authtool --print-key <KEYRING>
+
 # remove an entity
 ceph auth rm <ENTITY>
 ```
