@@ -348,6 +348,35 @@ ceph osd pool set <POOL> pg_num_min <N>
 ```
 
 ## Ceph orch
+
+### cephadm
+```bash
+# Bootstrap the first node
+cephadm bootstrap --mon-ip <MON_IP>
+cephadm bootstrap --mon-ip <MON_IP> \
+  --public-network <CIDR> --cluster-network <CIDR>
+# pin the container image
+cephadm bootstrap --mon-ip <MON_IP> --image quay.io/ceph/ceph:v<CEPH_VERSION>
+# no dashboard / monitoring stack
+cephadm bootstrap --mon-ip <MON_IP> --skip-dashboard --skip-monitoring-stack
+# apply a service spec right away
+cephadm bootstrap --mon-ip <MON_IP> --apply-spec <PATH_TO_CEPH_SPEC>
+
+# Shell with the ceph CLI and keyrings inside a container
+cephadm shell
+cephadm shell -- ceph -s
+
+# Daemons running on this host, and their logs
+cephadm ls
+cephadm logs --name <DAEMON_NAME>
+# run ceph-volume in the container
+cephadm ceph-volume -- lvm list
+
+# Check the host before adding it to the cluster
+ceph cephadm check-host <HOSTNAME>
+```
+
+### orchestrator
 ```bash
 # enable the module
 ceph mgr module enable cephadm
@@ -370,6 +399,21 @@ ssh-copy-id -f -i ceph.pub root@<HOSTNAME>
 
 # repeat per host
 ceph orch host add <HOSTNAME>
+# with an IP and labels, _admin also copies ceph.conf and the admin keyring
+ceph orch host add <HOSTNAME> <IP> --labels _admin,mon,osd
+ceph orch host label add <HOSTNAME> <LABEL>
+ceph orch host label rm  <HOSTNAME> <LABEL>
+ceph orch host ls --host-pattern <HOSTNAME>
+ceph orch host set-addr <HOSTNAME> <NEW_IP>
+
+# Maintenance mode, stops all daemons of the host and sets noout for it
+ceph orch host maintenance enter <HOSTNAME>
+ceph orch host maintenance exit  <HOSTNAME>
+
+# Remove a host: drain moves all daemons away first
+ceph orch host drain <HOSTNAME>
+ceph orch osd rm status
+ceph orch host rm <HOSTNAME>
 
 # Services and daemons
 # modify / redeploy services
@@ -388,8 +432,27 @@ ceph orch daemon restart <DAEMON_NAME>
 # restart all daemons of a service, name from 'ceph orch ls', e.g. rgw.default
 ceph orch restart <SERVICE_TYPE>.<SERVICE_ID>
 
+ceph orch daemon stop  <DAEMON_NAME>
+ceph orch daemon start <DAEMON_NAME>
+# redeploy a daemon or a whole service, e.g. after changing the image
+ceph orch daemon redeploy <DAEMON_NAME>
+ceph orch redeploy <SERVICE_TYPE>.<SERVICE_ID>
+# add a single daemon on a host
+ceph orch daemon add mon <HOSTNAME>
+ceph orch daemon add mgr <HOSTNAME>
+
 ceph orch ls osd
 ceph orch ls osd --export
+
+# Create OSDs
+ceph orch device ls --refresh
+# preview first
+ceph orch apply osd --all-available-devices --dry-run
+ceph orch apply osd --all-available-devices
+# a single device
+ceph orch daemon add osd <HOSTNAME>:<DEVICE_PATH>
+# wipe a device so it can be used again
+ceph orch device zap <HOSTNAME> <DEVICE_PATH> --force
 
 ceph orch set-managed   <SERVICE_TYPE>.<SERVICE_ID>
 ceph orch set-unmanaged <SERVICE_TYPE>.<SERVICE_ID>
