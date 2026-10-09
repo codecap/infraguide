@@ -183,6 +183,64 @@ ceph pg dump pgs_brief
 ceph pg dump sum
 ```
 
+## Troubleshooting & health
+```bash
+# Health warnings
+ceph health detail
+# silence a warning, <TTL> e.g. 1h, 1d, 1w
+ceph health mute   <HEALTH_CODE> <TTL>
+# stay muted even if the warning changes or clears and returns
+ceph health mute   <HEALTH_CODE> <TTL> --sticky
+ceph health unmute <HEALTH_CODE>
+
+# Crashes (daemon crash reports, trigger RECENT_CRASH warning)
+ceph crash ls
+ceph crash ls-new
+ceph crash info <CRASH_ID>
+# acknowledge, clears the warning
+ceph crash archive <CRASH_ID>
+ceph crash archive-all
+
+# Find problematic PGs
+ceph pg ls | grep -v active+clean
+ceph pg dump_stuck inactive
+ceph pg dump_stuck unclean
+ceph pg dump_stuck stale
+
+# Inspect a PG, <PG_ID> looks like 2.1f
+ceph pg <PG_ID> query
+# which OSDs serve the PG
+ceph pg map <PG_ID>
+# which PG / OSDs hold an object
+ceph osd map <POOL> <OBJECT>
+
+# Speed up recovery of a specific PG
+ceph pg force-recovery <PG_ID>
+ceph pg force-backfill <PG_ID>
+ceph pg cancel-force-recovery <PG_ID>
+ceph pg cancel-force-backfill <PG_ID>
+
+# Scrub errors (PG_DAMAGED, OSD_SCRUB_ERRORS)
+ceph pg scrub      <PG_ID>
+ceph pg deep-scrub <PG_ID>
+rados list-inconsistent-pg  <POOL>
+rados list-inconsistent-obj <PG_ID> --format=json-pretty
+ceph pg repair <PG_ID>
+
+# Unfound objects
+ceph pg <PG_ID> query | grep unfound
+# ⚠️ last resort, data is reverted to a previous version or deleted
+ceph pg <PG_ID> mark_unfound_lost revert
+ceph pg <PG_ID> mark_unfound_lost delete
+
+# ⚠️ declare a dead OSD lost, only if it will never come back
+ceph osd lost <OSD_NR> --yes-i-really-mean-it
+
+# Slow requests and daemon logs
+ceph osd perf
+journalctl -u "ceph*" | grep "slow request"
+```
+
 ## CRUSH & failure domain
 ```bash
 # Bucket types
