@@ -1024,6 +1024,35 @@ cp <MOUNTPOINT>/<DIR>/.snap/<SNAP_NAME>/<FILE> <MOUNTPOINT>/<DIR>/<FILE>
 rmdir  <MOUNTPOINT>/<DIR>/.snap/<SNAP_NAME>
 ```
 
+## NFS
+```bash
+# Deploy an NFS cluster (Ganesha) on the given hosts
+ceph nfs cluster create <CLUSTER_ID> "<HOST1>,<HOST2>"
+ceph nfs cluster ls
+ceph nfs cluster info <CLUSTER_ID>
+ceph nfs cluster rm <CLUSTER_ID>
+
+# Export a CephFS directory
+ceph nfs export create cephfs --cluster-id <CLUSTER_ID> \
+  --pseudo-path /<EXPORT> --fsname <FS_NAME> --path /<DIR>
+# read-only
+ceph nfs export create cephfs --cluster-id <CLUSTER_ID> \
+  --pseudo-path /<EXPORT> --fsname <FS_NAME> --path /<DIR> --readonly
+
+# Export an RGW bucket
+ceph nfs export create rgw --cluster-id <CLUSTER_ID> \
+  --pseudo-path /<EXPORT> --bucket <BUCKET>
+
+ceph nfs export ls   <CLUSTER_ID>
+ceph nfs export info <CLUSTER_ID> /<EXPORT>
+# change an export from a JSON spec, 'export info' prints the current one
+ceph nfs export apply <CLUSTER_ID> -i <EXPORT_JSON>
+ceph nfs export rm <CLUSTER_ID> /<EXPORT>
+
+# Mount on a client
+mount -t nfs -o vers=4.1 <NFS_HOST>:/<EXPORT> <MOUNTPOINT>
+```
+
 ## radosgw
 ```bash
 # list users
