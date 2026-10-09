@@ -15,6 +15,8 @@ Common ceph, rbd and rados commands, grouped by tool. Replace the values to matc
 
 Want to see these commands in context? Build the [Ceph lab](/learn/ceph/).
 
+{% include cheat-sheet-toc.md %}
+
 ## Cluster status & config
 ```bash
 ceph health

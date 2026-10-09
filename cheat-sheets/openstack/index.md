@@ -16,6 +16,8 @@ Common openstack commands, grouped by service. Replace the values in angle brack
 
 Want to see these commands in context? Build the [OpenStack lab](/learn/openstack/).
 
+{% include cheat-sheet-toc.md %}
+
 ## CLI basics
 
 ### Help and debugging
