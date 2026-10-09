@@ -16,6 +16,51 @@ Common openstack commands, grouped by service. Replace the values in angle brack
 
 Want to see these commands in context? Build the [OpenStack lab](/learn/openstack/).
 
+## CLI basics
+
+### Authentication
+```bash
+openstack command list
+# show the REST calls and responses
+openstack --debug <COMMAND>
+
+# Credentials from an openrc file or from clouds.yaml
+source <OPENRC_FILE>
+env | grep OS_
+openstack --os-cloud <CLOUD> server list
+
+# Application credential: scoped, expiring credential for scripts
+openstack application credential create <NAME> --role <ROLE> --expiration <ISO8601_DATE>
+openstack application credential list
+openstack application credential show <NAME_OR_ID>
+openstack application credential delete <NAME_OR_ID>
+```
+
+### Output formatting
+```bash
+# Format: table (default), json, yaml, csv or value
+openstack server list -f json
+openstack server list -f csv --quote minimal
+openstack server show <SERVER> -f shell
+
+# Columns, repeat -c per column
+openstack server list -c ID -c Name -c Status -c Networks
+openstack volume list -c ID -c Name -c Size -c Status
+
+# Filter and sort
+openstack server list --status ACTIVE
+openstack server list --name <REGEX>
+openstack server list --sort-column Name
+openstack server list --sort-column Status --sort-descending
+
+# Paging: use the last ID of a page as the marker for the next
+openstack server list --limit <N> --marker <LAST_ID>
+
+# Scripting: a single value, one per line
+openstack server show <SERVER> -f value -c id
+openstack server list -f value -c ID | xargs -I{} openstack server show {}
+```
+
 ## Identity
 
 ### Domains
