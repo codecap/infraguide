@@ -598,12 +598,29 @@ rbd create --image-feature layering --size 1024 <POOL>/<IMAGE>
 rbd list --pool <POOL>
 # show info about an image
 rbd info <POOL>/<IMAGE>
+# provisioned vs. used space
+rbd du <POOL>/<IMAGE>
+# who is using the image (watchers)
+rbd status <POOL>/<IMAGE>
 
 # resize an image
 rbd resize --size 2G <POOL>/<IMAGE>
+# shrinking needs a flag, may destroy data
+rbd resize --size 1G <POOL>/<IMAGE> --allow-shrink
+
+# enable / disable image features
+rbd feature enable  <POOL>/<IMAGE> <FEATURE>
+rbd feature disable <POOL>/<IMAGE> <FEATURE>
 
 # Delete an image/volume
 rbd rm <POOL>/<IMAGE>
+
+# Trash: delete with a way back
+rbd trash mv <POOL>/<IMAGE>
+rbd trash ls <POOL>
+rbd trash restore <POOL> <IMAGE_ID>
+rbd trash rm      <POOL> <IMAGE_ID>
+rbd trash purge   <POOL>
 
 # Map and use
 rbd device list
@@ -611,6 +628,9 @@ rbd device list
 rbd map <POOL>/<IMAGE>
 # show mapped images
 rbd showmapped
+# unmap, by device or by image
+rbd unmap /dev/rbd<N>
+rbd unmap <POOL>/<IMAGE>
 
 # Use
 ls -lh /dev/rbd<N>  /dev/rbd/<POOL>/<IMAGE>
@@ -632,8 +652,33 @@ rbd snap ls           <POOL>/<IMAGE>
 rbd map <POOL>/<IMAGE>@<SNAP>
 # Rollback the image to its snapshot
 rbd snap rollback <POOL>/<IMAGE>@<SNAP>
+# Delete a snapshot
+rbd snap rm <POOL>/<IMAGE>@<SNAP>
 # Delete/Purge all unprotected snapshots.
 rbd snap purge <POOL>/<IMAGE>
+
+# Clones
+# clone from a protected snapshot
+rbd clone <POOL>/<IMAGE>@<SNAP> <POOL>/<CLONE>
+# list clones of a snapshot
+rbd children <POOL>/<IMAGE>@<SNAP>
+# detach the clone from its parent, copies all data
+rbd flatten <POOL>/<CLONE>
+
+# Export and import
+rbd export <POOL>/<IMAGE> <FILE>
+rbd import <FILE> <POOL>/<IMAGE>
+# incremental: changes between two snapshots
+rbd export-diff <POOL>/<IMAGE>@<SNAP2> --from-snap <SNAP1> <DIFF_FILE>
+rbd import-diff <DIFF_FILE> <POOL>/<IMAGE>
+
+# Performance
+rbd perf image iostat
+rbd perf image stats <POOL>
+
+# Map images at boot (rbdmap service)
+echo "<POOL>/<IMAGE> id=<USER>,keyring=/etc/ceph/ceph.client.<USER>.keyring" >> /etc/ceph/rbdmap
+systemctl enable --now rbdmap
 ```
 
 ## CephFS
