@@ -75,6 +75,8 @@ openstack domain create <DOMAIN_NAME>
 openstack domain set <KEY> <VALUE> <DOMAIN_ID>
 # delete domain
 openstack domain delete <DOMAIN_ID>
+
+openstack domain set <DOMAIN_ID> --description "<DESCRIPTION>"
 ```
 
 ### Users
@@ -96,6 +98,11 @@ openstack user delete <USER_ID>
 openstack user create --domain <DOMAIN> --project <PROJECT> \
   --description "<DESCRIPTION>" --email <EMAIL> --password <PASSWORD> \
   --enable <USER>
+
+# enable / disable a user, change the password
+openstack user set <USER_ID> --enable
+openstack user set <USER_ID> --disable
+openstack user set <USER_ID> --password <PASSWORD>
 ```
 
 ### Groups
@@ -149,6 +156,17 @@ openstack role remove --project <PROJECT_ID> \
 
 # Role in a domain
 openstack role create --domain Default <ROLE>
+
+# role assignments, with names instead of IDs
+openstack role list
+openstack role show <ROLE_ID>
+openstack role assignment list --names
+openstack role assignment list --user <USER_ID> --names
+
+# implied roles: the prior role includes the implied one
+openstack implied role list
+openstack implied role create <PRIOR_ROLE> --implied-role <IMPLIED_ROLE>
+openstack implied role delete <PRIOR_ROLE> --implied-role <IMPLIED_ROLE>
 ```
 
 ### Tokens
@@ -179,6 +197,12 @@ openstack quota set --server-groups <N> --server-group-members <N> <PROJECT>
 openstack quota delete <PROJECT>              # revert to defaults
 openstack limits show --absolute
 openstack limits show --rate
+
+# Block storage and network quotas
+openstack quota set --volumes <N> --gigabytes <GB> --snapshots <N> <PROJECT>
+openstack quota set --networks <N> --subnets <N> --routers <N> \
+  --floating-ips <N> --secgroups <N> <PROJECT>
+openstack limits show --absolute --project <PROJECT>
 ```
 
 ### Catalog & services
@@ -197,6 +221,16 @@ openstack service list --long
 openstack network agent list --long
 openstack compute service list --long
 openstack volume service list --long
+
+openstack endpoint list
+openstack endpoint list --service <SERVICE>
+openstack endpoint show <ENDPOINT_ID>
+openstack service show <SERVICE>
+
+# Regions
+openstack region list
+openstack region show <REGION>
+openstack region create <REGION>
 ```
 
 ## Compute
@@ -222,6 +256,14 @@ openstack flavor set <FLAVOR_NAME> \
   --property resources:VCPU=0 \
   --property resources:MEMORY_MB=0 \
   --property resources:DISK_GB=0
+
+# all flavors including private ones, with ephemeral disk
+openstack flavor list --all
+openstack flavor create --vcpus <VCPUS> --ram <RAM_MB> --disk <DISK_GB> \
+  --ephemeral <EPHEMERAL_GB> <FLAVOR_NAME>
+# extra spec: schedule onto host aggregates with a matching property
+openstack flavor set <FLAVOR> --property aggregate_instance_extra_specs:<KEY>=<VALUE>
+openstack flavor unset <FLAVOR> --property <KEY>
 ```
 
 ### Key pairs
@@ -234,6 +276,10 @@ openstack keypair show <KEY_PAIR_NAME>
 openstack keypair create --private-key <FILE_PATH> <KEY_PAIR_NAME>
 # delete key pair
 openstack keypair delete <KEY_PAIR_NAME>
+
+# upload an existing public key, or let OpenStack generate a pair
+openstack keypair create --public-key <PUBLIC_KEY_FILE> <KEY_PAIR_NAME>
+openstack keypair create <KEY_PAIR_NAME> > <PRIVATE_KEY_FILE>
 ```
 
 ### Instances
@@ -406,6 +452,36 @@ openstack image create --file <IMAGE_FILE> --private \
 openstack image set --min-ram <MB> <IMAGE_NAME>
 openstack image set --property os_shutdown_timeout=<SECONDS> <IMAGE_NAME>
 openstack image show <IMAGE_NAME>
+
+# Import from a URL
+openstack image import --disk-format qcow2 --container-format bare \
+  --uri <URI> <IMAGE_NAME>
+
+# Hardware properties, the guest sees them as virtio devices
+openstack image set <IMAGE> --property hw_disk_bus=virtio
+openstack image set <IMAGE> --property hw_scsi_model=virtio-scsi
+openstack image set <IMAGE> --property hw_vif_model=virtio
+openstack image set <IMAGE> --min-disk <GB> --min-ram <MB>
+openstack image unset <IMAGE> --property <KEY>
+
+# Visibility
+openstack image list --public
+openstack image list --private
+openstack image list --status active
+openstack image set <IMAGE> --public
+openstack image set <IMAGE> --private
+openstack image set <IMAGE> --shared
+
+# Share a shared image with another project
+openstack image member create <IMAGE> <PROJECT>
+openstack image member list <IMAGE>
+openstack image member delete <IMAGE> <PROJECT>
+# the other project accepts it
+openstack image set --accept <IMAGE>
+
+# Make an image unusable without deleting it
+openstack image set <IMAGE> --deactivate
+openstack image set <IMAGE> --activate
 ```
 
 ### Octavia amphora image
@@ -1132,6 +1208,19 @@ openstack compute service list
 openstack network agent list
 openstack volume service list
 openstack baremetal conductor list
+```
+
+### Compute node
+```bash
+# Instances as libvirt sees them, <INSTANCE_UUID> is the Nova server ID
+sudo virsh list --all
+sudo virsh dominfo <INSTANCE_UUID>
+# logs; with kolla-ansible: docker logs nova_compute
+sudo journalctl -u openstack-nova-compute -f
+# can the scheduler place it?
+openstack allocation candidate list --resource VCPU=<N>,MEMORY_MB=<MB>,DISK_GB=<GB>
+# console log of the instance
+openstack server console log show --lines 200 <SERVER>
 ```
 
 ### Debugging
