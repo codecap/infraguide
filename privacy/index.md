@@ -16,7 +16,7 @@ sitemap: false
   Mergenthalerallee 73-75<br>
   65760 Eschborn<br>
   Germany<br>
-  Email: <a href="mailto:ping@infraguide.org">ping@infraguide.org</a><br>
+  Email: <a href="mailto:privacy@infraguide.org">privacy@infraguide.org</a><br>
   Phone: +49 6196 204 55 80
   </p>
   <p>
@@ -188,13 +188,13 @@ sitemap: false
   process your data unless we can demonstrate compelling legitimate grounds for
   the processing which override your interests, rights and freedoms, or the
   processing serves the establishment, exercise or defence of legal claims. To
-  object, write to <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>.
+  object, write to <a href="mailto:privacy@infraguide.org">privacy@infraguide.org</a>.
   </strong>
   </p>
 
   <h2>11. Contact</h2>
   <p>
   For any questions about this privacy policy or your personal data, contact:
-  <a href="mailto:ping@infraguide.org">ping@infraguide.org</a>
+  <a href="mailto:privacy@infraguide.org">privacy@infraguide.org</a>
   </p>
 </div>
